@@ -10,7 +10,7 @@ export function ComingSoon({
   description = "Această pagină este în pregătire.",
 }: ComingSoonProps) {
   return (
-    <main className="mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 pt-20 text-center">
+    <div className="mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 pt-20 text-center">
       <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-primary">
         În curând
       </p>
@@ -22,6 +22,6 @@ export function ComingSoon({
       >
         Înapoi la pagina principală
       </Link>
-    </main>
+    </div>
   );
 }

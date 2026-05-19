@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 text-center">
+    <div className="mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 text-center">
       <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-primary">
         404
       </p>
@@ -16,6 +16,6 @@ export default function NotFound() {
       >
         Înapoi la pagina principală
       </Link>
-    </main>
+    </div>
   );
 }
