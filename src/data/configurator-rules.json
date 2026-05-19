@@ -4,7 +4,8 @@
     "if": { "projectType": "teren-individual", "sport": "basket", "users": "copii-mici" },
     "then": {
       "suggest": "loc-joaca",
-      "message": "Pentru copii <12 ani, un sistem EPDM de 1cm e mai potrivit și mai ieftin decât un teren de basket regulament de 3cm. Vrei să treci la loc de joacă?"
+      "message": "Pentru copii sub 12 ani, un sistem EPDM de 1cm e mai potrivit și mai ieftin decât un teren de basket regulament de 3cm. Vrei să trecem la configurare loc de joacă?",
+      "rewriteAnswers": { "projectType": "loc-joaca" }
     }
   },
   {
@@ -12,7 +13,8 @@
     "if": { "projectType": "teren-individual", "sport": "basket", "context": "public-nesupervizat" },
     "then": {
       "suggest": "multisport",
-      "message": "În spații publice nesupervizate, terenurile ajung să fie folosite pentru tot (biciclete, role, trotinete). Recomandăm un sistem multisport mai rezistent decât unul pur de basket."
+      "message": "În spații publice nesupervizate, terenurile ajung să fie folosite pentru tot (biciclete, role, trotinete). Recomandăm un sistem multisport mai rezistent decât unul pur de basket.",
+      "rewriteAnswers": { "projectType": "multisport" }
     }
   },
   {
@@ -28,7 +30,8 @@
     "if": { "projectType": "pista-atletism", "lengthBelow": 400 },
     "then": {
       "suggest": "teren-alergare",
-      "message": "Pentru proiecte sub 400m, o pistă de alergare recreațională e mai potrivită decât o pistă de atletism certificată. Economisești 40-60% din cost fără să sacrifici calitatea utilizării."
+      "message": "Pentru proiecte sub 400m, o pistă de alergare recreațională e mai potrivită decât o pistă de atletism certificată. Economisești 40-60% din cost fără să sacrifici calitatea utilizării.",
+      "rewriteAnswers": { "projectType": "spatii-publice" }
     }
   },
   {
