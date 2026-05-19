@@ -41,7 +41,7 @@ export default async function OpengraphImage() {
             ATESS PROJECT
           </span>
         </div>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               fontSize: "84px",
