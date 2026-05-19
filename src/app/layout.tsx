@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
+import { LenisProvider } from "@/components/motion/LenisProvider";
+import { PageTransition } from "@/components/motion/PageTransition";
 import "./globals.css";
 
 const inter = Inter({
@@ -85,9 +87,11 @@ export default function RootLayout({
       className={`dark ${inter.variable} ${fraunces.variable} ${spaceGrotesk.variable}`}
     >
       <body className="bg-bg-base text-text-primary min-h-screen flex flex-col">
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <LenisProvider>
+          <Header />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
