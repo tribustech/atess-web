@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gallery:build": "node scripts/build-gallery.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
