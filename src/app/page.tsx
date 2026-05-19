@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TeoSection } from "@/components/home/TeoSection";
 import { ClientsSection } from "@/components/home/ClientsSection";
-import { PartnersSection } from "@/components/home/PartnersSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { SnapSection } from "@/components/home/SnapSection";
 import { FlooringSystemClient } from "@/components/home/FlooringSystemClient";
@@ -57,9 +56,6 @@ export default function Home() {
           <HeroSection />
         </SnapSection>
         <FlooringSystemClient />
-        <SnapSection id="partners" className="bg-bg-base">
-          <PartnersSection />
-        </SnapSection>
         <SnapSection id="clients" className="bg-bg-base">
           <ClientsSection />
         </SnapSection>
