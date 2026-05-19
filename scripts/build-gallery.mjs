@@ -27,15 +27,14 @@ async function walk(dir) {
     if (entry.isDirectory()) {
       files.push(...(await walk(full)));
     } else {
-      files.push(full);
+      files.push(full.replace(/\\/g, "/"));
     }
   }
   return files;
 }
 
 function deriveId(srcPath) {
-  const name = basename(srcPath).replace(/\.webp$/, "");
-  return name.split("-")[0];
+  return relative(IMAGES_DIR, srcPath).replace(/\.webp$/, "").replace(/\\/g, "/");
 }
 
 function inferCategory(srcPath, existing) {
@@ -64,15 +63,31 @@ function isExcluded(file) {
 }
 
 async function main() {
-  const allFiles = await walk(IMAGES_DIR);
+  let allFiles;
+  try {
+    allFiles = await walk(IMAGES_DIR);
+  } catch (err) {
+    if (err && err.code === "ENOENT") {
+      console.error(`Images directory not found: ${IMAGES_DIR}`);
+      process.exit(1);
+    }
+    throw err;
+  }
+
   const fullWebps = allFiles
     .filter((f) => f.endsWith(".webp"))
     .filter((f) => !isThumb(f))
     .filter((f) => !isExcluded(f));
 
-  const existing = existsSync(OUT_FILE)
-    ? JSON.parse(await readFile(OUT_FILE, "utf8"))
-    : [];
+  let existing = [];
+  if (existsSync(OUT_FILE)) {
+    try {
+      existing = JSON.parse(await readFile(OUT_FILE, "utf8"));
+    } catch {
+      console.error(`gallery.json is not valid JSON — delete it and re-run.`);
+      process.exit(1);
+    }
+  }
   const existingById = new Map(existing.map((e) => [e.id, e]));
 
   const excluded = allFiles
