@@ -11,7 +11,7 @@ interface GalleryItemProps {
 }
 
 export function GalleryItem({ entry, index, onOpen }: GalleryItemProps) {
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotion() ?? false;
 
   return (
     <motion.figure
@@ -38,12 +38,12 @@ export function GalleryItem({ entry, index, onOpen }: GalleryItemProps) {
           priority={index < 6}
           className="h-auto w-full transition duration-500 group-hover:scale-[1.02]"
         />
-        {entry.caption ? (
-          <figcaption className="mt-2 text-sm text-text-muted">
-            {entry.caption}
-          </figcaption>
-        ) : null}
       </button>
+      {entry.caption ? (
+        <figcaption className="mt-2 text-sm text-text-muted">
+          {entry.caption}
+        </figcaption>
+      ) : null}
     </motion.figure>
   );
 }
