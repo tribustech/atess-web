@@ -37,9 +37,6 @@ export function deriveNextStep(current: StepId, answers: Answers): StepId | null
     case "turnkey-brief":
       return "contact";
 
-    case "suggestion":
-      return "base-layer";
-
     case "base-layer":
       return "timeline";
 

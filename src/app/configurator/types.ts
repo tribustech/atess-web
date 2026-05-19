@@ -51,7 +51,6 @@ export type StepId =
   | "context"
   | "interior-env"
   | "turnkey-brief"
-  | "suggestion"
   | "base-layer"
   | "timeline"
   | "contact"

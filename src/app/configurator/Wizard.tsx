@@ -13,10 +13,10 @@ import { StepInteriorEnv } from "./steps/StepInteriorEnv";
 import { StepTurnkeyBrief } from "./steps/StepTurnkeyBrief";
 import { StepBaseLayer } from "./steps/StepBaseLayer";
 import { StepTimeline } from "./steps/StepTimeline";
-import { StepSuggestion } from "./steps/StepSuggestion";
 import { StepContact } from "./steps/StepContact";
 import { StepThanks } from "./steps/StepThanks";
 import { ProgressBar } from "./components/ProgressBar";
+import { RecommendationHint } from "./components/RecommendationHint";
 
 const STEP_INDEX: Record<StepId, number> = {
   "project-type": 1,
@@ -26,11 +26,10 @@ const STEP_INDEX: Record<StepId, number> = {
   "interior-env": 3,
   "turnkey-brief": 3,
   context: 4,
-  suggestion: 5,
-  "base-layer": 6,
-  timeline: 7,
-  contact: 8,
-  thanks: 9,
+  "base-layer": 5,
+  timeline: 6,
+  contact: 7,
+  thanks: 8,
 };
 
 const RULE_GATES: StepId[] = ["context", "users", "interior-env", "dimensions", "base-layer"];
@@ -53,13 +52,6 @@ export function Wizard() {
       dispatch({ type: "rule-fired", ruleId: matched.id });
     }
   }, [state.current, state.answers, state.firedRules, state.pendingRuleId]);
-
-  // If a rule is pending and we're not already on the suggestion step, route there.
-  useEffect(() => {
-    if (state.pendingRuleId && state.current !== "suggestion") {
-      dispatch({ type: "goto", step: "suggestion" });
-    }
-  }, [state.pendingRuleId, state.current]);
 
   const submit = useCallback(
     async (contact: ContactFields, files: File[], honeypot: string) => {
@@ -118,7 +110,8 @@ export function Wizard() {
 
   return (
     <>
-      <ProgressBar current={STEP_INDEX[state.current]} total={9} />
+      <ProgressBar current={STEP_INDEX[state.current]} total={8} />
+      <RecommendationHint pendingRuleId={state.pendingRuleId} dispatch={dispatch} />
       <AnimatePresence mode="wait">
         <motion.div
           key={state.current}
@@ -160,8 +153,6 @@ function renderStep(
       return <StepBaseLayer state={state} dispatch={dispatch} />;
     case "timeline":
       return <StepTimeline state={state} dispatch={dispatch} />;
-    case "suggestion":
-      return <StepSuggestion state={state} dispatch={dispatch} />;
     case "contact":
       return (
         <StepContact

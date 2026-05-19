@@ -114,9 +114,9 @@ describe("configuratorReducer", () => {
     const s = run([
       { type: "set", key: "projectType", value: "teren-individual" },
       { type: "next" },
-      { type: "goto", step: "suggestion" },
+      { type: "goto", step: "contact" },
     ]);
-    expect(s.current).toBe("suggestion");
+    expect(s.current).toBe("contact");
     expect(s.history).toContain("sport");
   });
 
