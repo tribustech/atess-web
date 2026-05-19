@@ -6,10 +6,7 @@ export function FinalCtaSection() {
       <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
         <div className="grid gap-8 border border-border/70 bg-black/20 p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
           <div>
-            <p className="font-mono text-sm uppercase tracking-[0.18em] text-text-muted">
-              E5
-            </p>
-            <h2 className="mt-3 text-display-lg">
+            <h2 className="text-display-lg">
               Construieste urmatorul proiect ATESS
             </h2>
             <p className="mt-5 max-w-xl text-lg text-text-muted">

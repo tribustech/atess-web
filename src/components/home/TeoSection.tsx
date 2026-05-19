@@ -22,10 +22,7 @@ export function TeoSection() {
           </div>
         </div>
         <div>
-          <p className="font-mono text-sm uppercase tracking-[0.18em] text-text-muted">
-            E4
-          </p>
-          <h2 className="mt-3 text-display-lg">Teo Neagu</h2>
+          <h2 className="text-display-lg">Teo Neagu</h2>
           <p className="mt-5 text-lg text-text-muted">
             Fiecare proiect începe cu întrebarea potrivită: unde va fi folosit
             spațiul, cum va fi întreținut și cum va arăta peste 10 ani.

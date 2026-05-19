@@ -20,10 +20,7 @@ export function ClientsSection() {
 
   return (
     <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 py-24 md:px-10">
-      <p className="font-mono text-sm uppercase tracking-[0.18em] text-text-muted">
-        E3
-      </p>
-      <h2 className="mt-3 text-display-lg">Lucrari care vorbesc</h2>
+      <h2 className="text-display-lg">Lucrari care vorbesc</h2>
       <p className="mt-2 text-sm uppercase tracking-[0.14em] text-text-muted">
         Clienti de referinta
       </p>
