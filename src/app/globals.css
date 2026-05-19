@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors — flat keys match v3 utility names */
+  --color-bg-base:        #0B0B0D;
+  --color-bg-elevated:    #141416;
+  --color-bg-subtle:      #1A1A1D;
+
+  --color-accent-primary: #C8102E;
+  --color-accent-deep:    #7A0A1C;
+
+  --color-text-primary:   #F5F5F3;
+  --color-text-muted:     #8A8A88;
+  --color-text-faint:     #4A4A4D;
+
+  --color-border:         #26262A;
+
+  /* Fonts — bound to next/font CSS variables set on <body> */
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter), system-ui, sans-serif;
+  --font-mono:    var(--font-space-grotesk), ui-monospace, monospace;
+  --font-serif:   var(--font-fraunces), Georgia, serif;
+
+  /* Custom type scale */
+  --text-display-xl: clamp(3rem, 8vw, 7rem);
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-lg: clamp(2.5rem, 5vw, 4.5rem);
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  /* Gradients exposed as bg-gradient-* utilities */
+  --background-image-gradient-hero: radial-gradient(ellipse at center, transparent 0%, #0B0B0D 75%);
+  --background-image-gradient-cta:  linear-gradient(135deg, #0B0B0D 0%, #7A0A1C 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html { color-scheme: dark; }
+  body {
+    background: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: var(--color-accent-primary);
+    color: var(--color-text-primary);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .grain { position: relative; }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 }
