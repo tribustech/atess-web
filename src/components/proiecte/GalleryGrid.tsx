@@ -33,17 +33,30 @@ export function GalleryGrid({ items }: GalleryGridProps) {
     return c;
   }, [items]);
 
+  const numberById = useMemo(() => {
+    const m = new Map<string, number>();
+    items.forEach((entry, i) => m.set(entry.id, i + 1));
+    return m;
+  }, [items]);
+
   return (
     <>
       <FilterChips active={filter} onChange={setFilter} counts={counts} />
       <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
         {filtered.map((entry, i) => (
-          <GalleryItem key={entry.id} entry={entry} index={i} onOpen={setOpenIndex} />
+          <GalleryItem
+            key={entry.id}
+            entry={entry}
+            index={i}
+            displayNumber={numberById.get(entry.id) ?? 0}
+            onOpen={setOpenIndex}
+          />
         ))}
       </div>
       <Lightbox
         entries={filtered}
         index={openIndex}
+        numberById={numberById}
         onClose={() => setOpenIndex(null)}
         onIndexChange={setOpenIndex}
       />

@@ -7,10 +7,11 @@ import type { GalleryEntry } from "@/lib/gallery";
 interface GalleryItemProps {
   entry: GalleryEntry;
   index: number;
+  displayNumber: number;
   onOpen: (index: number) => void;
 }
 
-export function GalleryItem({ entry, index, onOpen }: GalleryItemProps) {
+export function GalleryItem({ entry, index, displayNumber, onOpen }: GalleryItemProps) {
   const reduce = useReducedMotion() ?? false;
 
   return (
@@ -24,8 +25,8 @@ export function GalleryItem({ entry, index, onOpen }: GalleryItemProps) {
       <button
         type="button"
         onClick={() => onOpen(index)}
-        aria-label={`Mărește imaginea: ${entry.caption ?? entry.alt}`}
-        className="group block w-full overflow-hidden bg-black/20 text-left"
+        aria-label={`Mărește imaginea ${displayNumber}: ${entry.caption ?? entry.alt}`}
+        className="group relative block w-full overflow-hidden bg-black/20 text-left"
       >
         <Image
           src={entry.thumb}
@@ -38,6 +39,12 @@ export function GalleryItem({ entry, index, onOpen }: GalleryItemProps) {
           priority={index < 6}
           className="h-auto w-full transition duration-500 group-hover:scale-[1.02]"
         />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute left-2 top-2 grid h-7 min-w-[1.75rem] place-items-center rounded-full bg-black/75 px-2 font-mono text-xs font-semibold text-white shadow-sm"
+        >
+          #{displayNumber}
+        </span>
       </button>
       {entry.caption ? (
         <figcaption className="mt-2 text-sm text-text-muted">
