@@ -10,8 +10,8 @@
     "surfaceM2": 6400,
     "client": "FC Bacău (sponsorizat de Dedeman)",
     "description": "Pistă de atletism de 400m, 8 culoare, color roșu cărămiziu. Aplicată conform standardului World Athletics, cu marcaje complete pentru probe de viteză și sărituri.",
-    "heroImage": "/assets/images/project-bacau.webp",
-    "gallery": ["/assets/images/project-bacau-1.webp", "/assets/images/project-bacau-2.webp"],
+    "heroImage": "/images/project-bacau.webp",
+    "gallery": ["/images/project-bacau-1.webp", "/images/project-bacau-2.webp"],
     "featured": true
   },
   {
@@ -25,7 +25,7 @@
     "surfaceM2": 850,
     "client": "Primăria Municipiului Suceava",
     "description": "Amenajare loc de joacă cu pardoseală EPDM colorată și marcaje decorative. Parte dintr-un program de reabilitare a spațiilor urbane.",
-    "heroImage": "/assets/images/project-suceava.webp",
+    "heroImage": "/images/project-suceava.webp",
     "gallery": [],
     "featured": true
   },
@@ -39,7 +39,7 @@
     "systemSlug": "multisport",
     "surfaceM2": 420,
     "description": "Teren multisport cu marcaje pentru baschet și fotbal, amenajat în curtea unei școli generale. Sistem Stockmeier CP 10mm pe fundație de asfalt existentă.",
-    "heroImage": "/assets/images/project-scoala.webp",
+    "heroImage": "/images/project-scoala.webp",
     "gallery": []
   },
   {
@@ -53,7 +53,7 @@
     "surfaceM2": 280,
     "client": "Primăria Sector 3",
     "description": "Amenajare loc de joacă cu pardoseală EPDM multi-color, design curbat inspirat din curcubeu. Proiect cu accent pe siguranță și impact vizual.",
-    "heroImage": "/assets/images/project-loc-joaca.webp",
+    "heroImage": "/images/project-loc-joaca.webp",
     "gallery": [],
     "featured": true
   },
@@ -68,7 +68,7 @@
     "surfaceM2": 1800,
     "client": "Campus privat (NDA)",
     "description": "Proiect extins de pardoseli sportive și spații de joacă pentru un campus internațional. Include terenuri multisport, zone de recreere, și pardoseli din plută pentru creșă.",
-    "heroImage": "/assets/images/project-british.webp",
+    "heroImage": "/images/project-british.webp",
     "gallery": []
   },
   {
@@ -81,7 +81,7 @@
     "systemSlug": "multisport",
     "surfaceM2": 968,
     "description": "Teren standard CNI tip 1, 44×22m, sistem Stobitan P 10mm cu marcaje pentru baschet, volei și handbal. Aplicat pe fundație nouă turnată.",
-    "heroImage": "/assets/images/project-cni.webp",
+    "heroImage": "/images/project-cni.webp",
     "gallery": []
   },
   {
@@ -95,7 +95,7 @@
     "surfaceM2": 1200,
     "client": "Confidențial",
     "description": "Terenuri de tenis și multisport pentru un complex sportiv privat premium. Sisteme Stockmeier aplicate cu marcaje personalizate.",
-    "heroImage": "/assets/images/project-tiriac.webp",
+    "heroImage": "/images/project-tiriac.webp",
     "gallery": []
   },
   {
@@ -108,7 +108,7 @@
     "systemSlug": "piste-atletism",
     "surfaceM2": 2400,
     "description": "Pistă de alergare publică amenajată pe malul Lacului Morii. Sistem drenant, adaptat la utilizare mixtă și condiții meteo variate.",
-    "heroImage": "/assets/images/project-lacul-morii.webp",
+    "heroImage": "/images/project-lacul-morii.webp",
     "gallery": []
   },
   {
@@ -121,7 +121,7 @@
     "systemSlug": "spatii-publice",
     "surfaceM2": 1500,
     "description": "Miniteren de fotbal cu gazon sintetic 50mm, parte a programului național PNDL. Include împrejmuire și marcaje FIFA compatible.",
-    "heroImage": "/assets/images/project-comunal.webp",
+    "heroImage": "/images/project-comunal.webp",
     "gallery": []
   },
   {
@@ -134,7 +134,7 @@
     "systemSlug": "educational",
     "surfaceM2": 180,
     "description": "Primul proiect cu pardoseală din plută turnată Corkeen pentru o grădiniță privată din Iași. Zonă de joacă naturală, non-toxică.",
-    "heroImage": "/assets/images/project-gradinita.webp",
+    "heroImage": "/images/project-gradinita.webp",
     "gallery": []
   },
   {
@@ -147,7 +147,7 @@
     "systemSlug": "interioare",
     "surfaceM2": 2200,
     "description": "Reamenajare completă de pardoseli PVC pentru secții spital. Produse medicale de clasă 34, antibacteriene, aplicate fără întrerupere de activitate.",
-    "heroImage": "/assets/images/project-spital.webp",
+    "heroImage": "/images/project-spital.webp",
     "gallery": []
   },
   {
@@ -160,7 +160,7 @@
     "systemSlug": "piste-atletism",
     "surfaceM2": 6400,
     "description": "Pistă de atletism certificată pentru o bază militară. Parte dintr-un program național de infrastructură sportivă pentru forțele armate.",
-    "heroImage": "/assets/images/project-militar.webp",
+    "heroImage": "/images/project-militar.webp",
     "gallery": []
   }
 ]
