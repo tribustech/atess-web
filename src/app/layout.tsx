@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, Space_Grotesk } from "next/font/google";
+import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -82,7 +84,11 @@ export default function RootLayout({
       lang="ro"
       className={`dark ${inter.variable} ${fraunces.variable} ${spaceGrotesk.variable}`}
     >
-      <body>{children}</body>
+      <body className="bg-bg-base text-text-primary min-h-screen flex flex-col">
+        <Header />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
