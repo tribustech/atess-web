@@ -5,6 +5,7 @@ import { ClientsSection } from "@/components/home/ClientsSection";
 import { PartnersSection } from "@/components/home/PartnersSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { SnapSection } from "@/components/home/SnapSection";
+import { FlooringSystemClient } from "@/components/home/FlooringSystemClient";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -55,6 +56,7 @@ export default function Home() {
         <SnapSection id="hero">
           <HeroSection />
         </SnapSection>
+        <FlooringSystemClient />
         <SnapSection id="partners" className="bg-bg-base">
           <PartnersSection />
         </SnapSection>
