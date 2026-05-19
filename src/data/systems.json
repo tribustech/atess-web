@@ -1,0 +1,145 @@
+[
+  {
+    "slug": "piste-atletism",
+    "category": "piste-atletism",
+    "order": 1,
+    "title": "Piste de atletism",
+    "tagline": "Omologate World Athletics. Construite să reziste la competiție.",
+    "heroImage": "/assets/images/track-hero.webp",
+    "intro": "Pistele de atletism sunt cea mai exigentă categorie de pardoseli sportive. Grosime, elasticitate, drenaj, omologare — totul contează. Lucrăm doar cu sisteme Stockmeier, aplicate conform fișei tehnice originale.",
+    "whyItMatters": [
+      "Certificarea World Athletics nu se dă pe vorbe — se dă pe teste de laborator și verificări la fața locului. Dacă sistemul nu e aplicat corect, pierzi certificarea.",
+      "Diferența între o pistă care rezistă 15 ani și una care se degradează în 3 ani e în stratul suport, nu în stratul vizibil. Noi construim de jos în sus.",
+      "Clasa de rezistență și absorbție a impactului se măsoară — nu se estimează. Îți dăm rapoarte de test reale."
+    ],
+    "variants": [],
+    "applications": ["Stadioane competiționale", "Baze sportive militare", "Piste licee și universități"]
+  },
+  {
+    "slug": "multisport",
+    "category": "multisport",
+    "order": 2,
+    "title": "Terenuri multisport & baze CNI",
+    "tagline": "Un singur teren, toate sporturile. Construit pentru mii de ore de joc.",
+    "heroImage": "/assets/images/multisport-hero.webp",
+    "intro": "Terenurile multisport standard CNI (44×22m, 968 m²) sunt proiectele cele mai frecvente din infrastructura sportivă românească. Baschet, volei, tenis, handbal — pe aceeași suprafață, cu marcaje clare și un sistem care rezistă.",
+    "whyItMatters": [
+      "Un teren multisport public e expus la orice — biciclete, role, trotinete, căruciaoare. Sistemul trebuie ales pentru realitatea din teren, nu pentru broșură.",
+      "Marcajele multiple cer planificare atentă — nu le poți adăuga după. Lucrăm cu proiectantul înainte de prima turnare.",
+      "Grosimea potrivită depinde de utilizare, nu de buget. Uneori 10mm sunt perfecți; alteori e nevoie de 13-15mm."
+    ],
+    "variants": [
+      {
+        "name": "Stobitan P",
+        "manufacturer": "Stockmeier",
+        "thickness": "10-13 mm",
+        "description": "Sistem clasic pentru baze CNI, proiectat pentru utilizare intensivă multi-disciplinară.",
+        "specs": ["Culori stabile", "Marcaje multi-sport"]
+      }
+    ],
+    "applications": ["Baze CNI tip 1 și 2", "Terenuri școlare", "Complexuri sportive private"]
+  },
+  {
+    "slug": "educational",
+    "category": "educational",
+    "order": 3,
+    "title": "Școli, grădinițe & plută pentru copii",
+    "tagline": "Siguranță, durabilitate și inovație — pentru spațiile unde cresc copiii.",
+    "heroImage": "/assets/images/educational-hero.webp",
+    "intro": "De la creșe și grădinițe la școli generale și licee, spațiile educaționale au nevoie de soluții diferite față de parcurile publice. Suntem primii aplicatori certificați în România pentru pardoselile din plută — un upgrade real față de EPDM-ul clasic.",
+    "whyItMatters": [
+      "O grădiniță privată și un parc public arată la fel în caietul de sarcini, dar sunt două lucruri total diferite. Reglementarea, supervizarea și utilizarea schimbă complet cerința.",
+      "Pluta nu se încinge la soare, lasă apa să treacă prin ea, și nu are solvenți. E next level pentru copii — scump, dar se justifică.",
+      "Pentru școli publice, bugetul decide aproape totul — dar există soluții corecte chiar și la buget limitat."
+    ],
+    "variants": [
+      {
+        "name": "Corkeen Play",
+        "manufacturer": "Other",
+        "thickness": "40 mm",
+        "description": "Sistem din plută naturală turnată pentru locuri de joacă premium. Drenant, răcoros, non-toxic.",
+        "specs": ["HIC până la 2.5m", "Natural, fără solvenți", "Aplicator unic România"]
+      }
+    ],
+    "applications": ["Creșe și grădinițe", "Școli generale", "Licee", "Campusuri internaționale"]
+  },
+  {
+    "slug": "spatii-publice",
+    "category": "spatii-publice",
+    "order": 4,
+    "title": "Spații publice & gazon sintetic",
+    "tagline": "Parcuri, miniterenuri de fotbal, amenajări urbane.",
+    "heroImage": "/assets/images/public-hero.webp",
+    "intro": "Programele naționale de infrastructură (PNDL, PNRR) au adus sute de miniterenuri de gazon sintetic în comunele și sectoarele din România. Experiența contează: un teren prost aplicat se degradează în primul sezon.",
+    "whyItMatters": [
+      "Gazonul sintetic are 10+ tipuri diferite — alegerea depinde de utilizare, climat și buget. Nu e unul singur.",
+      "Montajul corect (fundație, drenaj, umplutură) contează mai mult decât calitatea gazonului în sine.",
+      "Maintenance-ul periodic poate prelungi durata de viață de la 5 la 10+ ani."
+    ],
+    "variants": [
+      {
+        "name": "Gazon sintetic fotbal 50mm",
+        "manufacturer": "Other",
+        "thickness": "50 mm",
+        "description": "Sistem standard pentru miniterenuri comunale și școlare. Drenaj bun, marcaje incluse.",
+        "specs": ["FIFA Quality compatible", "Garanție 7 ani"]
+      }
+    ],
+    "applications": ["Miniterenuri comunale", "Parcuri publice", "Zone de agrement"]
+  },
+  {
+    "slug": "interioare",
+    "category": "interioare",
+    "order": 5,
+    "title": "Pardoseli interioare profesionale",
+    "tagline": "PVC, LVT, linoleum, mochetă — pentru spații comerciale, birouri, spitale.",
+    "heroImage": "/assets/images/interior-hero.webp",
+    "intro": "Pardoselile interioare au propriile reguli: fiecare mediu (spital, birou, comercial, educațional) cere alt tip de produs. Nu toate PVC-urile sunt la fel, nu tot linoleumul e natural.",
+    "whyItMatters": [
+      "Un PVC bun e mai ușor pe metru pătrat decât unul slab — are mai mult poliuretan și mai puțină cretă. Diferența se vede în 2-3 ani de utilizare.",
+      "Linoleumul natural e antifungic — dar dacă îl speli cu clor, anulezi complet proprietatea. Mentenanța corectă e esențială.",
+      "LVT-urile bune arată identic cu parchetul, dar rezistă la umezeală și trafic intens."
+    ],
+    "variants": [
+      {
+        "name": "PVC Comercial",
+        "manufacturer": "Other",
+        "thickness": "2-3 mm",
+        "description": "Gamă comercială pentru birouri, spații comerciale, unități medicale.",
+        "specs": ["Clasă 34/43 trafic", "Antistatic opțional"]
+      },
+      {
+        "name": "LVT Premium",
+        "manufacturer": "Other",
+        "thickness": "5 mm",
+        "description": "Luxury vinyl tile cu aspect de lemn sau piatră, pentru spații premium.",
+        "specs": ["Rezistență umezeală", "Instalare click"]
+      }
+    ],
+    "applications": ["Spitale și clinici", "Birouri corporate", "Showroom-uri", "Educație privată"]
+  },
+  {
+    "slug": "constructii-cheie",
+    "category": "constructii-cheie",
+    "order": 6,
+    "title": "Construcții la cheie",
+    "tagline": "De la concept la predare — ne ocupăm de tot.",
+    "heroImage": "/assets/images/turnkey-hero.webp",
+    "intro": "Dacă ai un teren și un vis — ne ocupăm noi de restul. Proiectare, autorizații, fundații, instalații, finalizare. Un singur interlocutor, o singură garanție, un singur responsabil.",
+    "whyItMatters": [
+      "Majoritatea proiectelor eșuează la coordonarea între meserii — proiectant, constructor, instalator, beneficiar. Noi preluăm coordonarea.",
+      "Experiența de 10 ani în aplicare ne dă un avantaj: știm exact ce cere pardoseala finală, și proiectăm fundația în funcție de asta.",
+      "De la DTAC-uri până la autorizații ANR, ne ocupăm de toată birocrația."
+    ],
+    "variants": [
+      {
+        "name": "Proiect la cheie",
+        "manufacturer": "Other",
+        "thickness": "—",
+        "description": "Servicii integrate: concept design, proiectare, autorizare, execuție, predare.",
+        "specs": ["Proiectare certificată", "Autorizări complete", "Garanție integrală"]
+      }
+    ],
+    "applications": ["Baze sportive private", "Terenuri companii", "Amenajări instituții"]
+  }
+]

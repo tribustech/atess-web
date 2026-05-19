@@ -1,0 +1,69 @@
+[
+  {
+    "slug": "initiere-pardoseli-sportive",
+    "title": "Inițiere în pardoseli sportive",
+    "category": "Fundamente",
+    "audience": ["arhitecti", "beneficiari", "antreprenori"],
+    "level": "incepator",
+    "durationMin": 8,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "Ce tipuri de pardoseli sportive există, când folosești fiecare, și care sunt diferențele fundamentale.",
+    "body": "În această lecție introductivă trecem prin principalele categorii de pardoseli sportive — poliuretanice turnate, prefabricate, acrilice, gazon sintetic — și explicăm când se folosește fiecare.",
+    "featured": true
+  },
+  {
+    "slug": "public-vs-privat",
+    "title": "Public vs Privat — de ce contează diferența",
+    "category": "Strategie",
+    "audience": ["arhitecti", "beneficiari"],
+    "level": "intermediar",
+    "durationMin": 12,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "O grădiniță privată și un parc public arată la fel în caietul de sarcini, dar sunt două lumi diferite. Iată de ce.",
+    "body": "Diferența dintre un spațiu supervizat și unul neregement schimbă complet ce sistem trebuie ales."
+  },
+  {
+    "slug": "piste-atletism-straturi",
+    "title": "Piste de atletism — straturi și certificări",
+    "category": "Tehnic",
+    "audience": ["arhitecti", "antreprenori"],
+    "level": "avansat",
+    "durationMin": 15,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "Cum se construiește o pistă de atletism certificată World Athletics, de jos în sus.",
+    "body": "Fiecare strat al unei piste de atletism are un rol specific. Fundație, strat de bază, strat de uzură, marcaje — fiecare cu fișa lui tehnică."
+  },
+  {
+    "slug": "locuri-joaca-siguranta",
+    "title": "Locuri de joacă — siguranță și normative",
+    "category": "Normative",
+    "audience": ["arhitecti", "beneficiari"],
+    "level": "intermediar",
+    "durationMin": 10,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "EPDM, plută, sau altceva? Ghid de alegere pentru locurile de joacă moderne.",
+    "body": "HIC (Head Injury Criterion), înălțime de cădere, materialele permise — tot ce trebuie să știi pentru un loc de joacă sigur."
+  },
+  {
+    "slug": "pvc-lvt-linoleum",
+    "title": "PVC, LVT și linoleum — cum alegi corect",
+    "category": "Interioare",
+    "audience": ["arhitecti", "antreprenori"],
+    "level": "intermediar",
+    "durationMin": 11,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "Diferențele reale între PVC, LVT și linoleum — nu cele din broșură.",
+    "body": "Fiecare are locul lui. Aflați de ce un PVC bun e mai ușor decât unul slab, de ce linoleumul natural nu merge cu clor, și când LVT-ul e alegerea corectă."
+  },
+  {
+    "slug": "greseli-caiete-sarcini",
+    "title": "Greșeli comune în caiete de sarcini",
+    "category": "Proiectare",
+    "audience": ["arhitecti"],
+    "level": "avansat",
+    "durationMin": 14,
+    "youtubeId": "dQw4w9WgXcQ",
+    "summary": "De ce caietele de sarcini copy-paste sunt o problemă — și cum le evităm.",
+    "body": "Din experiența de pe teren: cele mai comune erori din caietele de sarcini românești, și cum le poți corecta din timp."
+  }
+]

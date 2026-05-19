@@ -1,0 +1,58 @@
+[
+  {
+    "id": "basket-kids-to-playground",
+    "if": { "projectType": "teren-individual", "sport": "basket", "users": "copii-mici" },
+    "then": {
+      "suggest": "loc-joaca",
+      "message": "Pentru copii <12 ani, un sistem EPDM de 1cm e mai potrivit și mai ieftin decât un teren de basket regulament de 3cm. Vrei să treci la loc de joacă?"
+    }
+  },
+  {
+    "id": "public-basket-mixed-use",
+    "if": { "projectType": "teren-individual", "sport": "basket", "context": "public-nesupervizat" },
+    "then": {
+      "suggest": "multisport",
+      "message": "În spații publice nesupervizate, terenurile ajung să fie folosite pentru tot (biciclete, role, trotinete). Recomandăm un sistem multisport mai rezistent decât unul pur de basket."
+    }
+  },
+  {
+    "id": "gradinita-privata-pluta",
+    "if": { "projectType": "loc-joaca", "context": "privat-supervizat", "users": "copii-mici" },
+    "then": {
+      "suggest": "pluta",
+      "message": "Pentru grădinițe private, pardoseala din plută turnată Corkeen e un upgrade real față de EPDM — nu se încinge, nu are solvenți, drenează apa. Scumpă, dar se justifică."
+    }
+  },
+  {
+    "id": "pista-sub-400m",
+    "if": { "projectType": "pista-atletism", "lengthBelow": 400 },
+    "then": {
+      "suggest": "teren-alergare",
+      "message": "Pentru proiecte sub 400m, o pistă de alergare recreațională e mai potrivită decât o pistă de atletism certificată. Economisești 40-60% din cost fără să sacrifici calitatea utilizării."
+    }
+  },
+  {
+    "id": "interior-spital",
+    "if": { "projectType": "interior", "useCase": "spital" },
+    "then": {
+      "suggest": "pvc-medical",
+      "message": "Pentru unități medicale, recomandăm PVC medical cu clasă 34/43 și proprietăți antibacteriene. Linoleumul natural NU e potrivit — clorul din mentenanță îi anulează proprietățile."
+    }
+  },
+  {
+    "id": "proiect-sub-100m",
+    "if": { "totalM2Below": 100 },
+    "then": {
+      "suggest": "contact-direct",
+      "message": "Pentru proiecte mici, recomandăm discuție directă — de multe ori există soluții mai simple și mai rapide decât un contract formal."
+    }
+  },
+  {
+    "id": "fara-fundatie",
+    "if": { "baseLayer": "niciuna" },
+    "then": {
+      "suggest": "turnare-completa",
+      "message": "Fără fundație existentă, proiectul include și turnare strat suport. Adaugă timp și cost, dar e esențial pentru durabilitate."
+    }
+  }
+]

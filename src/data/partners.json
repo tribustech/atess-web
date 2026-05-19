@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "stockmeier",
+    "name": "Stockmeier",
+    "type": "manufacturer",
+    "logo": "/logos/logo-stockmeier.svg",
+    "description": "Producător premium de sisteme poliuretanice pentru suprafețe sportive. Folosit pe stadioane și baze internaționale.",
+    "url": "https://www.stockmeier-urethanes.com"
+  },
+  { "slug": "stejarii", "name": "Stejarii Country Club", "type": "client", "logo": "/logos/stejarii.png" },
+  { "slug": "primaria-s3", "name": "Primăria Sector 3", "type": "client", "logo": "/logos/primaria_sector3.png" },
+  { "slug": "primaria-suceava", "name": "Primăria Suceava", "type": "client", "logo": "/logos/primaria_suceava.png" },
+  { "slug": "british-school", "name": "British School of Bucharest", "type": "client", "logo": "/logos/british_school.svg" },
+  { "slug": "dedeman", "name": "Dedeman", "type": "client", "logo": "/logos/dedeman.svg" },
+  { "slug": "fc-bacau", "name": "FC Bacău", "type": "client", "logo": "/logos/fc_bacau.svg" },
+  { "slug": "cni", "name": "CNI România", "type": "client", "logo": "/logos/cni.png" }
+]
