@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { ComingSoon } from "@/components/shared/ComingSoon";
+import { Wizard } from "./Wizard";
 
 export const metadata: Metadata = {
-  title: "Configurator",
-  description: "Pagină în pregătire.",
-  robots: { index: false, follow: false },
+  title: "Configurator proiect",
+  description:
+    "Configurează-ți proiectul în câțiva pași. Te ghidăm către soluția potrivită și te sunăm cu o estimare inițială.",
   alternates: { canonical: "/configurator" },
 };
 
 export default function ConfiguratorPage() {
-  return <ComingSoon title="Configurator" />;
+  return (
+    <main className="min-h-screen bg-bg-base">
+      <Wizard />
+    </main>
+  );
 }
