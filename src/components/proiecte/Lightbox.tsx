@@ -1,24 +1,33 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import type { GalleryEntry } from "@/lib/gallery";
 
 interface LightboxProps {
   entries: GalleryEntry[];
   index: number | null;
+  numberById: Map<string, number>;
   onClose: () => void;
   onIndexChange: (next: number) => void;
 }
 
-export function Lightbox({ entries, index, onClose, onIndexChange }: LightboxProps) {
+export function Lightbox({ entries, index, numberById, onClose, onIndexChange }: LightboxProps) {
   const open = index !== null;
   const current = open ? entries[index] : null;
+  const displayNumber = current ? numberById.get(current.id) ?? 0 : 0;
   const dialogRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
+  const [imageLoading, setImageLoading] = useState(true);
+  const currentId = current?.id;
+
+  useEffect(() => {
+    if (!currentId) return;
+    setImageLoading(true);
+  }, [currentId]);
 
   const goPrev = useCallback(() => {
     if (index === null) return;
@@ -115,19 +124,34 @@ export function Lightbox({ entries, index, onClose, onIndexChange }: LightboxPro
             className="relative flex max-h-full max-w-6xl flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              key={current.id}
-              src={current.src}
-              alt={current.alt}
-              width={current.width}
-              height={current.height}
-              sizes="100vw"
-              className="h-auto max-h-[80vh] w-auto object-contain"
-              priority
-            />
-            {current.caption ? (
-              <p className="mt-4 text-sm text-text-muted">{current.caption}</p>
-            ) : null}
+            <div className="relative flex items-center justify-center">
+              <Image
+                key={current.id}
+                src={current.src}
+                alt={current.alt}
+                width={current.width}
+                height={current.height}
+                sizes="100vw"
+                onLoad={() => setImageLoading(false)}
+                className={`h-auto max-h-[80vh] w-auto object-contain transition-opacity duration-200 ${
+                  imageLoading ? "opacity-0" : "opacity-100"
+                }`}
+                priority
+              />
+              {imageLoading ? (
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <Loader2
+                    size={40}
+                    className="animate-spin text-white/70"
+                    aria-label="Se încarcă imaginea"
+                  />
+                </div>
+              ) : null}
+            </div>
+            <p className="mt-4 text-sm text-text-muted">
+              <span className="font-mono text-text-primary">#{displayNumber}</span>
+              {current.caption ? ` — ${current.caption}` : ""}
+            </p>
 
             <button
               type="button"
