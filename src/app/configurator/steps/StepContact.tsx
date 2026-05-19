@@ -37,7 +37,7 @@ const MAX_TOTAL_BYTES = 9 * 1024 * 1024;
 const ACCEPTED_TYPES = ["application/pdf", "image/jpeg", "image/png"];
 
 const inputCls =
-  "mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary focus:border-accent-primary focus:outline-none";
+  "mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary placeholder:text-text-secondary/50 focus:border-accent-primary focus:outline-none";
 
 function Field({
   label,
@@ -149,6 +149,7 @@ export function StepContact({
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="ex: Ion Popescu"
             className={inputCls}
             autoComplete="name"
           />
@@ -168,6 +169,7 @@ export function StepContact({
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="ex: ion@exemplu.ro"
             className={inputCls}
             autoComplete="email"
           />
@@ -177,6 +179,7 @@ export function StepContact({
             list="judete"
             value={judet}
             onChange={(e) => setJudet(e.target.value)}
+            placeholder="ex: Cluj"
             className={inputCls}
           />
           <datalist id="judete">
@@ -203,6 +206,7 @@ export function StepContact({
             type="text"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
+            placeholder="ex: Primăria Cluj-Napoca"
             className={inputCls}
           />
         </Field>
@@ -211,6 +215,7 @@ export function StepContact({
             rows={4}
             value={note}
             onChange={(e) => setNote(e.target.value)}
+            placeholder="ex: avem teren existent cu fundație asfalt veche, suprafață ~1500m², vrem să turnăm un mini-teren multisport"
             className={inputCls}
           />
         </Field>

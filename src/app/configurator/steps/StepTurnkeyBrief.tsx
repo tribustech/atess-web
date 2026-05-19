@@ -27,7 +27,7 @@ export function StepTurnkeyBrief({
           dispatch({ type: "set", key: "turnkeyBrief", value: e.target.value })
         }
         placeholder="ex: am un teren de 1500m² lângă școala generală din comună, vreau un mini-teren multisport și o pistă de alergare în jurul lui"
-        className="block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary focus:border-accent-primary focus:outline-none"
+        className="block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary placeholder:text-text-secondary/50 focus:border-accent-primary focus:outline-none"
       />
     </StepShell>
   );

@@ -37,6 +37,7 @@ export function StepDimensions({
             min={1}
             max={5000}
             step="0.1"
+            placeholder={lengthOnly ? "ex: 400" : "ex: 44"}
             value={length ?? ""}
             onChange={(e) =>
               dispatch({
@@ -45,7 +46,7 @@ export function StepDimensions({
                 value: e.target.value === "" ? undefined : Number(e.target.value),
               })
             }
-            className="mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary focus:border-accent-primary focus:outline-none"
+            className="mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary placeholder:text-text-secondary/50 focus:border-accent-primary focus:outline-none"
           />
         </label>
         {!lengthOnly && (
@@ -57,6 +58,7 @@ export function StepDimensions({
               min={1}
               max={500}
               step="0.1"
+              placeholder="ex: 22"
               value={width ?? ""}
               onChange={(e) =>
                 dispatch({
@@ -65,7 +67,7 @@ export function StepDimensions({
                   value: e.target.value === "" ? undefined : Number(e.target.value),
                 })
               }
-              className="mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary focus:border-accent-primary focus:outline-none"
+              className="mt-1 block w-full rounded border border-border bg-bg-elevated px-3 py-2 text-text-primary placeholder:text-text-secondary/50 focus:border-accent-primary focus:outline-none"
             />
           </label>
         )}

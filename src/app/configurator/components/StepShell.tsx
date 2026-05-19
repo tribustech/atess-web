@@ -27,8 +27,13 @@ export function StepShell({
   className,
 }: Props) {
   return (
-    <div className={cn("flex min-h-[calc(100vh-8rem)] flex-col", className)}>
-      <div className="mx-auto w-full max-w-2xl px-6 pt-10 pb-32 sm:pt-16">
+    <div
+      className={cn(
+        "flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center pb-24",
+        className,
+      )}
+    >
+      <div className="mx-auto w-full max-w-2xl px-6 py-12 sm:py-16">
         <h1 className="text-2xl font-medium text-text-primary sm:text-3xl">
           {title}
         </h1>
