@@ -11,7 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1.0,
     },
+    {
+      url: `${SITE_URL}/proiecte`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     // Coming Soon routes intentionally excluded (they're noindex).
-    // Add /servicii, /proiecte, /configurator, /invata, /despre, /contact when they become real pages.
+    // Add /servicii, /configurator, /invata, /despre, /contact when they become real pages.
   ];
 }
