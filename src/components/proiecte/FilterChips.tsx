@@ -28,7 +28,6 @@ export function FilterChips({ active, onChange, counts }: FilterChipsProps) {
           <button
             key={opt.slug}
             role="tab"
-            aria-pressed={isActive}
             aria-selected={isActive}
             onClick={() => onChange(opt.slug)}
             className={cn(
