@@ -10,33 +10,31 @@ export function NavBar() {
     navStore.getSnapshot,
   );
 
-  const isEmpty = !nav.hasNext && !nav.hasBack;
-  const showBack = nav.hasBack && !nav.hideBack;
-  const showBackButton = !nav.hideBack;
-  const aloneNext = nav.hasNext && !showBackButton;
+  const showBack = nav.hasBack && nav.hideBack !== true;
+  const showNext = nav.hasNext;
+  const isEmpty = !showBack && !showNext;
+
+  if (isEmpty) return null;
+
+  const aloneNext = showNext && !showBack;
 
   return (
     <div
       className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-bg-base pb-safe"
-      style={{
-        transform: "translateZ(0)",
-        visibility: isEmpty ? "hidden" : "visible",
-      }}
       aria-hidden={isEmpty}
     >
       <div className="mx-auto flex w-full max-w-2xl items-center gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
-        {showBackButton && (
+        {showBack && (
           <Button
             variant="ghost"
             size="md"
             onClick={() => navStore.current().onBack?.()}
-            disabled={!showBack}
-            className="h-11 px-5 text-sm sm:h-11 sm:px-6 sm:text-base"
+            className="h-11 px-5 text-sm sm:px-6 sm:text-base"
           >
             Înapoi
           </Button>
         )}
-        {nav.hasNext && (
+        {showNext && (
           <Button
             variant="primary"
             size="md"
@@ -44,8 +42,8 @@ export function NavBar() {
             disabled={nav.nextDisabled}
             className={
               aloneNext
-                ? "h-11 w-full px-6 text-sm sm:h-11 sm:text-base"
-                : "ml-auto h-11 px-5 text-sm sm:h-11 sm:px-6 sm:text-base"
+                ? "h-11 w-full px-6 text-sm sm:text-base"
+                : "ml-auto h-11 px-5 text-sm sm:px-6 sm:text-base"
             }
           >
             {nav.nextLabel ?? "Continuă"}
