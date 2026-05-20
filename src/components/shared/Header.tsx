@@ -30,13 +30,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 pt-safe transition-all duration-300",
         scrolled
           ? "bg-bg-base/80 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
         <Link
           href="/"
           className="flex items-center gap-3 text-text-primary"

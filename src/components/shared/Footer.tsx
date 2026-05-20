@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_CONTACT } from "@/lib/site-contact";
 
 export function Footer() {
   return (
@@ -70,21 +71,21 @@ export function Footer() {
             Contact
           </h4>
           <ul className="space-y-2 text-sm text-text-primary">
-            <li>București, România</li>
+            <li>{SITE_CONTACT.city}, {SITE_CONTACT.region}</li>
             <li>
               <a
-                href="mailto:contact@atess.ro"
+                href={`mailto:${SITE_CONTACT.email}`}
                 className="hover:text-accent-primary"
               >
-                contact@atess.ro
+                {SITE_CONTACT.email}
               </a>
             </li>
             <li>
               <a
-                href="tel:+40700000000"
+                href={`tel:${SITE_CONTACT.phone.tel}`}
                 className="hover:text-accent-primary"
               >
-                +40 700 000 000
+                {SITE_CONTACT.phone.display}
               </a>
             </li>
           </ul>

@@ -7,11 +7,16 @@
     "description": "Producător premium de sisteme poliuretanice pentru suprafețe sportive. Folosit pe stadioane și baze internaționale.",
     "url": "https://www.stockmeier-urethanes.com"
   },
-  { "slug": "stejarii", "name": "Stejarii Country Club", "type": "client", "logo": "/logos/stejarii.png" },
   { "slug": "primaria-s3", "name": "Primăria Sector 3", "type": "client", "logo": "/logos/primaria_sector3.png" },
-  { "slug": "primaria-suceava", "name": "Primăria Suceava", "type": "client", "logo": "/logos/primaria_suceava.png" },
-  { "slug": "british-school", "name": "British School of Bucharest", "type": "client", "logo": "/logos/british_school.svg" },
+  { "slug": "primaria-s6", "name": "Primăria Sector 6", "type": "client", "logo": "/logos/primaria_sector6.png" },
+  { "slug": "primaria-ploiesti", "name": "Primăria Municipiului Ploiești", "type": "client", "logo": "/logos/primaria_ploiesti.svg" },
+  { "slug": "primaria-suceava", "name": "Primăria Municipiului Suceava", "type": "client", "logo": "/logos/primaria_suceava.png" },
   { "slug": "dedeman", "name": "Dedeman", "type": "client", "logo": "/logos/dedeman.svg" },
-  { "slug": "fc-bacau", "name": "FC Bacău", "type": "client", "logo": "/logos/fc_bacau.svg" },
-  { "slug": "cni", "name": "CNI România", "type": "client", "logo": "/logos/cni.png" }
+  { "slug": "stejarii", "name": "Stejarii Country Club", "type": "client", "logo": "/logos/stejarii.png" },
+  { "slug": "british-school", "name": "British School of Bucharest", "type": "client", "logo": "/logos/british_school.svg" },
+  { "slug": "scoala-americana", "name": "Școala Americană", "type": "client", "logo": "/logos/scoala_americana.png" },
+  { "slug": "straco", "name": "Straco Holding", "type": "client", "logo": "/logos/straco.png" },
+  { "slug": "tcmb", "name": "TCMB", "type": "client", "logo": "/logos/tcmb.png" },
+  { "slug": "erbasu", "name": "Construcții Erbașu", "type": "client", "logo": "/logos/erbasu.svg" },
+  { "slug": "concelex", "name": "Concelex", "type": "client", "logo": "/logos/concelex.png" }
 ]

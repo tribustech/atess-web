@@ -8,8 +8,6 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { heroSlides, heroVideo } from "./homeMedia";
 
 const manufacturers = partnersData.filter((p) => p.type === "manufacturer");
-const clients = partnersData.filter((p) => p.type === "client").slice(0, 8);
-const lightTreatmentSlugs = new Set(["british-school", "primaria-s3"]);
 
 type MediaItem = { type: "video"; src: string } | { type: "image"; src: string };
 const MEDIA: MediaItem[] = [
@@ -130,7 +128,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mt-auto border-t border-white/15 bg-gradient-to-t from-black/95 via-black/80 to-black/20 backdrop-blur-md md:absolute md:inset-x-0 md:bottom-0">
-        <div className="mx-auto flex w-full max-w-[96rem] flex-col gap-6 px-4 py-8 md:flex-row md:items-center md:justify-between md:gap-12 md:px-6 md:py-14">
+        <div className="mx-auto flex w-full max-w-[96rem] flex-col gap-6 px-4 py-8 md:px-6 md:py-14">
           <div className="flex flex-col gap-4">
             <span className="font-mono text-[11px] uppercase tracking-[0.26em] text-white/50">
               Parteneri certificați
@@ -149,62 +147,13 @@ export function HeroSection() {
                   <img
                     src={m.logo}
                     alt={m.name}
-                    className={`h-10 w-auto max-w-[150px] object-contain opacity-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.18)] transition group-hover:opacity-100 md:h-16 md:max-w-[260px] ${
-                      lightTreatmentSlugs.has(m.slug)
-                        ? "brightness-0 invert"
-                        : ""
-                    }`}
+                    className="h-10 w-auto max-w-[150px] object-contain opacity-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.18)] transition group-hover:opacity-100 md:h-16 md:max-w-[260px]"
                   />
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 md:max-w-[68%]">
-            <span className="font-mono text-[11px] uppercase tracking-[0.26em] text-white/50">
-              Clienți de referință
-            </span>
-            <div className="relative -mx-1 overflow-hidden px-1 pb-1 md:hidden">
-              <div
-                className="flex w-max items-center gap-4"
-                style={{
-                  animation: "clientsMarquee 28s linear infinite",
-                }}
-              >
-                {[...clients, ...clients].map((c, index) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={`${c.slug}-mobile-${index}`}
-                    src={c.logo}
-                    alt={c.name}
-                    title={c.name}
-                    className={`h-10 w-auto max-w-[130px] shrink-0 object-contain opacity-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.18)] ${
-                      lightTreatmentSlugs.has(c.slug)
-                        ? "brightness-0 invert"
-                        : ""
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="group/clients hidden flex-wrap items-center gap-8 md:flex">
-              {clients.map((c) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={c.slug}
-                  src={c.logo}
-                  alt={c.name}
-                  title={c.name}
-                  className={`relative z-0 h-10 w-auto max-w-[130px] shrink-0 object-contain opacity-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.18)] transition duration-300 md:group-hover/clients:opacity-30 md:hover:z-20 md:hover:-translate-y-6 md:hover:scale-[1.8] md:hover:!opacity-100 md:h-[72px] md:max-w-[240px] ${
-                    lightTreatmentSlugs.has(c.slug)
-                      ? "brightness-0 invert"
-                      : ""
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -223,14 +172,6 @@ export function HeroSection() {
           }
           100% {
             transform: scale(1.12);
-          }
-        }
-        @keyframes clientsMarquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-50% - 0.5rem));
           }
         }
       `}</style>
