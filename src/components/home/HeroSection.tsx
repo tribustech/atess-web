@@ -92,16 +92,16 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/85" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-16 pt-28 md:px-10 md:pb-56">
-        <div className="max-w-2xl">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-accent-primary" />
-            <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-accent-primary">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-5 pb-12 pt-24 sm:px-6 sm:pb-16 sm:pt-28 md:px-10 md:pb-56">
+        <div className="w-full max-w-2xl">
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-8 bg-accent-primary sm:w-10" />
+            <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-accent-primary sm:text-[11px] sm:tracking-[0.35em]">
               Pardoseli sportive profesionale
             </p>
           </div>
 
-          <h1 className="text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl lg:text-[88px]">
+          <h1 className="text-[2.5rem] font-semibold leading-[1] tracking-tight sm:text-5xl sm:leading-[0.95] md:text-7xl lg:text-[88px]">
             Suprafețe
             <br />
             construite
@@ -109,17 +109,26 @@ export function HeroSection() {
             <span className="text-accent-primary">să reziste.</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-base text-white/75 md:text-lg">
+          <p className="mt-6 max-w-xl text-base text-white/75 sm:mt-8 md:text-lg">
             Sisteme Stockmeier executate cu rigoare de șantier, detaliu tehnic
             și consultanță directă cu Teo Neagu.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link href="/configurator">
-              <Button size="lg">Configurează-ți proiectul</Button>
+          <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <Link href="/configurator" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+              >
+                Configurează-ți proiectul
+              </Button>
             </Link>
-            <Link href="/proiecte">
-              <Button size="lg" variant="outline">
+            <Link href="/proiecte" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+              >
                 Vezi proiecte
               </Button>
             </Link>

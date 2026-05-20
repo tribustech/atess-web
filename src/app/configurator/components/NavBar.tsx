@@ -12,6 +12,8 @@ export function NavBar() {
 
   const isEmpty = !nav.hasNext && !nav.hasBack;
   const showBack = nav.hasBack && !nav.hideBack;
+  const showBackButton = !nav.hideBack;
+  const aloneNext = nav.hasNext && !showBackButton;
 
   return (
     <div
@@ -22,30 +24,32 @@ export function NavBar() {
       }}
       aria-hidden={isEmpty}
     >
-      <div className="mx-auto flex w-full max-w-2xl items-center justify-between gap-3 px-5 py-3 sm:gap-4 sm:px-6 sm:py-4">
-        {!nav.hideBack ? (
+      <div className="mx-auto flex w-full max-w-2xl items-center gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
+        {showBackButton && (
           <Button
             variant="ghost"
             size="md"
             onClick={() => navStore.current().onBack?.()}
             disabled={!showBack}
+            className="h-11 px-5 text-sm sm:h-11 sm:px-6 sm:text-base"
           >
             Înapoi
           </Button>
-        ) : (
-          <span />
         )}
-        {nav.hasNext ? (
+        {nav.hasNext && (
           <Button
             variant="primary"
             size="md"
             onClick={() => navStore.current().onNext?.()}
             disabled={nav.nextDisabled}
+            className={
+              aloneNext
+                ? "h-11 w-full px-6 text-sm sm:h-11 sm:text-base"
+                : "ml-auto h-11 px-5 text-sm sm:h-11 sm:px-6 sm:text-base"
+            }
           >
             {nav.nextLabel ?? "Continuă"}
           </Button>
-        ) : (
-          <span />
         )}
       </div>
     </div>

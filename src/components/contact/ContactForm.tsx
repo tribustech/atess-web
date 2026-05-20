@@ -282,7 +282,8 @@ export function ContactForm() {
                       type="submit"
                       disabled={status === "submitting"}
                       className={cn(
-                        "group inline-flex h-14 items-center justify-center gap-3 bg-accent-primary px-8 text-base font-medium uppercase tracking-wide text-text-primary transition-all duration-200",
+                        "group inline-flex h-12 w-full items-center justify-center gap-3 bg-accent-primary px-6 text-sm font-medium uppercase tracking-wide text-text-primary transition-all duration-200",
+                        "sm:h-14 sm:w-auto sm:px-8 sm:text-base",
                         "hover:bg-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base",
                         "disabled:opacity-60",
                       )}

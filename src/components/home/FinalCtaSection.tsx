@@ -5,22 +5,31 @@ import { Button } from "@/components/shared/Button";
 export function FinalCtaSection() {
   return (
     <div className="flex min-h-[100svh] items-center bg-gradient-cta">
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
-        <div className="grid gap-8 border border-border/70 bg-black/20 p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
+      <div className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-6 sm:py-24 md:px-10">
+        <div className="grid gap-8 border border-border/70 bg-black/20 p-6 sm:p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
           <div>
             <h2 className="text-display-lg">
               Construieste urmatorul proiect ATESS
             </h2>
-            <p className="mt-5 max-w-xl text-lg text-text-muted">
+            <p className="mt-5 max-w-xl text-base text-text-muted sm:text-lg">
               In 2 minute afli sistemele potrivite, pasii de executie si
               recomandarile pe care Teo le valideaza cu tine.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/configurator">
-                <Button size="lg">Incepe configuratorul</Button>
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link href="/configurator" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+                >
+                  Incepe configuratorul
+                </Button>
               </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="ghost">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
+                >
                   Vorbeste cu Teo
                 </Button>
               </Link>
