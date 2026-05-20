@@ -2,9 +2,8 @@
 
 import partnersData from "@/data/partners.json";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
-import { LogoNameBadge } from "./LogoNameBadge";
 
-const clients = partnersData.filter((item) => item.type === "client").slice(0, 10);
+const clients = partnersData.filter((item) => item.type === "client");
 
 const stats = [
   { label: "proiecte livrate", value: 500, suffix: "+" },
@@ -25,16 +24,27 @@ export function ClientsSection() {
         Clienti de referinta
       </p>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-5">
+      <ul className="mt-10 grid grid-cols-2 gap-px overflow-hidden border border-border bg-border md:grid-cols-3 lg:grid-cols-4">
         {clients.map((client) => (
-          <div
+          <li
             key={client.slug}
-            className="flex h-20 items-center justify-start border border-border bg-bg-elevated px-3 text-center text-sm text-text-muted transition hover:text-text-primary"
+            className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-[#F5F5F3] p-6 transition-colors duration-300 hover:bg-white sm:p-8"
+            title={client.name}
           >
-            <LogoNameBadge name={client.name} logo={client.logo} compact />
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="max-h-[68%] max-w-[80%] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+              loading="lazy"
+              decoding="async"
+            />
+            <span className="pointer-events-none absolute inset-x-0 bottom-3 translate-y-1 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-text-faint opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              {client.name}
+            </span>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
         {stats.map((stat, idx) => (

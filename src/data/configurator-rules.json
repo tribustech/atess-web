@@ -4,7 +4,10 @@
     "if": { "projectType": "teren-individual", "sport": "basket", "users": "copii-mici" },
     "then": {
       "suggest": "loc-joaca",
-      "message": "Pentru copii <12 ani, un sistem EPDM de 1cm e mai potrivit și mai ieftin decât un teren de basket regulament de 3cm. Vrei să treci la loc de joacă?"
+      "title": "Loc de joacă în loc de teren de baschet",
+      "message": "Pentru copii sub 12 ani, un sistem EPDM de loc de joacă (~1 cm) e mai potrivit decât un teren de baschet la dimensiuni regulamentare (~3 cm).",
+      "detail": "La vârsta asta, copiii cad des și folosesc terenul pentru tot felul de jocuri — nu doar baschet regulamentar. Sistemul EPDM impact-attenuated pentru locuri de joacă are 10–15 mm grosime și e testat pentru căderi de la 1–1.5 m (EN 1177). Un teren oficial de baschet are 30–35 mm, e dimensionat pentru contact bal-suprafață și nu absoarbe la fel căderile copiilor mici. În plus, e de 2–3× mai scump pe mp și aduce un standard de joc de care vârsta lor nu beneficiază încă. Recomandarea: configurăm un loc de joacă cu o zonă marcată pentru baschet recreațional, dacă vrei să păstrezi sportul în mix.",
+      "rewriteAnswers": { "projectType": "loc-joaca" }
     }
   },
   {
@@ -12,7 +15,10 @@
     "if": { "projectType": "teren-individual", "sport": "basket", "context": "public-nesupervizat" },
     "then": {
       "suggest": "multisport",
-      "message": "În spații publice nesupervizate, terenurile ajung să fie folosite pentru tot (biciclete, role, trotinete). Recomandăm un sistem multisport mai rezistent decât unul pur de basket."
+      "title": "Multisport pentru spațiu public",
+      "message": "În spațiile publice nesupervizate, terenurile ajung să fie folosite și pentru biciclete, role sau trotinete. Un sistem multisport rezistă mai bine decât unul dedicat exclusiv baschetului.",
+      "detail": "Un teren dedicat baschetului e dimensionat pentru pantofi de sport pe o suprafață cu coeficient mare de aderență — exact ce nu vrei să ai sub roți de bicicletă sau role. În spațiile publice nesupervizate, indiferent de marcaj, suprafața va prelua toate aceste utilizări. Sistemele multisport (PU + EPDM 13 mm sau acrilice texturate) sunt formulate pentru abraziune ridicată, au coeficient de uzură mai bun și suportă atât pantofi cât și roți fără să se mâzgălească. În plus, marcajele multisport (baschet + volei + minifotbal) lasă terenul accesibil unui public mai larg — practic crește utilizarea per investiție.",
+      "rewriteAnswers": { "projectType": "multisport" }
     }
   },
   {
@@ -20,7 +26,9 @@
     "if": { "projectType": "loc-joaca", "context": "privat-supervizat", "users": "copii-mici" },
     "then": {
       "suggest": "pluta",
-      "message": "Pentru grădinițe private, pardoseala din plută turnată Corkeen e un upgrade real față de EPDM — nu se încinge, nu are solvenți, drenează apa. Scumpă, dar se justifică."
+      "title": "Plută turnată ca alternativă la EPDM",
+      "message": "Pentru grădinițe private cu copii mici, pluta turnată e o alternativă tehnică la EPDM — nu se încinge la soare, drenează apa și nu conține solvenți.",
+      "detail": "EPDM-ul standard e excelent ca absorbție de impact, dar are două dezavantaje pe care părinții le observă rapid: la soare puternic poate atinge 50–60°C la suprafață (în România, verile cu 35°C+ devin un argument real), iar formularea include lianți poliuretanici cu reziduuri de solvenți. Pluta turnată (cork EPDM binder) e un compozit pe bază de granule de plută cu liant fără solvenți: temperatura la suprafață rămâne ~10°C sub EPDM-ul clasic, drenează apa de ploaie mai bine și e certificată pentru contact cu pielea copiilor. E ~20% mai scumpă, dar la o grădiniță privată unde părinții văd zilnic suprafața, diferența se justifică. O cerem ca alternativă în ofertă, alături de EPDM clasic, ca să poți compara concret."
     }
   },
   {
@@ -28,7 +36,10 @@
     "if": { "projectType": "pista-atletism", "lengthBelow": 400 },
     "then": {
       "suggest": "teren-alergare",
-      "message": "Pentru proiecte sub 400m, o pistă de alergare recreațională e mai potrivită decât o pistă de atletism certificată. Economisești 40-60% din cost fără să sacrifici calitatea utilizării."
+      "title": "Pistă de alergare în loc de pistă World Athletics",
+      "message": "Pentru piste sub 400 m, o pistă de alergare recreațională e de obicei mai potrivită decât una de atletism certificată World Athletics — fără cerințe de omologare, execuția și verificările sunt mai simple.",
+      "detail": "Pista de atletism certificată World Athletics presupune omologare oficială: 400 m perimetru, raze de curbe controlate, planeitate sub 6 mm pe 4 m, sistem sandwich de 13–15 mm cu un strat sportiv specific, marcaje verificate cu geodez și un dosar tehnic complet. Toate astea adaugă 2–3 luni de proces de omologare la deviz, plus testele de laborator. Pentru piste comunale, școlare, sau bazele sportive private care nu organizează competiții oficiale, o pistă de alergare recreațională cu același tartan, dar fără omologare, costă cu 30–40% mai puțin și se execută în jumătate de timp. Dacă apare ulterior nevoia de omologare, sistemul poate fi adus la standard.",
+      "rewriteAnswers": { "projectType": "spatii-publice" }
     }
   },
   {
@@ -36,7 +47,9 @@
     "if": { "projectType": "interior", "useCase": "spital" },
     "then": {
       "suggest": "pvc-medical",
-      "message": "Pentru unități medicale, recomandăm PVC medical cu clasă 34/43 și proprietăți antibacteriene. Linoleumul natural NU e potrivit — clorul din mentenanță îi anulează proprietățile."
+      "title": "PVC medical pentru unități spitalicești",
+      "message": "Pentru unități medicale recomandăm PVC medical cu clasă de uzură 34/43 și tratament antibacterian. Linoleumul natural nu e indicat — clorul folosit la dezinfecție îi degradează stratul de protecție.",
+      "detail": "PVC-ul medical (Tarkett iQ, Gerflor Mipolam, Forbo Sphera) e formulat exact pentru protocoalele de dezinfecție spitalicească: rezistă la hipoclorit, alcool izopropilic și agenți pe bază de amoniu cuaternar, are sudură caldă etanșă (nu există rosturi unde să se acumuleze biofilm) și include tratament antibacterian în masă, nu doar la suprafață. Linoleumul natural, cât e de ecologic, are linseed oil ca liant — clorul îl oxidează lent și după 12–18 luni de mopuri zilnice cu dezinfectant începe să dezvolte microfisuri. Clasa 34 (heavy commercial) e minim pentru zone clinice; 43 (heavy industrial) pentru saloane intensive și holuri. Pentru blocul operator se cere și conductibilitate ESD."
     }
   },
   {
@@ -44,7 +57,9 @@
     "if": { "totalM2Below": 100 },
     "then": {
       "suggest": "contact-direct",
-      "message": "Pentru proiecte mici, recomandăm discuție directă — de multe ori există soluții mai simple și mai rapide decât un contract formal."
+      "title": "Sub 100 m² — sună-ne direct",
+      "message": "Pentru suprafețe sub 100 m² merită o discuție directă înainte — la dimensiuni mici există adesea soluții mai simple care nu necesită un proces formal de ofertare.",
+      "detail": "Sub 100 m² costurile fixe (mobilizare echipă, transport materiale, deplasare aplicatori) reprezintă 30–50% din devizul total. La proiectele mari, costurile astea se diluează pe mp; la cele mici, ridică prețul pe mp peste media pieței și fac oferta să pară scumpă fără să fie. Cel mai bine îți pot sugera trei variante: (1) coordonăm cu alte lucrări din aceeași zonă ca să împărțim mobilizarea, (2) lucrăm într-un sistem mai simplu (de exemplu acrilic spray în loc de EPDM turnat) care se execută într-o zi, (3) îți recomand un partener local mai potrivit pentru scara asta. O discuție de 10 minute decide direcția."
     }
   },
   {
@@ -52,7 +67,9 @@
     "if": { "baseLayer": "niciuna" },
     "then": {
       "suggest": "turnare-completa",
-      "message": "Fără fundație existentă, proiectul include și turnare strat suport. Adaugă timp și cost, dar e esențial pentru durabilitate."
+      "title": "Include și turnarea stratului suport",
+      "message": "Fără o fundație existentă, proiectul include și turnarea stratului suport. Adaugă timp și cost la execuție, dar e necesar pentru durabilitatea pardoselii finale.",
+      "detail": "Pardoseala sportivă nu se aplică direct pe pământ. Are nevoie de un strat suport stabil — beton sclivisit (8–15 cm cu armătură) sau asfalt (5–7 cm pe pat de balast compactat) — peste care vine sistemul tartan/EPDM. Fără el, terenul se va deforma în primii 2–3 ani din cauza compactării solului și a ciclurilor de îngheț-dezgheț, iar pardoseala se va crăpa indiferent de calitatea ei. La devizul nostru, adăugăm un strat de balast 15–20 cm compactat în straturi, un strat de uzură (beton sau asfalt) și abia apoi sistemul sportiv. Timpul de execuție crește cu 3–5 săptămâni (turnare + maturare beton 28 zile sau așezare asfalt + 2 săptămâni de stabilizare), dar e singurul mod în care lucrarea durează 15–20 de ani fără intervenții."
     }
   }
 ]
