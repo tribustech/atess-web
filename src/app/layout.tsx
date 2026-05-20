@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
 import { LenisProvider } from "@/components/motion/LenisProvider";
@@ -93,6 +94,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
           <Footer />
         </LenisProvider>
+        <Analytics />
       </body>
     </html>
   );
