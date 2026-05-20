@@ -6,7 +6,9 @@ export type Rule = {
   if: Partial<Answers> & { lengthBelow?: number; totalM2Below?: number };
   then: {
     suggest: string;
+    title?: string;
     message: string;
+    detail?: string;
     rewriteAnswers?: Partial<Answers>;
   };
 };
@@ -40,4 +42,8 @@ export function evaluateRules(answers: Answers, firedRules: string[]): Rule | nu
 
 export function getRuleById(id: string): Rule | undefined {
   return RULES.find((r) => r.id === id);
+}
+
+export function ruleMatches(rule: Rule, answers: Answers): boolean {
+  return matches(rule.if, answers);
 }

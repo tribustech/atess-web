@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ConfiguratorPage() {
   return (
-    <main className="min-h-screen bg-bg-base">
+    <main className="min-h-screen bg-bg-base pt-[calc(4rem+env(safe-area-inset-top))] sm:pt-[calc(5rem+env(safe-area-inset-top))]">
       <Wizard />
     </main>
   );

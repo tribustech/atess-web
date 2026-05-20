@@ -1,5 +1,6 @@
 import type { Action, Answers, State } from "./types";
 import { deriveNextStep } from "./step-graph";
+import { getRuleById, ruleMatches } from "./rules";
 
 export const initialState: State = {
   answers: {},
@@ -16,6 +17,27 @@ function applyAnswerSideEffects(answers: Answers): Answers {
   return next;
 }
 
+function refreshRuleState(
+  state: State,
+  answers: Answers,
+): Pick<State, "pendingRuleId" | "firedRules"> {
+  let pendingRuleId = state.pendingRuleId;
+  if (pendingRuleId) {
+    const rule = getRuleById(pendingRuleId);
+    if (!rule || !ruleMatches(rule, answers)) {
+      pendingRuleId = undefined;
+    }
+  }
+  // Drop fired rules that no longer match the new answers, so a
+  // back+edit+forward cycle can re-evaluate them on the next gate.
+  const firedRules = state.firedRules.filter((id) => {
+    const rule = getRuleById(id);
+    if (!rule) return false;
+    return ruleMatches(rule, answers);
+  });
+  return { pendingRuleId, firedRules };
+}
+
 export function configuratorReducer(state: State, action: Action): State {
   switch (action.type) {
     case "set": {
@@ -23,7 +45,7 @@ export function configuratorReducer(state: State, action: Action): State {
         ...state.answers,
         [action.key]: action.value,
       });
-      return { ...state, answers };
+      return { ...state, answers, ...refreshRuleState(state, answers) };
     }
 
     case "next": {
@@ -40,7 +62,12 @@ export function configuratorReducer(state: State, action: Action): State {
       if (state.history.length === 0) return state;
       const history = state.history.slice(0, -1);
       const current = state.history[state.history.length - 1];
-      return { ...state, current, history };
+      return {
+        ...state,
+        current,
+        history,
+        pendingRuleId: undefined,
+      };
     }
 
     case "goto":

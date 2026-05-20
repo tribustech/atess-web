@@ -39,19 +39,25 @@ export function OptionCard({
       {hasMedia && (
         <span
           className={cn(
-            "relative flex h-24 w-28 shrink-0 items-center justify-center overflow-hidden bg-bg-base sm:h-28 sm:w-36",
+            "relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden bg-bg-base sm:h-28 sm:w-28",
             !imageSrc && "text-accent-primary",
           )}
           aria-hidden={!imageSrc}
         >
           {imageSrc ? (
-            <Image
-              src={imageSrc}
-              alt={imageAlt ?? ""}
-              fill
-              sizes="(min-width: 640px) 144px, 112px"
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+            <>
+              <Image
+                src={imageSrc}
+                alt={imageAlt ?? ""}
+                fill
+                sizes="(min-width: 640px) 112px, 96px"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent"
+              />
+            </>
           ) : (
             <span className="flex h-10 w-10 items-center justify-center">
               {icon}

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "gallery:build": "node scripts/build-gallery.mjs",
+    "configurator:spec": "node scripts/build-configurator-spec.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

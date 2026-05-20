@@ -1,7 +1,7 @@
 "use client";
-import { type ReactNode } from "react";
+import { useLayoutEffect, type ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
-import { Button } from "@/components/shared/Button";
+import { navStore } from "../nav-store";
 
 type Props = {
   title: string;
@@ -21,43 +21,33 @@ export function StepShell({
   children,
   onNext,
   onBack,
-  nextLabel = "Continuă",
+  nextLabel,
   nextDisabled,
   hideBack,
   className,
 }: Props) {
+  useLayoutEffect(() => {
+    navStore.set({ onNext, onBack, nextLabel, nextDisabled, hideBack });
+  });
+
   return (
     <div
       className={cn(
-        "flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center pb-24",
+        "flex min-h-[calc(100svh-4rem)] flex-col items-stretch sm:min-h-[calc(100svh-5rem)] sm:items-center sm:justify-center",
+        "pb-[calc(8rem+env(safe-area-inset-bottom))]",
         className,
       )}
     >
-      <div className="mx-auto w-full max-w-2xl px-6 py-12 sm:py-16">
-        <h1 className="text-2xl font-medium text-text-primary sm:text-3xl">
+      <div className="mx-auto w-full max-w-2xl px-5 pt-8 pb-6 sm:px-6 sm:py-16">
+        <h1 className="text-[1.625rem] font-semibold leading-tight text-text-primary sm:text-3xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-2 text-base text-text-secondary">{subtitle}</p>
+          <p className="mt-2 text-sm text-text-secondary sm:text-base">
+            {subtitle}
+          </p>
         )}
-        <div className="mt-8">{children}</div>
-      </div>
-
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-bg-base/95 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-2xl items-center justify-between gap-4 px-6 py-4">
-          {!hideBack ? (
-            <Button variant="ghost" size="md" onClick={onBack} disabled={!onBack}>
-              Înapoi
-            </Button>
-          ) : (
-            <span />
-          )}
-          {onNext && (
-            <Button variant="primary" size="md" onClick={onNext} disabled={nextDisabled}>
-              {nextLabel}
-            </Button>
-          )}
-        </div>
+        <div className="mt-6 sm:mt-8">{children}</div>
       </div>
     </div>
   );

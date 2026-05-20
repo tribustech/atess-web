@@ -16,7 +16,9 @@ import { StepTimeline } from "./steps/StepTimeline";
 import { StepContact } from "./steps/StepContact";
 import { StepThanks } from "./steps/StepThanks";
 import { ProgressBar } from "./components/ProgressBar";
+import { NavBar } from "./components/NavBar";
 import { RecommendationHint } from "./components/RecommendationHint";
+import { RecommendationContext } from "./recommendation-context";
 
 const STEP_INDEX: Record<StepId, number> = {
   "project-type": 1,
@@ -109,21 +111,26 @@ export function Wizard() {
   );
 
   return (
-    <>
+    <RecommendationContext.Provider
+      value={{ pendingRuleId: state.pendingRuleId, dispatch }}
+    >
       <ProgressBar current={STEP_INDEX[state.current]} total={8} />
-      <RecommendationHint pendingRuleId={state.pendingRuleId} dispatch={dispatch} />
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={state.current}
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -24 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-        >
-          {renderStep(state, dispatch, submit, submitting, submitError)}
-        </motion.div>
-      </AnimatePresence>
-    </>
+      <div className="relative min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)]">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={state.current}
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -16 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            {renderStep(state, dispatch, submit, submitting, submitError)}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <RecommendationHint />
+      <NavBar />
+    </RecommendationContext.Provider>
   );
 }
 

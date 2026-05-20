@@ -1,7 +1,8 @@
 "use client";
-import { type Dispatch } from "react";
+import { useLayoutEffect, type Dispatch } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/shared/Button";
+import { navStore } from "../nav-store";
 import type { Action, State } from "../types";
 
 export function StepThanks({
@@ -11,6 +12,9 @@ export function StepThanks({
   state: State;
   dispatch: Dispatch<Action>;
 }) {
+  useLayoutEffect(() => {
+    navStore.clear();
+  }, []);
   const c = state.contact;
   return (
     <div className="mx-auto w-full max-w-2xl px-6 pt-16 pb-32 text-center">
