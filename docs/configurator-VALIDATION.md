@@ -20,3 +20,10 @@ Status per Teo (F3 48:44): "Configuratorul este bine." This is a validation pass
 ## Rules review protocol with Teo
 
 See `src/data/configurator-rules.README.md` (to be created in Task 6) and the standing review task (Task 8).
+
+## Standing task — rules review with Teo (recurring)
+- Cadence: at each feedback session, or whenever a new project category lands.
+- Steps: `npm run configurator:spec` → send `docs/configurator-spec.pdf` to Teo →
+  capture da/nu/adaugă per rule → edit `src/data/configurator-rules.json`
+  (keep ids stable) → add/adjust tests → `npm run test` → regenerate PDF.
+- Owner: dev maintains; Teo decides.
