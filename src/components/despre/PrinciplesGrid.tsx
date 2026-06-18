@@ -1,3 +1,5 @@
+// DRAFT — principiul #2 rescris de dev, în așteptarea aprobării Teo/Ioana.
+// Înlocuiește vechiul „200g în plus, mereu". Textul final vine prin cod.
 const PRINCIPLES = [
   {
     index: "01",
@@ -5,9 +7,10 @@ const PRINCIPLES = [
     body: "Nu vorbim din fișa tehnică a producătorului. Am pus mâna pe ele toate, am greșit și ne-am corectat. Știm de ce un sistem care merge într-o școală privată moare în trei luni într-un parc public.",
   },
   {
+    /* TODO: principiul #2 — formulare propusă, de validat cu Teo */
     index: "02",
-    title: "200g în plus, mereu",
-    body: "Fișa tehnică spune 1,3 kg de poliuretan la metru. Noi punem 1,5. Costă mai mult acum, dar dispar mantenanțele și garanțiile la doi ani. Tot ce am făcut din 2019 încă rezistă — pentru că am pus liant, nu praf colorat.",
+    title: "Specificația corectă, nu cea minimă",
+    body: "Fișa tehnică indică un minim de proiectare; noi dimensionăm sistemul pentru utilizarea reală. Acolo unde proiectul cere mai mult, propunem mai mult — pentru ca suprafața să nu ajungă în mentenanță sau garanție după primul sezon.",
   },
   {
     index: "03",
