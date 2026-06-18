@@ -19,6 +19,7 @@ const FLOORING_SYSTEM_IDS = [
   "sport-indoor",
   "locuri-joaca",
   "pardoseli-piatra",
+  "gazon-sintetic",
 ] as const satisfies FlooringSystemId[];
 
 const SERVICE_SLUGS_TUPLE = [
