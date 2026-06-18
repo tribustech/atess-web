@@ -89,7 +89,10 @@ export function RecommendationHint() {
                     {rule.then.detail && (
                       <button
                         type="button"
-                        onClick={() => setDetailOpen(true)}
+                        onClick={() => {
+                          dispatch({ type: "read-rule", ruleId: pendingRuleId });
+                          setDetailOpen(true);
+                        }}
                         className="text-xs font-medium uppercase tracking-[0.12em] text-accent-primary underline-offset-4 transition hover:underline"
                       >
                         Citește mai mult
