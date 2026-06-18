@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
-import { TeoSection } from "@/components/home/TeoSection";
 import { ClientsSection } from "@/components/home/ClientsSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { SnapSection } from "@/components/home/SnapSection";
-import { FlooringSystemClient } from "@/components/home/FlooringSystemClient";
+import { ProducersSection } from "@/components/home/ProducersSection";
+import { FeaturedArticlesSection } from "@/components/home/FeaturedArticlesSection";
+import { getFeaturedArticles } from "@/lib/academy";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -41,6 +42,13 @@ const localBusinessLd = {
 };
 
 export default function Home() {
+  const featuredArticles = getFeaturedArticles(3).map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    dek: a.dek,
+    readingMin: a.readingMin,
+  }));
+
   return (
     <>
       <script
@@ -55,12 +63,25 @@ export default function Home() {
         <SnapSection id="hero">
           <HeroSection />
         </SnapSection>
-        <FlooringSystemClient />
+        <SnapSection id="producers" className="bg-bg-base">
+          <ProducersSection />
+        </SnapSection>
+        {/* HOME-FEATURE PLACEHOLDER: Teo va alege elementul vizual de impact care înlocuiește blocul 3D aici (CHANGE-PLAN §3 / F4 01:09) */}
+        <SnapSection id="home-feature" className="bg-bg-base">
+          <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col items-center justify-center px-6 py-24 md:px-10">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-text-muted">
+              Secțiune în pregătire
+            </p>
+            <p className="mt-4 max-w-xl text-center text-lg text-text-muted">
+              Elementul vizual de impact va fi definit în faza următoare.
+            </p>
+          </div>
+        </SnapSection>
         <SnapSection id="clients" className="bg-bg-base">
           <ClientsSection />
         </SnapSection>
-        <SnapSection id="teo" className="bg-bg-base">
-          <TeoSection />
+        <SnapSection id="invata" className="bg-bg-base">
+          <FeaturedArticlesSection articles={featuredArticles} />
         </SnapSection>
         <SnapSection id="cta">
           <FinalCtaSection />
