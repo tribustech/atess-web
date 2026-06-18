@@ -71,9 +71,9 @@ export default function InvataPage() {
 
             <p className="mt-8 max-w-2xl text-lg text-text-muted md:text-xl">
               Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari.
-              Elaborate de Teo Neagu — peste 10 ani de experiență pe șantier,
-              aplicator certificat Stockmeier — pe baza practicii reale, nu a
-              materialelor de marketing.
+              Elaborate de echipa ATESS Project — peste 10 ani de experiență pe
+              șantier, aplicator certificat Stockmeier — pe baza practicii
+              reale, nu a materialelor de marketing.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-text-muted">

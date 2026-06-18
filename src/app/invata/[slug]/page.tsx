@@ -81,9 +81,9 @@ export default async function ArticlePage({ params }: PageProps) {
     description: article.dek,
     url: `${SITE_URL}/invata/${article.slug}`,
     author: {
-      "@type": "Person",
-      name: "Teo Neagu",
-      url: `${SITE_URL}/despre`,
+      "@type": "Organization",
+      name: "ATESS Project",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -165,7 +165,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-text-faint">
                     Autor
                   </p>
-                  <p className="mt-1 text-text-primary">Teo Neagu</p>
+                  <p className="mt-1 text-text-primary">Echipa ATESS Project</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-text-faint">
