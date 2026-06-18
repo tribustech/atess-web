@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Clock } from "lucide-react";
 import {
-  getAllArticles,
+  getPublishedArticles,
   getArticleBySlug,
   getRelatedArticles,
   CATEGORY_META,
@@ -18,7 +18,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllArticles().map((a) => ({ slug: a.slug }));
+  return getPublishedArticles().map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({
@@ -33,11 +33,20 @@ export async function generateMetadata({
     };
   }
 
+  if (article.status === "draft") {
+    return {
+      title: `${article.title} | Învață`,
+      description: article.dek,
+      robots: { index: false, follow: false },
+      alternates: { canonical: `/invata/${article.slug}` },
+    };
+  }
+
   const url = `/invata/${article.slug}`;
 
   return {
     title: `${article.title} | Învață`,
-    description: article.dek,
+    description: `${article.dek} Ghid tehnic ATESS Project pentru ${article.audience.join(", ")}.`,
     alternates: { canonical: url },
     openGraph: {
       title: article.title,
@@ -85,11 +94,35 @@ export default async function ArticlePage({ params }: PageProps) {
     articleSection: categoryMeta.label,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Învață", item: `${SITE_URL}/invata` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: categoryMeta.label,
+        item: `${SITE_URL}/invata`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${SITE_URL}/invata/${article.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <main>
