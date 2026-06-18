@@ -19,7 +19,7 @@ function codeFromPathId(id: string | null): string | null {
 interface RomaniaMapProps {
   /** Raw SVG markup string, read server-side with fs.readFileSync. */
   svgMarkup: string;
-  /** Optional callback invoked when a county with projects is clicked/selected. */
+  /** Optional callback invoked when a county with projects is selected. */
   onSelectJudet?: (code: string) => void;
 }
 
@@ -35,8 +35,11 @@ export function RomaniaMap({ svgMarkup, onSelectJudet }: RomaniaMapProps) {
     const path = (e.target as Element).closest("path");
     const code = codeFromPathId(path?.getAttribute("id") ?? null);
     if (!code || !counts[code]) return; // mute counties without projects
-    setSelected((cur) => (cur === code ? null : code));
-    onSelectJudet?.(code);
+    setSelected((cur) => {
+      const next = cur === code ? null : code;
+      if (next !== null) onSelectJudet?.(code); // only fire on selection, not deselect
+      return next;
+    });
   }
 
   function handleMouseOver(e: React.MouseEvent<HTMLDivElement>) {
@@ -54,49 +57,61 @@ export function RomaniaMap({ svgMarkup, onSelectJudet }: RomaniaMapProps) {
     const target = e.target as Element;
     const code = codeFromPathId(target.getAttribute("id") ?? null);
     if (!code || !counts[code]) return;
-    setSelected((cur) => (cur === code ? null : code));
-    onSelectJudet?.(code);
+    e.preventDefault(); // prevent page scroll on Space
+    setSelected((cur) => {
+      const next = cur === code ? null : code;
+      if (next !== null) onSelectJudet?.(code); // only fire on selection, not deselect
+      return next;
+    });
   }
 
   /**
-   * Inject per-county colours into the SVG markup before rendering.
-   * Counties with projects get the accent colour; the selected county gets a
-   * distinct highlight; all others stay muted.
+   * Inject per-county colours and a11y attributes into the SVG markup.
+   * NOTE: `hovered` is intentionally excluded — hover styling is handled
+   * purely via CSS so that hover changes never rebuild the DOM and never
+   * destroy keyboard focus.
    */
   const styledSvg = useMemo(() => {
-    let svg = svgMarkup;
+    // Build a CSS block for hover/focus-visible so no DOM rebuild on hover.
+    const hoverCss = `
+<style>
+path[role="button"]:hover { fill: #c4520d !important; }
+path[role="button"]:focus-visible { outline: 2px solid #f97316; outline-offset: 2px; }
+</style>`;
 
-    // Replace each county path's fill based on project presence.
-    svg = svg.replace(/id="(RO[A-Z]+)"/g, (match, rawId) => {
-      const code = rawId.slice(2);
-      if (!(code in JUDET_LABELS)) return match;
+    // Scope the regex to <path ... id="RO..."> only (not circles).
+    let svg = svgMarkup.replace(
+      /<path([^>]*)\sid="(RO[A-Z]+)"/g,
+      (match, attrs, rawId) => {
+        const code = rawId.slice(2);
+        if (!(code in JUDET_LABELS)) return match;
 
-      const hasProjects = !!counts[code];
-      const isSelected = selected === code;
-      const isHovered = hovered === code;
+        const hasProjects = !!counts[code];
+        const isSelected = selected === code;
 
-      let fill: string;
-      if (isSelected) {
-        fill = "#e8701a"; // accent-primary highlight for selected county
-      } else if (isHovered && hasProjects) {
-        fill = "#c4520d"; // darker on hover
-      } else if (hasProjects) {
-        fill = "#f97316"; // orange — counties with projects
-      } else {
-        fill = "#2d3748"; // muted dark — counties without projects
+        const fill = isSelected
+          ? "#e8701a"     // accent-primary highlight for selected county
+          : hasProjects
+          ? "#f97316"     // orange — counties with projects
+          : "#2d3748";    // muted dark — counties without projects
+
+        const cursor = hasProjects ? "pointer" : "default";
+        const tabIndex = hasProjects ? "0" : "-1";
+        const label = JUDET_LABELS[code] ?? code;
+        const countText = counts[code]
+          ? `, ${counts[code]} proiect${counts[code] === 1 ? "" : "e"}`
+          : "";
+        const ariaLabel = `${label}${countText}`;
+
+        return `<path${attrs} id="${rawId}" fill="${fill}" style="cursor:${cursor}" tabindex="${tabIndex}" role="button" aria-label="${ariaLabel}" aria-pressed="${isSelected}"`;
       }
+    );
 
-      const cursor = hasProjects ? "pointer" : "default";
-      const tabIndex = hasProjects ? "0" : "-1";
-      const label = JUDET_LABELS[code] ?? code;
-      const countText = counts[code] ? `, ${counts[code]} proiect${counts[code] === 1 ? "" : "e"}` : "";
-      const ariaLabel = `${label}${countText}`;
-
-      return `${match} fill="${fill}" style="cursor:${cursor}" tabindex="${tabIndex}" role="button" aria-label="${ariaLabel}" aria-pressed="${isSelected}"`;
-    });
+    // Inject the <style> block right after the opening <svg ...> tag.
+    svg = svg.replace(/(<svg\b[^>]*>)/, `$1${hoverCss}`);
 
     return svg;
-  }, [svgMarkup, counts, selected, hovered]);
+  }, [svgMarkup, counts, selected]);
 
   const tooltipCode = hovered ?? selected;
   const tooltipLabel = tooltipCode ? (JUDET_LABELS[tooltipCode] ?? tooltipCode) : null;
