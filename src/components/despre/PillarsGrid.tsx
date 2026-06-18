@@ -4,7 +4,7 @@ import type { ServiceSlug } from "@/lib/services";
 
 type PillarHref = `/servicii/${ServiceSlug}` | "/proiecte";
 
-const PILLARS: { title: string; body: string; href: PillarHref }[] = [
+export const PILLARS: { title: string; body: string; href: PillarHref }[] = [
   {
     title: "Pardoseli sportive",
     body: "Terenuri multisport, săli de sport, baze CNI. Opt sisteme Stockmeier, fiecare cu rolul lui.",
