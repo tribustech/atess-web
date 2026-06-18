@@ -1,17 +1,25 @@
-export type GalleryCategory =
+export type ProjectCategory =
   | "piste-atletism"
   | "multisport"
   | "locuri-joaca"
-  | "educational"
-  | "interioare";
+  | "spatii-publice"
+  | "interioare"
+  | "constructii-cheie";
 
-export const GALLERY_CATEGORIES: { slug: GalleryCategory; label: string }[] = [
-  { slug: "piste-atletism", label: "Piste atletism" },
-  { slug: "multisport", label: "Multisport" },
+// Kept as an alias so existing gallery imports keep compiling.
+export type GalleryCategory = ProjectCategory;
+
+export const PROJECT_CATEGORIES: { slug: ProjectCategory; label: string }[] = [
+  { slug: "piste-atletism", label: "Piste de atletism" },
+  { slug: "multisport", label: "Terenuri multisport" },
   { slug: "locuri-joaca", label: "Locuri de joacă" },
-  { slug: "educational", label: "Educațional" },
-  { slug: "interioare", label: "Interioare" },
+  { slug: "spatii-publice", label: "Spații publice & gazon" },
+  { slug: "interioare", label: "Pardoseli interioare" },
+  { slug: "constructii-cheie", label: "Construcții la cheie" },
 ];
+
+// Backwards-compatible alias for the gallery code that already imports GALLERY_CATEGORIES.
+export const GALLERY_CATEGORIES = PROJECT_CATEGORIES;
 
 export type GalleryEntry = {
   id: string;
