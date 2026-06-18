@@ -2,30 +2,32 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import {
-  getAllArticles,
+  getPublishedArticles,
   getArticlesGroupedByCategory,
+  getFeaturedArticles,
 } from "@/lib/academy";
 import { ArticleCard } from "@/components/invata/ArticleCard";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
 export const metadata: Metadata = {
-  title: "Învață — Ghiduri tehnice pentru arhitecți și proiectanți",
+  title: "Învață — Ghiduri tehnice pardoseli, covor PVC și pardoseli de plută",
   description:
-    "Cum alegi corect pardoseala sportivă, cum citești o fișă tehnică, ce nu-ți spune marketingul. Conținut tehnic gratuit, scris de Teo Neagu, aplicator certificat cu 10+ ani pe șantier.",
+    "Ghiduri tehnice despre pardoseli sportive, covor PVC, linoleum, LVT și pardoseli de plută. Cum alegi corect, cum citești o fișă tehnică și ce nu spune marketingul — conținut elaborat de ATESS Project.",
+  keywords: ["pardoseli", "covor PVC", "linoleum", "pardoseli de plută", "LVT", "pardoseli sportive", "fișă tehnică"],
   alternates: { canonical: "/invata" },
   openGraph: {
     title: "Învață — ATESS Project",
     description:
-      "Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari. Pardoseli sportive, locuri de joacă, interior — tot ce nu apare în fișele tehnice.",
+      "Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari. Pardoseli sportive, covor PVC, linoleum, pardoseli de plută — tot ce nu apare în fișele tehnice.",
     url: "/invata",
     type: "website",
   },
 };
 
 export default function InvataPage() {
-  const all = getAllArticles();
-  const featured = all.filter((a) => a.featured);
+  const all = getPublishedArticles();
+  const featured = getFeaturedArticles(3);
   const grouped = getArticlesGroupedByCategory();
 
   const blogJsonLd = {
