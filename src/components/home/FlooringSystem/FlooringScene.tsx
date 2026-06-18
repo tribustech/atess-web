@@ -3,17 +3,19 @@
 import { Suspense } from 'react';
 import { Environment, ContactShadows } from '@react-three/drei';
 import { LayerStack } from './LayerStack';
-import type { LayerId } from './layers.config';
+import type { FlooringSystem } from './flooring-systems';
 
 type FlooringSceneProps = {
+  system: FlooringSystem;
   progressRef: React.MutableRefObject<number>;
-  hoveredIdRef: React.MutableRefObject<LayerId | null>;
-  onHoverChange: (id: LayerId | null) => void;
+  hoveredIdRef: React.MutableRefObject<number | null>;
+  onHoverChange: (id: number | null) => void;
   autoRotate: boolean;
   interactive: boolean;
 };
 
 export function FlooringScene({
+  system,
   progressRef,
   hoveredIdRef,
   onHoverChange,
@@ -39,6 +41,7 @@ export function FlooringScene({
       <Suspense fallback={null}>
         <Environment preset="studio" />
         <LayerStack
+          system={system}
           progressRef={progressRef}
           hoveredIdRef={hoveredIdRef}
           onHoverChange={onHoverChange}
