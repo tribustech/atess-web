@@ -142,7 +142,7 @@ export function FlooringSystemSection({
                     <div className="flex-1">
                       <div className="text-sm font-semibold text-white/90">{layer.label}</div>
                       <div className="mt-0.5 text-xs leading-relaxed text-white/55">
-                        {layer.texture}
+                        {layer.thicknessMm} mm
                       </div>
                     </div>
                   </div>
@@ -264,7 +264,7 @@ export function FlooringSystemSection({
                           isActive ? 'text-white/80' : 'text-white/55'
                         }`}
                       >
-                        {layer.texture}
+                        {layer.thicknessMm} mm
                       </div>
                     </div>
                   </div>
