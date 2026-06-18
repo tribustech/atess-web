@@ -134,7 +134,7 @@ export function LayerStack({
       <group ref={rotatingGroupRef} rotation={[0.15, -0.5, 0]}>
         {layers.map((layer, i) => (
           <Layer
-            key={i}
+            key={`${system.id}-${i}`}
             config={layer}
             index={i}
             size={geometry[i].size}
