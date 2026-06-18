@@ -1,0 +1,218 @@
+[
+  {
+    "slug": "sport-outdoor",
+    "group": "Exterior",
+    "order": 1,
+    "label": "Pardoseli sportive outdoor",
+    "shortBlurb": "Piste de atletism, terenuri multisport și suprafețe EPDM omologate, construite pentru exterior.",
+    "intro": "Pardoselile sportive de exterior sunt expuse la UV, îngheț, ploaie și utilizare intensivă. Construim sisteme turnate, de la fundație până la stratul de uzură, dimensionate pentru climatul și traficul fiecărui proiect.",
+    "seoCopy": [
+      {
+        "heading": "Structura pe straturi",
+        "body": "Sistemul standard se construiește de jos în sus: bază de beton sau asfalt, amorsă de aderență, strat amortizor SBR, straturi de poliuretan și suprafață de uzură EPDM. Fiecare strat are o grosime calculată în funcție de disciplina sportivă și clasa de absorbție a impactului."
+      },
+      {
+        "heading": "Montaj și întreținere",
+        "body": "Aplicarea respectă fișa tehnică originală a producătorului: pregătirea suportului, controlul umidității și al temperaturii, dozarea corectă a componentelor. Întreținerea periodică — curățare și verificarea drenajului — prelungește durata de viață a suprafeței."
+      }
+    ],
+    "applications": [],
+    "isSport": true,
+    "model3dId": "sport-outdoor",
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem sportiv de exterior",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "multisport",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "locuri-joaca",
+    "group": "Exterior",
+    "order": 2,
+    "label": "Pardoseli pentru locuri de joacă",
+    "shortBlurb": "Suprafețe turnate antitraumatice pentru locuri de joacă, inclusiv plută naturală.",
+    "intro": "Locurile de joacă au cerințe proprii de siguranță: înălțimea critică de cădere și absorbția impactului se calculează pentru fiecare echipament. Aplicăm sisteme EPDM și, în premieră în România, pardoseli din plută naturală.",
+    "seoCopy": [
+      {
+        "heading": "Siguranță și HIC",
+        "body": "Grosimea stratului antitraumatic se dimensionează după înălțimea critică de cădere (HIC) a fiecărui echipament. Verificăm conformitatea cu standardele de siguranță înainte de turnare."
+      },
+      {
+        "heading": "Plută vs. EPDM",
+        "body": "Pluta naturală nu se încinge la soare, permite drenajul apei și nu conține solvenți. Reprezintă un nivel superior față de EPDM-ul clasic, justificat în proiecte premium."
+      }
+    ],
+    "applications": ["Grădinițe și creșe", "Parcuri publice", "Spații de joacă rezidențiale"],
+    "isSport": false,
+    "model3dId": "locuri-joaca",
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem pentru locuri de joacă",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "locuri-joaca",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "pardoseli-piatra",
+    "group": "Exterior",
+    "order": 3,
+    "label": "Pardoseli de piatră",
+    "shortBlurb": "Covoare de piatră pe liant rășinos pentru alei, terase și zone pietonale decorative.",
+    "intro": "Pardoselile de piatră combină agregate naturale cu un liant rășinos transparent, rezultând o suprafață drenantă, decorativă și rezistentă pentru exterior.",
+    "seoCopy": [
+      {
+        "heading": "Compoziție",
+        "body": "Agregatele de marmură sau pietriș sunt amestecate cu un liant poliuretanic sau epoxidic și aplicate pe o bază pregătită corespunzător. Rezultă o suprafață continuă, fără rosturi."
+      },
+      {
+        "heading": "Aplicații",
+        "body": "Recomandată pentru alei, terase, zone din jurul piscinelor și amenajări peisagistice unde se dorește un aspect natural și un drenaj bun."
+      }
+    ],
+    "applications": ["Alei și terase", "Zone de piscină", "Amenajări peisagistice"],
+    "isSport": false,
+    "model3dId": "pardoseli-piatra",
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem de pardoseală de piatră",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "spatii-publice",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "alei-pietonale",
+    "group": "Exterior",
+    "order": 4,
+    "label": "Alei pietonale",
+    "shortBlurb": "Suprafețe continue pentru circulații pietonale, fără destinație sportivă.",
+    "intro": "Aleile pietonale cer suprafețe durabile, antiderapante și ușor de întreținut. Propunem sisteme turnate adaptate traficului pietonal și condițiilor de exterior.",
+    "seoCopy": [
+      {
+        "heading": "Criterii de alegere",
+        "body": "Selecția sistemului ține cont de trafic, expunerea la intemperii și aspectul dorit. Suprafața finală trebuie să fie antiderapantă și rezistentă la uzură."
+      }
+    ],
+    "applications": ["Circulații în parcuri", "Trotuare amenajate", "Spații instituționale"],
+    "isSport": false,
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem de alee pietonală",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "spatii-publice",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "sport-indoor",
+    "group": "Interior",
+    "order": 5,
+    "label": "Pardoseli sportive indoor",
+    "shortBlurb": "Pardoseli sportive de interior pentru săli, baze și spații multifuncționale.",
+    "intro": "Pardoselile sportive de interior sunt alese după disciplină, intensitatea utilizării și cerințele de elasticitate. Lucrăm atât sisteme turnate, cât și soluții PVC sportiv omologate.",
+    "seoCopy": [
+      {
+        "heading": "Tipuri de sisteme",
+        "body": "Pentru interior se folosesc sisteme poliuretanice turnate sau pardoseli PVC sportive, fiecare cu clase proprii de absorbție a impactului și de alunecare controlată."
+      },
+      {
+        "heading": "Omologare și marcaje",
+        "body": "Suprafețele competiționale respectă cerințele federațiilor sportive. Marcajele se planifică din proiectare, pentru a evita suprapunerile."
+      }
+    ],
+    "applications": ["Săli de sport școlare", "Baze sportive private", "Spații multifuncționale"],
+    "isSport": true,
+    "model3dId": "sport-indoor",
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem sportiv de interior",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "multisport",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "mocheta",
+    "group": "Interior",
+    "order": 6,
+    "label": "Mochetă",
+    "shortBlurb": "Mochetă în plăci și din rolă pentru birouri și spații comerciale.",
+    "intro": "Mocheta oferă confort acustic și termic pentru birouri și spații comerciale. Lucrăm cu portofolii de producători recunoscuți, în plăci modulare sau din rolă.",
+    "seoCopy": [
+      {
+        "heading": "Plăci vs. rolă",
+        "body": "Plăcile modulare permit înlocuirea punctuală și gestionarea cablajului, în timp ce mocheta din rolă oferă o suprafață continuă. Alegerea depinde de utilizare și de bugetul de întreținere."
+      }
+    ],
+    "applications": ["Birouri corporate", "Spații comerciale", "Hoteluri"],
+    "isSport": false,
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem de mochetă",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "interioare",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "pvc-linoleum",
+    "group": "Interior",
+    "order": 7,
+    "label": "Covor PVC / Linoleum / Tapet PVC",
+    "shortBlurb": "Covor PVC, linoleum natural și tapet PVC — un singur portofoliu de producător.",
+    "intro": "Covorul PVC, linoleumul și tapetul PVC provin din același portofoliu de producător și acoperă spațiile medicale, educaționale și comerciale. Fiecare mediu cere o clasă de trafic și un tip de finisaj diferit.",
+    "seoCopy": [
+      {
+        "heading": "Ce diferențiază un PVC bun",
+        "body": "Un covor PVC de calitate are mai mult poliuretan și mai puțină cretă, fiind mai ușor pe metru pătrat și mai rezistent în timp. Diferența se observă după câțiva ani de utilizare."
+      },
+      {
+        "heading": "Linoleumul natural",
+        "body": "Linoleumul natural are proprietăți antifungice, însă întreținerea cu produse clorinate anulează acest avantaj. Recomandăm un protocol de curățare adecvat."
+      }
+    ],
+    "applications": ["Unități medicale", "Spații educaționale", "Spații comerciale"],
+    "isSport": false,
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem PVC sau linoleum",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "interioare",
+    "relatedArticleSlugs": []
+  },
+  {
+    "slug": "lvt",
+    "group": "Interior",
+    "order": 8,
+    "label": "LVT",
+    "shortBlurb": "Luxury Vinyl Tile cu aspect de lemn sau piatră, rezistent la trafic și umezeală.",
+    "intro": "LVT-ul reproduce aspectul lemnului sau al pietrei, dar rezistă la umezeală și trafic intens. Este potrivit pentru spații rezidențiale premium și comerciale.",
+    "seoCopy": [
+      {
+        "heading": "Avantaje",
+        "body": "LVT-urile bune arată identic cu parchetul, dar tolerează umezeala și traficul intens. Montajul poate fi prin lipire sau prin sistem click."
+      }
+    ],
+    "applications": ["Spații rezidențiale premium", "Showroom-uri", "Birouri"],
+    "isSport": false,
+    "layerPhoto": {
+      "src": "/images/services/placeholder-layers.webp",
+      "alt": "Secțiune prin straturile unui sistem LVT",
+      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
+      "placeholder": true
+    },
+    "relatedProjectCategory": "interioare",
+    "relatedArticleSlugs": []
+  }
+]
