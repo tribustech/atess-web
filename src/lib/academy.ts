@@ -33,26 +33,34 @@ const articles = academyRaw as AcademyArticle[];
 
 export const CATEGORY_META: Record<
   AcademyCategory,
-  { label: string; sub: string; order: number }
+  { label: string; sub: string; intro: string; order: number }
 > = {
   fundamente: {
     label: "Bazele",
     sub: "Concepte fundamentale înainte de orice proiect",
+    intro:
+      "Înainte de a alege un sistem de pardoseală, contează înțelegerea materialelor de bază: poliuretanul, granula EPDM și SBR, modul de construire strat cu strat și destinația suprafeței. Articolele din această secțiune explică diferențele dintre pardoselile sportive, covorul PVC, linoleumul și pardoselile de plută, pe baza practicii reale de șantier.",
     order: 1,
   },
   decizii: {
     label: "Ghiduri de decizie",
     sub: "Cum alegi corect în funcție de context",
+    intro:
+      "Alegerea corectă a unei pardoseli depinde de context: trafic public sau privat, supraveghere, buget de întreținere și certificările cerute de proiect. Ghidurile de decizie compară opțiunile pentru terenuri sportive, locuri de joacă și spații interioare, astfel încât specificația tehnică să corespundă utilizării reale.",
     order: 2,
   },
   tehnic: {
     label: "Tehnic & mituri",
     sub: "Fișe tehnice, certificări și ce nu-ți spune marketingul",
+    intro:
+      "Fișa tehnică spune doar o parte din adevăr. Această secțiune analizează grosimile reale, certificările relevante și miturile de marketing din jurul covorului PVC, linoleumului și sistemelor poliuretanice — pentru ca decizia să se bazeze pe date verificabile, nu pe broșuri.",
     order: 3,
   },
   specializari: {
     label: "Specializări",
     sub: "Servicii și sisteme pe care le facem distinct",
+    intro:
+      "ATESS Project execută sisteme care necesită experiență dedicată: pardoseli de plută pentru locuri de joacă, construcții sportive la cheie și soluții interioare de tip covor PVC, LVT și linoleum. Articolele detaliază cum sunt construite aceste sisteme și unde aduc avantaje față de alternativele standard.",
     order: 4,
   },
 };

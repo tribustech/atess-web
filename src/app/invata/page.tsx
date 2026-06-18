@@ -5,6 +5,7 @@ import {
   getPublishedArticles,
   getArticlesGroupedByCategory,
   getFeaturedArticles,
+  CATEGORY_META,
 } from "@/lib/academy";
 import { ArticleCard } from "@/components/invata/ArticleCard";
 
@@ -129,6 +130,9 @@ export default function InvataPage() {
                   {group.label}
                 </p>
                 <h2 className="mt-3 text-2xl md:text-3xl">{group.sub}</h2>
+                <p className="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
+                  {CATEGORY_META[group.category].intro}
+                </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
