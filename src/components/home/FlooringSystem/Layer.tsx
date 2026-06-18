@@ -3,21 +3,28 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { MathUtils, type Mesh, type MeshStandardMaterial } from 'three';
-import type { LayerConfig, LayerId } from './layers.config';
+import type { FlooringLayer } from './flooring-systems';
 
 type Slot = { current: number };
 
-type LayerProps = {
-  config: LayerConfig;
+export type LayerProps = {
+  config: FlooringLayer;
+  index: number;
+  /** X/Z footprint in scene units. */
+  size: [number, number];
+  /** Visual thickness in scene units (derived from thicknessMm by caller). */
+  thickness: number;
   material: MeshStandardMaterial;
   targetY: Slot;
-  hoveredIdRef: React.MutableRefObject<LayerId | null>;
-  onHover: (id: LayerId | null) => void;
+  hoveredIdRef: React.MutableRefObject<number | null>;
+  onHover: (id: number | null) => void;
   interactive: boolean;
 };
 
 export function Layer({
-  config,
+  index,
+  size,
+  thickness,
   material,
   targetY,
   hoveredIdRef,
@@ -33,7 +40,7 @@ export function Layer({
     mesh.position.y = MathUtils.damp(mesh.position.y, targetY.current, 10, dt);
 
     const hoveredId = hoveredIdRef.current;
-    const isHovered = hoveredId === config.id;
+    const isHovered = hoveredId === index;
     const anyHovered = hoveredId !== null;
 
     // Scale: hovered pops slightly, others shrink a hair for contrast.
@@ -57,7 +64,7 @@ export function Layer({
         interactive
           ? (e) => {
               e.stopPropagation();
-              onHover(config.id);
+              onHover(index);
               document.body.style.cursor = 'pointer';
             }
           : undefined
@@ -72,7 +79,7 @@ export function Layer({
           : undefined
       }
     >
-      <boxGeometry args={[config.size[0], config.thickness, config.size[1]]} />
+      <boxGeometry args={[size[0], thickness, size[1]]} />
     </mesh>
   );
 }
