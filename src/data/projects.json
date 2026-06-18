@@ -10,8 +10,13 @@
     "surfaceM2": 6400,
     "client": "FC Bacău (sponsorizat de Dedeman)",
     "description": "Pistă de atletism de 400m, 8 culoare, color roșu cărămiziu. Aplicată conform standardului World Athletics, cu marcaje complete pentru probe de viteză și sărituri.",
+    "whatWeDid": [
+      "Turnare pistă de atletism 400m, 8 culoare, finisaj color roșu cărămiziu.",
+      "Aplicare conform standardului World Athletics.",
+      "Trasare completă a marcajelor pentru probe de viteză și sărituri."
+    ],
     "heroImage": "/images/project-bacau.webp",
-    "gallery": [
+    "images": [
       "/images/project-bacau-1.webp",
       "/images/project-bacau-2.webp"
     ],
@@ -27,9 +32,16 @@
     "systemSlug": "spatii-publice",
     "surfaceM2": 850,
     "client": "Primăria Municipiului Suceava",
-    "description": "Amenajare loc de joacă cu pardoseală EPDM colorată și marcaje decorative. Parte dintr-un program de reabilitare a spațiilor urbane.",
+    "description": "Amenajare de spațiu public cu pardoseală EPDM colorată și marcaje decorative. Parte dintr-un program de reabilitare a spațiilor urbane.",
+    "whatWeDid": [
+      "Pregătire suport și turnare pardoseală EPDM colorată.",
+      "Marcaje decorative pentru spațiul public.",
+      "Integrare în programul de reabilitare urbană al municipiului."
+    ],
     "heroImage": "/images/project-suceava.webp",
-    "gallery": [],
+    "images": [
+      "/images/project-suceava.webp"
+    ],
     "featured": true
   },
   {
@@ -42,8 +54,15 @@
     "systemSlug": "multisport",
     "surfaceM2": 420,
     "description": "Teren multisport cu marcaje pentru baschet și fotbal, amenajat în curtea unei școli generale. Sistem Stockmeier CP 10mm pe fundație de asfalt existentă.",
+    "whatWeDid": [
+      "Aplicare sistem Stockmeier CP 10mm pe fundație de asfalt existentă.",
+      "Trasare marcaje pentru baschet și fotbal.",
+      "Amenajare în curtea școlii generale."
+    ],
     "heroImage": "/images/project-scoala.webp",
-    "gallery": []
+    "images": [
+      "/images/project-scoala.webp"
+    ]
   },
   {
     "slug": "loc-joaca-sector-3",
@@ -56,8 +75,15 @@
     "surfaceM2": 280,
     "client": "Primăria Sector 3",
     "description": "Amenajare loc de joacă cu pardoseală EPDM multi-color, design curbat inspirat din curcubeu. Proiect cu accent pe siguranță și impact vizual.",
+    "whatWeDid": [
+      "Turnare pardoseală EPDM multi-color cu design curbat.",
+      "Accent pe siguranța la impact și impact vizual.",
+      "Coordonare cu Primăria Sector 3."
+    ],
     "heroImage": "/images/project-loc-joaca.webp",
-    "gallery": [],
+    "images": [
+      "/images/project-loc-joaca.webp"
+    ],
     "featured": true
   },
   {
@@ -71,8 +97,15 @@
     "surfaceM2": 1800,
     "client": "Campus privat (NDA)",
     "description": "Proiect extins de pardoseli sportive și spații de joacă pentru un campus internațional. Include terenuri multisport, zone de recreere, și pardoseli din plută pentru creșă.",
+    "whatWeDid": [
+      "Amenajare terenuri multisport și zone de recreere.",
+      "Pardoseli din plută pentru zona de creșă.",
+      "Coordonare extinsă pe un campus internațional."
+    ],
     "heroImage": "/images/project-british.webp",
-    "gallery": []
+    "images": [
+      "/images/project-british.webp"
+    ]
   },
   {
     "slug": "baza-cni-tip1-cluj",
@@ -84,8 +117,15 @@
     "systemSlug": "multisport",
     "surfaceM2": 968,
     "description": "Teren standard CNI tip 1, 44×22m, sistem Stobitan P 10mm cu marcaje pentru baschet, volei și handbal. Aplicat pe fundație nouă turnată.",
+    "whatWeDid": [
+      "Turnare teren standard CNI tip 1, 44×22m.",
+      "Sistem Stobitan P 10mm pe fundație nouă.",
+      "Marcaje pentru baschet, volei și handbal."
+    ],
     "heroImage": "/images/project-cni.webp",
-    "gallery": []
+    "images": [
+      "/images/project-cni.webp"
+    ]
   },
   {
     "slug": "complex-privat-tiriac",
@@ -98,8 +138,15 @@
     "surfaceM2": 1200,
     "client": "Confidențial",
     "description": "Terenuri de tenis și multisport pentru un complex sportiv privat premium. Sisteme Stockmeier aplicate cu marcaje personalizate.",
+    "whatWeDid": [
+      "Amenajare terenuri de tenis și multisport.",
+      "Sisteme Stockmeier cu marcaje personalizate.",
+      "Standard premium pentru complex sportiv privat."
+    ],
     "heroImage": "/images/project-tiriac.webp",
-    "gallery": []
+    "images": [
+      "/images/project-tiriac.webp"
+    ]
   },
   {
     "slug": "pista-lacul-morii",
@@ -111,8 +158,15 @@
     "systemSlug": "piste-atletism",
     "surfaceM2": 2400,
     "description": "Pistă de alergare publică amenajată pe malul Lacului Morii. Sistem drenant, adaptat la utilizare mixtă și condiții meteo variate.",
+    "whatWeDid": [
+      "Turnare pistă de alergare publică drenantă.",
+      "Adaptare la utilizare mixtă și condiții meteo variate.",
+      "Amenajare pe malul Lacului Morii."
+    ],
     "heroImage": "/images/project-lacul-morii.webp",
-    "gallery": []
+    "images": [
+      "/images/project-lacul-morii.webp"
+    ]
   },
   {
     "slug": "miniteren-comunal-pndl",
@@ -124,8 +178,15 @@
     "systemSlug": "spatii-publice",
     "surfaceM2": 1500,
     "description": "Miniteren de fotbal cu gazon sintetic 50mm, parte a programului național PNDL. Include împrejmuire și marcaje FIFA compatible.",
+    "whatWeDid": [
+      "Montaj gazon sintetic 50mm.",
+      "Împrejmuire și marcaje compatibile FIFA.",
+      "Execuție în programul național PNDL."
+    ],
     "heroImage": "/images/project-comunal.webp",
-    "gallery": []
+    "images": [
+      "/images/project-comunal.webp"
+    ]
   },
   {
     "slug": "gradinita-privata-iasi",
@@ -137,8 +198,15 @@
     "systemSlug": "locuri-joaca",
     "surfaceM2": 180,
     "description": "Primul proiect cu pardoseală din plută turnată Corkeen pentru o grădiniță privată din Iași. Zonă de joacă naturală, non-toxică.",
+    "whatWeDid": [
+      "Turnare pardoseală din plută Corkeen.",
+      "Zonă de joacă naturală, non-toxică.",
+      "Primul proiect de plută turnată pentru o grădiniță privată din Iași."
+    ],
     "heroImage": "/images/project-gradinita.webp",
-    "gallery": []
+    "images": [
+      "/images/project-gradinita.webp"
+    ]
   },
   {
     "slug": "spital-pvc-timisoara",
@@ -150,8 +218,15 @@
     "systemSlug": "interioare",
     "surfaceM2": 2200,
     "description": "Reamenajare completă de pardoseli PVC pentru secții spital. Produse medicale de clasă 34, antibacteriene, aplicate fără întrerupere de activitate.",
+    "whatWeDid": [
+      "Reamenajare pardoseli PVC medicale clasa 34.",
+      "Produse antibacteriene aplicate fără întreruperea activității.",
+      "Acoperire completă a secțiilor de spital."
+    ],
     "heroImage": "/images/project-spital.webp",
-    "gallery": []
+    "images": [
+      "/images/project-spital.webp"
+    ]
   },
   {
     "slug": "baza-militara-targoviste",
@@ -163,7 +238,14 @@
     "systemSlug": "piste-atletism",
     "surfaceM2": 6400,
     "description": "Pistă de atletism certificată pentru o bază militară. Parte dintr-un program național de infrastructură sportivă pentru forțele armate.",
+    "whatWeDid": [
+      "Turnare pistă de atletism certificată.",
+      "Execuție în program național de infrastructură sportivă.",
+      "Amenajare pentru o bază militară."
+    ],
     "heroImage": "/images/project-militar.webp",
-    "gallery": []
+    "images": [
+      "/images/project-militar.webp"
+    ]
   }
 ]
