@@ -32,7 +32,6 @@ export const changes: ChangeEntry[] = [
       "CTA-ul principal a fost redenumit din 'Vorbeste cu Teo' in 'Contacteaza echipa'. Referintele la consultanta personala si la persoana lui Teo au fost eliminate din header, hero si sectiunile de servicii. Blocul fondatorului a ramas exclusiv pe pagina Despre.",
     status: "done",
     route: "/",
-    beforeImage: "/changes/before/home.png",
     afterImage: "/changes/after/home.png",
   },
   {
@@ -47,7 +46,6 @@ export const changes: ChangeEntry[] = [
       "Headline-ul principal din sectiunea Hero a paginii de pornire a fost actualizat de la 'pardoseli sportive' la 'pardoseli profesionale', reflectand spectrul complet al serviciilor ATESS.",
     status: "done",
     route: "/",
-    beforeImage: "/changes/before/home.png",
     afterImage: "/changes/after/home.png",
   },
 
@@ -108,7 +106,6 @@ export const changes: ChangeEntry[] = [
       "Sectiunea Hero a fost transformata intr-un slideshow rotativ. Fiecare slide afiseaza o imagine de fundal, un text contextual scurt si un buton care trimite direct la categoria de servicii relevanta. Tranzitiile sunt animate si performanta de incarcare a fost pastrata.",
     status: "done",
     route: "/",
-    beforeImage: "/changes/before/home.png",
     afterImage: "/changes/after/home.png",
   },
   {
@@ -152,7 +149,6 @@ export const changes: ChangeEntry[] = [
       "Componenta FlooringSystemClient a fost mutata din pagina de pornire in paginile individuale de categorie din Servicii. Homepage-ul a primit un placeholder vizual in locul animatiei 3D, conform indicatiei lui Teo de a propune o alternativa.",
     status: "done",
     route: "/servicii",
-    beforeImage: "/changes/before/flooring-3d.png",
     afterImage: "/changes/after/flooring-3d.png",
   },
   {
@@ -167,7 +163,6 @@ export const changes: ChangeEntry[] = [
       "Titlul sectiunii 3D a fost actualizat din 'Patru straturi. O singura suprafata.' in 'Mai multe straturi. O singura suprafata.', eliminand numarul fix care nu era corect tehnic pentru toate sistemele.",
     status: "done",
     route: "/servicii",
-    beforeImage: "/changes/before/flooring-3d.png",
     afterImage: "/changes/after/flooring-3d.png",
   },
   {
