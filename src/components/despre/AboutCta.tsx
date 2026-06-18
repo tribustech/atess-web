@@ -11,7 +11,7 @@ export function AboutCta() {
           </h2>
           <p className="mt-5 max-w-xl text-base text-text-muted sm:mt-6 sm:text-lg">
             Configurează proiectul în 2 minute sau scrie-ne direct. Revenim cu o
-            recomandare validată de Teo.
+            recomandare validată de echipa ATESS.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
             <Link href="/configurator" className="w-full sm:w-auto">
