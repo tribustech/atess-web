@@ -5,7 +5,49 @@
     "type": "manufacturer",
     "logo": "/logos/logo-stockmeier.svg",
     "description": "Producător premium de sisteme poliuretanice pentru suprafețe sportive. Folosit pe stadioane și baze internaționale.",
-    "url": "https://www.stockmeier-urethanes.com"
+    "url": "https://www.stockmeier-urethanes.com",
+    "rank": 1,
+    "lead": true
+  },
+  {
+    "slug": "doctor-schutz",
+    "name": "Doctor Schutz",
+    "type": "manufacturer",
+    "logo": "/logos/placeholder-doctor-schutz.svg",
+    "description": "Lider mondial în soluții de recondiționat pardoseli PVC medicale și sportive.",
+    "url": "https://www.doctorschutz.com",
+    "rank": 2,
+    "lead": false
+  },
+  {
+    "slug": "tarkett",
+    "name": "Tarkett",
+    "type": "manufacturer",
+    "logo": "/logos/placeholder-tarkett.svg",
+    "description": "Sisteme PVC sportiv și medical pentru spații cu trafic intens.",
+    "url": "https://www.tarkett.com",
+    "rank": 3,
+    "lead": false
+  },
+  {
+    "slug": "balta",
+    "name": "Modulyss by Balta",
+    "type": "manufacturer",
+    "logo": "/logos/placeholder-balta.svg",
+    "description": "Mochetă în plăci pentru spații comerciale și birouri, prin gama Modulyss.",
+    "url": "https://www.modulyss.com",
+    "rank": 4,
+    "lead": false
+  },
+  {
+    "slug": "ivc",
+    "name": "IVC",
+    "type": "manufacturer",
+    "logo": "/logos/placeholder-ivc.svg",
+    "description": "Pardoseli LVT și PVC pentru interioare rezidențiale și comerciale.",
+    "url": "https://www.ivc-commercial.com",
+    "rank": 5,
+    "lead": false
   },
   { "slug": "primaria-s3", "name": "Primăria Sector 3", "type": "client", "logo": "/logos/primaria_sector3.png" },
   { "slug": "primaria-s6", "name": "Primăria Sector 6", "type": "client", "logo": "/logos/primaria_sector6.png" },
