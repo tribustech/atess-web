@@ -60,21 +60,18 @@ export function Header() {
       <div className="container mx-auto px-5 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-3 text-text-primary"
-          aria-label="ATESS"
+          className="flex items-center"
+          aria-label="ATESS Project"
         >
           <Image
-            src="/images/logo-bg.png"
-            alt=""
-            width={40}
-            height={40}
-            className="h-10 w-auto"
+            src="/images/logo-atess-white-placeholder.svg"
+            alt="ATESS Project"
+            width={160}
+            height={45}
+            className="h-9 w-auto sm:h-11"
             priority
             draggable={false}
           />
-          <span className="text-sm font-semibold tracking-[0.14em] uppercase text-text-primary">
-            ATESS
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
