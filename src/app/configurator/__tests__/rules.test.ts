@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { evaluateRules } from "../rules";
+import { evaluateRules, getRuleById, ruleMatches } from "../rules";
 import type { Answers } from "../types";
 
 const fired = (ids: string[] = []) => ids;
@@ -69,5 +69,50 @@ describe("evaluateRules", () => {
 
   it("returns null when no rule matches", () => {
     expect(evaluateRules({ projectType: "multisport" }, fired())).toBeNull();
+  });
+});
+
+describe("matcher edge cases", () => {
+  it("requires ALL conditions in an if-block to match", () => {
+    // basket-kids-to-playground needs projectType + sport + users
+    const partial: Answers = { projectType: "teren-individual", sport: "basket" };
+    expect(evaluateRules(partial, [])?.id).not.toBe("basket-kids-to-playground");
+  });
+
+  it("lengthBelow returns false when length is undefined", () => {
+    const rule = getRuleById("pista-sub-400m")!;
+    expect(ruleMatches(rule, { projectType: "pista-atletism" })).toBe(false);
+  });
+
+  it("totalM2Below returns false when totalM2 is undefined", () => {
+    const rule = getRuleById("proiect-sub-100m")!;
+    expect(ruleMatches(rule, {})).toBe(false);
+  });
+
+  it("totalM2Below is strict (< not <=)", () => {
+    const rule = getRuleById("proiect-sub-100m")!;
+    expect(ruleMatches(rule, { totalM2: 100 })).toBe(false);
+    expect(ruleMatches(rule, { totalM2: 99 })).toBe(true);
+  });
+});
+
+describe("priority / ordering", () => {
+  it("context-specific rule wins over generic fara-fundatie for public-nesupervizat", () => {
+    const answers: Answers = {
+      context: "public-nesupervizat",
+      baseLayer: "niciuna",
+    };
+    expect(evaluateRules(answers, [])?.id).toBe("public-nesupervizat-fara-fundatie");
+  });
+
+  it("generic fara-fundatie fires when context is not public-nesupervizat", () => {
+    const answers: Answers = { baseLayer: "niciuna" };
+    expect(evaluateRules(answers, [])?.id).toBe("fara-fundatie");
+  });
+
+  it("returns null once every matching rule has fired", () => {
+    const answers: Answers = { baseLayer: "niciuna" };
+    const first = evaluateRules(answers, [])!;
+    expect(evaluateRules(answers, [first.id])).toBeNull();
   });
 });
