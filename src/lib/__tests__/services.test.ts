@@ -30,7 +30,6 @@ const RELATED_PROJECT_CATEGORIES = [
   "spatii-publice",
   "interioare",
   "constructii-cheie",
-  "educational",
 ] as const;
 
 // ─── Schema validation at parse time ─────────────────────────────────────────
@@ -262,7 +261,7 @@ describe("getMegaMenuModelId()", () => {
 // ─── relatedProjectCategory invariants ───────────────────────────────────────
 
 describe("relatedProjectCategory", () => {
-  it("every relatedProjectCategory is one of the 7 known GalleryCategory slugs", () => {
+  it("every relatedProjectCategory is one of the 6 known GalleryCategory slugs", () => {
     for (const cat of getAllServices()) {
       expect(
         (RELATED_PROJECT_CATEGORIES as readonly string[]).includes(

@@ -42,7 +42,6 @@ const RELATED_PROJECT_CATEGORIES = [
   "spatii-publice",
   "interioare",
   "constructii-cheie",
-  "educational",
 ] as const;
 
 const layerPhotoSchema = z.object({
