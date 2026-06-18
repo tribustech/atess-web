@@ -140,7 +140,8 @@ export function ServicesMegaMenu({
         "w-[min(90vw,880px)] rounded-lg border border-border",
         "bg-bg-base/95 p-6 shadow-2xl backdrop-blur-md",
       )}
-      role="dialog"
+      id="servicii-mega-menu"
+      role="region"
       aria-label="Meniu servicii"
     >
       {/* Heading */}

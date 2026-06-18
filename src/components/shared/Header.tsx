@@ -91,9 +91,14 @@ export function Header() {
                 >
                   <Link
                     href={item.to}
+                    aria-expanded={megaOpen}
+                    aria-controls="servicii-mega-menu"
                     onFocus={() => setMegaOpen(true)}
                     onBlur={(e) => {
-                      // Only close if focus leaves the entire mega container
+                      // relatedTarget can be null during AnimatePresence mounting —
+                      // do not close in that case; only close when focus moves to a
+                      // node that is outside the entire mega container.
+                      if (e.relatedTarget === null) return;
                       if (!megaRef.current?.contains(e.relatedTarget as Node)) {
                         setMegaOpen(false);
                       }
@@ -145,7 +150,12 @@ export function Header() {
 
         <button
           className="lg:hidden text-text-primary"
-          onClick={() => setMobileOpen((v) => !v)}
+          onClick={() => {
+            setMobileOpen((v) => {
+              if (v) setMobileServiciiOpen(false); // reset accordion on close
+              return !v;
+            });
+          }}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -156,7 +166,7 @@ export function Header() {
         <div className="lg:hidden bg-bg-base border-t border-border">
           <nav className="flex flex-col p-6 gap-4">
             {NAV.map((item) => {
-              const isActive = pathname === item.to;
+              const isActive = pathname === item.to || (item.to === "/servicii" && pathname.startsWith("/servicii"));
               if (item.to === "/servicii") {
                 return (
                   <div key={item.to}>
