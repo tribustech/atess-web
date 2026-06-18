@@ -29,7 +29,7 @@ export function ServiceCategoryCard({
       <div className="relative overflow-hidden">
         <Image
           src={category.layerPhoto.src}
-          alt=""
+          alt={category.layerPhoto.alt}
           width={480}
           height={320}
           className="aspect-[3/2] w-full rounded-t-lg object-cover transition-transform duration-300 group-hover:scale-105"
