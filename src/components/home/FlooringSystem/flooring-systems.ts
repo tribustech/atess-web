@@ -46,11 +46,11 @@ const SPORT_OUTDOOR: FlooringSystem = {
   title: 'Sistem sport exterior (spray PU + EPDM)',
   layers: [
     { label: 'Bază de beton',               thicknessMm: 100, texture: 'concrete'   },
-    { label: 'Amorsă',                       thicknessMm:   1, texture: 'concrete'   },
-    { label: 'Strat SBR',                    thicknessMm:  10, texture: 'sbr'        },
-    { label: 'Strat poliuretan',             thicknessMm:   2, texture: 'sbr'        },
-    { label: 'Strat poliuretan',             thicknessMm:   2, texture: 'sbr'        },
-    { label: 'Suprafață EPDM',               thicknessMm:   6, texture: 'epdm'       },
+    { label: 'Amorsă',                            thicknessMm:   1, texture: 'primer'       },
+    { label: 'Strat SBR',                         thicknessMm:  10, texture: 'sbr'          },
+    { label: 'Strat poliuretan — strat 1',        thicknessMm:   2, texture: 'polyurethane' },
+    { label: 'Strat poliuretan — strat 2',        thicknessMm:   2, texture: 'polyurethane' },
+    { label: 'Suprafață EPDM',                    thicknessMm:   6, texture: 'epdm'         },
   ],
 };
 
@@ -59,10 +59,10 @@ const SPORT_INDOOR: FlooringSystem = {
   title: 'Sistem sport interior (PU)',
   layers: [
     { label: 'Bază de beton',                thicknessMm: 100, texture: 'concrete'   },
-    { label: 'Amorsă',                        thicknessMm:   1, texture: 'concrete'   },
-    { label: 'Strat elastic SBR',             thicknessMm:  10, texture: 'sbr'        },
-    { label: 'Strat poliuretan',              thicknessMm:   2, texture: 'sbr'        },
-    { label: 'Strat de uzură poliuretan (cu marcaje)', thicknessMm: 3, texture: 'sbr' },
+    { label: 'Amorsă',                                           thicknessMm:   1, texture: 'primer'       },
+    { label: 'Strat elastic SBR',                               thicknessMm:  10, texture: 'sbr'          },
+    { label: 'Strat poliuretan',                                thicknessMm:   2, texture: 'polyurethane' },
+    { label: 'Strat de uzură poliuretan (cu marcaje de teren)', thicknessMm:   3, texture: 'polyurethane' },
   ],
 };
 
@@ -71,8 +71,9 @@ const LOCURI_JOACA: FlooringSystem = {
   title: 'Pardoseală loc de joacă (SBR + EPDM)',
   layers: [
     { label: 'Bază de beton',               thicknessMm: 100, texture: 'concrete'    },
-    { label: 'Amorsă',                       thicknessMm:   1, texture: 'concrete'    },
+    { label: 'Amorsă',                       thicknessMm:   1, texture: 'primer'       },
     { label: 'Strat de bază SBR',            thicknessMm:  40, texture: 'sbr'         },
+    { label: 'Liant poliuretanic',           thicknessMm: 1.5, texture: 'polyurethane' },
     { label: 'Suprafață EPDM colorată',      thicknessMm:  13, texture: 'epdm'        },
   ],
 };
@@ -82,7 +83,7 @@ const PARDOSELI_PIATRA: FlooringSystem = {
   title: 'Pardoseală de piatră legată cu rășină',
   layers: [
     { label: 'Bază de beton',               thicknessMm: 100, texture: 'concrete'    },
-    { label: 'Amorsă',                       thicknessMm:   1, texture: 'concrete'    },
+    { label: 'Amorsă',                       thicknessMm:   1, texture: 'primer'      },
     { label: 'Mortar piatră + rășină',       thicknessMm:  18, texture: 'resin-stone' },
   ],
 };
@@ -91,7 +92,7 @@ const GAZON_SINTETIC: FlooringSystem = {
   id: 'gazon-sintetic',
   title: 'Gazon sintetic cu plută',
   layers: [
-    { label: 'Trasament balast compactat',          thicknessMm: 150, texture: 'asphalt' },
+    { label: 'Subbază balast compactat',            thicknessMm: 150, texture: 'asphalt' },
     { label: 'Piatră spartă 0–63 compactată',       thicknessMm: 100, texture: 'asphalt' },
     { label: 'Gazon sintetic + umplutură (granule plută)', thicknessMm: 40, texture: 'grass' },
   ],
