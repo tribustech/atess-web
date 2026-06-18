@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-label="IVC (placeholder logo)">
+  <rect width="240" height="80" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="239" height="79" fill="none" stroke="#e2e6e9"/>
+  <text x="120" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1c2024">IVC</text>
+  <text x="120" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#9aa1a7">logo placeholder</text>
+</svg>
