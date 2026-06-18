@@ -23,6 +23,7 @@ const PayloadSchema = z.object({
   answers: AnswersSchema,
   originalAnswers: AnswersSchema.optional(),
   acceptedRule: z.string().optional(),
+  readRules: z.array(z.string()).max(20).optional(),
   contact: z.object({
     name: z.string().min(2).max(80),
     phone: z.string().regex(/^(\+4)?0[2-7][0-9]{8}$/),
@@ -123,6 +124,7 @@ export async function POST(req: Request) {
     answers: payload.answers as Parameters<typeof buildConfiguratorEmail>[0]["answers"],
     originalAnswers: payload.originalAnswers as Parameters<typeof buildConfiguratorEmail>[0]["originalAnswers"],
     acceptedRule: payload.acceptedRule,
+    readRules: payload.readRules,
     contact: payload.contact,
   });
 

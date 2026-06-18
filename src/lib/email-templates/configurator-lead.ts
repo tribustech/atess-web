@@ -1,11 +1,18 @@
 import type { Answers, ContactFields } from "@/app/configurator/types";
+import { getRuleById } from "@/app/configurator/rules";
 
 export type ConfiguratorEmailInput = {
   answers: Answers;
   originalAnswers?: Answers;
   acceptedRule?: string;
+  readRules?: string[];
   contact: ContactFields;
 };
+
+function ruleTitle(id: string): string {
+  const r = getRuleById(id);
+  return r?.then.title ?? r?.then.suggest ?? id;
+}
 
 const LABELS: Record<keyof Answers, string> = {
   projectType: "Tip proiect",
@@ -37,7 +44,8 @@ function escapeHtml(s: unknown): string {
 }
 
 export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
-  const { answers, originalAnswers, acceptedRule, contact } = input;
+  const { answers, originalAnswers, acceptedRule, readRules = [], contact } = input;
+  const engaged = readRules.filter((id) => id !== acceptedRule);
 
   const subject = `[Configurator] ${answers.projectType ?? "—"} — ${contact.name} (${contact.judet})`;
 
@@ -63,6 +71,14 @@ export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
       `=== Recomandare aplicată ===`,
       `Regulă: ${acceptedRule}`,
       ...answersTextLines(originalAnswers).map((l) => `Original ${l.slice(2)}`),
+    );
+  }
+
+  if (engaged.length > 0) {
+    textLines.push(
+      ``,
+      `=== Recomandări citite de client ===`,
+      ...engaged.map((id) => `- ${ruleTitle(id)} (${id})`),
     );
   }
 
@@ -107,6 +123,20 @@ export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
          </table>`
       : "";
 
+  const readSection =
+    engaged.length > 0
+      ? `<h3 style="margin:24px 0 8px;color:#2563eb;">Recomandări citite de client</h3>
+         <p style="margin:0 0 8px;color:#666;">Clientul a deschis aceste recomandări în configurator.</p>
+         <ul style="margin:0;padding-left:18px;font-size:14px;color:#111;">
+           ${engaged
+             .map(
+               (id) =>
+                 `<li style="margin:0 0 4px;">${escapeHtml(ruleTitle(id))} <code style="color:#666;">${escapeHtml(id)}</code></li>`,
+             )
+             .join("")}
+         </ul>`
+      : "";
+
   const html = `<!doctype html><html><body style="font-family:system-ui,sans-serif;color:#111;">
 <h2 style="margin:0 0 8px;">Lead configurator atess.ro</h2>
 <p style="margin:0 0 24px;color:#666;">Trimite o ofertă de orientare prin telefon în 1 zi lucrătoare.</p>
@@ -118,6 +148,7 @@ export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
 <table style="border-collapse:collapse;width:100%;font-size:14px;">${contactRows}</table>
 
 ${diffSection}
+${readSection}
 </body></html>`;
 
   return { subject, text, html };
