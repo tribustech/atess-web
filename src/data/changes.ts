@@ -87,9 +87,9 @@ export const changes: ChangeEntry[] = [
       "Copiati stilul Tarkett pe paginile de categorie -- montaj, intretinere, straturi -- asta rankeaza.",
     timestamp: "F3 21:19",
     whatChanged:
-      "Au fost create pagini de categorie dedicate pentru toate cele 7 categorii de servicii. Fiecare pagina contine descriere tehnica, lista straturilor, domenii de aplicare si un CTA. Fotografiile de produs sunt temporar placeholder -- Teo urmeaza sa furnizeze imaginile reale.",
+      "Au fost create pagini de categorie dedicate pentru toate cele 8 categorii de servicii. Fiecare pagina contine descriere tehnica, lista straturilor, domenii de aplicare si un CTA. Fotografiile de produs sunt temporar placeholder -- Teo urmeaza sa furnizeze imaginile reale.",
     status: "needs-asset",
-    route: "/servicii/interior/pardoseli-sportive-indoor",
+    route: "/servicii/sport-indoor",
     afterImage: "/changes/after/servicii-category.png",
   },
 
