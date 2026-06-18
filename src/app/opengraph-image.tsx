@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ATESS Project — Pardoseli sportive profesionale";
+export const alt = "ATESS Project — Pardoseli profesionale";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -51,7 +51,7 @@ export default async function OpengraphImage() {
               maxWidth: "900px",
             }}
           >
-            Pardoseli sportive profesionale
+            Pardoseli profesionale
           </div>
           <div
             style={{

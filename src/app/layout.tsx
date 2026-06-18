@@ -38,13 +38,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ATESS Project — Pardoseli sportive profesionale",
+    default: "ATESS Project — Pardoseli profesionale",
     template: "%s | ATESS Project",
   },
   description:
-    "Pardoseli sportive profesionale. Aplicator certificat Stockmeier. 10+ ani pe teren.",
+    "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier. 10+ ani pe teren.",
   applicationName: "ATESS Project",
   keywords: [
+    "pardoseli profesionale",
     "pardoseli sportive",
     "Stockmeier",
     "tartan",
@@ -59,8 +60,8 @@ export const metadata: Metadata = {
     locale: "ro_RO",
     url: "/",
     siteName: "ATESS Project",
-    title: "ATESS Project — Pardoseli sportive profesionale",
-    description: "Aplicator certificat Stockmeier.",
+    title: "ATESS Project — Pardoseli profesionale",
+    description: "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier.",
     images: [
       {
         url: "/opengraph-image",
@@ -72,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ATESS Project",
-    description: "Pardoseli sportive profesionale",
+    title: "ATESS Project — Pardoseli profesionale",
+    description: "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier.",
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg" },
