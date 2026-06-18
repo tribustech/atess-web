@@ -3,6 +3,7 @@ import academyRaw from "@/data/academy.json";
 export type AcademyCategory = "fundamente" | "decizii" | "tehnic" | "specializari";
 export type AcademyLevel = "incepator" | "intermediar" | "avansat";
 export type AcademyAudience = "arhitecti" | "beneficiari" | "antreprenori";
+export type AcademyStatus = "published" | "draft";
 
 export type AcademySection =
   | { type: "p"; text: string }
@@ -18,11 +19,13 @@ export interface AcademyArticle {
   title: string;
   dek: string;
   category: AcademyCategory;
+  categories: AcademyCategory[];
   audience: AcademyAudience[];
   level: AcademyLevel;
   readingMin: number;
   tags: string[];
   featured: boolean;
+  status: AcademyStatus;
   sections: AcademySection[];
 }
 
@@ -64,6 +67,17 @@ export function getAllArticles(): AcademyArticle[] {
   return articles;
 }
 
+export function getPublishedArticles(): AcademyArticle[] {
+  return articles.filter((a) => a.status === "published");
+}
+
+export function getFeaturedArticles(limit = 3): AcademyArticle[] {
+  return getPublishedArticles()
+    .filter((a) => a.featured)
+    .sort((a, b) => CATEGORY_META[a.category].order - CATEGORY_META[b.category].order)
+    .slice(0, limit);
+}
+
 export function getArticleBySlug(slug: string): AcademyArticle | undefined {
   return articles.find((a) => a.slug === slug);
 }
@@ -75,10 +89,13 @@ export function getArticlesGroupedByCategory(): Array<{
   articles: AcademyArticle[];
 }> {
   const map = new Map<AcademyCategory, AcademyArticle[]>();
-  for (const a of articles) {
-    const list = map.get(a.category) ?? [];
-    list.push(a);
-    map.set(a.category, list);
+  for (const a of getPublishedArticles()) {
+    const cats = a.categories.length > 0 ? a.categories : [a.category];
+    for (const cat of cats) {
+      const list = map.get(cat) ?? [];
+      list.push(a);
+      map.set(cat, list);
+    }
   }
   return (Array.from(map.entries()) as Array<[AcademyCategory, AcademyArticle[]]>)
     .map(([category, list]) => ({
@@ -93,12 +110,14 @@ export function getArticlesGroupedByCategory(): Array<{
 export function getRelatedArticles(slug: string, count = 3): AcademyArticle[] {
   const current = getArticleBySlug(slug);
   if (!current) return [];
-  const scored = articles
+  const currentCats = current.categories.length > 0 ? current.categories : [current.category];
+  const scored = getPublishedArticles()
     .filter((a) => a.slug !== slug)
     .map((a) => {
-      const sameCat = a.category === current.category ? 2 : 0;
+      const aCats = a.categories.length > 0 ? a.categories : [a.category];
+      const catOverlap = aCats.filter((c) => currentCats.includes(c)).length * 2;
       const tagOverlap = a.tags.filter((t) => current.tags.includes(t)).length;
-      return { article: a, score: sameCat + tagOverlap };
+      return { article: a, score: catOverlap + tagOverlap };
     })
     .sort((x, y) => y.score - x.score);
   return scored.slice(0, count).map((s) => s.article);
