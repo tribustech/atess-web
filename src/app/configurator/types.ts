@@ -61,6 +61,8 @@ export type State = {
   history: StepId[];
   current: StepId;
   firedRules: string[];
+  readRules: string[];
+  declinedRules: string[];
   pendingRuleId?: string;
   acceptedRule?: string;
   originalAnswers?: Answers;
@@ -74,9 +76,16 @@ export type Action =
   | { type: "back" }
   | { type: "goto"; step: StepId }
   | { type: "rule-fired"; ruleId: string }
+  | { type: "read-rule"; ruleId: string }
   | { type: "accept-rule"; ruleId: string; rewrite?: Partial<Answers> }
   | { type: "decline-rule"; ruleId: string }
   | { type: "revert-rule" }
   | { type: "set-contact"; contact: ContactFields }
   | { type: "set-files"; files: File[] }
   | { type: "reset" };
+
+export type EngagedRecommendation = {
+  ruleId: string;
+  read: boolean;
+  applied: boolean;
+};
