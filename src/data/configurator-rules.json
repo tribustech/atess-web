@@ -63,6 +63,16 @@
     }
   },
   {
+    "id": "public-nesupervizat-fara-fundatie",
+    "if": { "context": "public-nesupervizat", "baseLayer": "niciuna" },
+    "then": {
+      "suggest": "turnare-completa",
+      "title": "Spațiu public nesupervizat fără fundație — stratul suport este obligatoriu",
+      "message": "Pentru un spațiu public nesupravegheat fără fundație existentă, stratul suport turnat nu este opțional — este condiția de bază pentru durabilitate. Spațiile publice preiau o uzură continuă și imprevizibilă; fără o bază stabilă, pardoseala cedează în primii ani indiferent de calitatea sistemului ales.",
+      "detail": "Spațiile publice nesupervizate funcționează non-stop și sunt accesate de toate categoriile de utilizatori: adulți, copii, bicicliști, trotinete, ocazional evenimente improvizate. Această încărcare variată și intensă cere o fundație corect dimensionată. Schema recomandată: balast compactat 15–20 cm în straturi, peste care beton sclivisit 8–15 cm cu armătură sau asfalt 5–7 cm, și abia apoi sistemul sportiv sau EPDM. Fără strat suport, ciclurile de îngheț-dezgheț și compactarea progresivă a solului fisurează pardoseala în 2–3 ani — indiferent de grosimea sau calitatea ei. La un buget public, intervențiile repetate ajung să coste mai mult decât turnarea corectă de la început. Termenul de execuție crește cu 3–5 săptămâni (maturare beton 28 de zile sau stabilizare asfalt), dar lucrarea realizată corect durează 15–20 de ani fără reparații majore."
+    }
+  },
+  {
     "id": "fara-fundatie",
     "if": { "baseLayer": "niciuna" },
     "then": {
