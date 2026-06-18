@@ -13,7 +13,17 @@ type MediaItem =
 
 const MEDIA: MediaItem[] = [
   { type: "image", src: heroSlides[0].src, slide: heroSlides[0] },
-  { type: "video", src: heroVideo, slide: heroSlides[0] },
+  {
+    type: "video",
+    src: heroVideo,
+    slide: {
+      src: heroVideo,
+      eyebrow: "Pardoseli profesionale",
+      caption:
+        "Sisteme complete pentru exterior și interior, executate la cheie.",
+      href: "/servicii",
+    } satisfies HeroSlide,
+  },
   ...heroSlides.slice(1).map((slide) => ({
     type: "image" as const,
     src: slide.src,
@@ -127,21 +137,21 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <Link href={active.href} className="w-full sm:w-auto">
+            <Link href="/configurator" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
               >
-                Descoperă categoria
+                Configurează-ți proiectul
               </Button>
             </Link>
-            <Link href="/configurator" className="w-full sm:w-auto">
+            <Link href={active.href} className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
                 className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
               >
-                Configurează-ți proiectul
+                Descoperă categoria
               </Button>
             </Link>
           </div>
