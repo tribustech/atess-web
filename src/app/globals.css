@@ -57,6 +57,18 @@
     background: var(--color-accent-primary);
     color: var(--color-text-primary);
   }
+
+  /* Intro loader: pre-paint dark cover, shown only on a first hard load of "/".
+     The IntroLoader component removes `intro-active` once its overlay paints. */
+  #intro-cover { display: none; }
+  html.intro-active #intro-cover {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 9998;
+  }
+  html.intro-active body { overflow: hidden; }
 }
 
 @layer utilities {

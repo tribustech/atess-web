@@ -4,7 +4,12 @@ import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
 import { LenisProvider } from "@/components/motion/LenisProvider";
 import { PageTransition } from "@/components/motion/PageTransition";
+import { IntroLoader } from "@/components/motion/IntroLoader";
 import "./globals.css";
+
+// Runs before first paint on a hard load: flags the homepage's first visit so a
+// dark cover paints immediately (no page flash before the intro animation mounts).
+const introBootstrap = `try{var p=location.pathname;if((p==='/'||p==='')&&!sessionStorage.getItem('atess_intro_seen')){document.documentElement.classList.add('intro-active')}}catch(e){}`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -89,7 +94,10 @@ export default function RootLayout({
       className={`dark ${inter.variable} ${fraunces.variable} ${spaceGrotesk.variable}`}
     >
       <body className="bg-bg-base text-text-primary min-h-screen flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: introBootstrap }} />
+        <div id="intro-cover" aria-hidden="true" />
         <LenisProvider>
+          <IntroLoader />
           <Header />
           <PageTransition>{children}</PageTransition>
           <Footer />
