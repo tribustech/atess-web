@@ -64,11 +64,11 @@ export function Header() {
           aria-label="ATESS Project"
         >
           <Image
-            src="/images/logo-atess-white-placeholder.svg"
+            src="/images/logo-bg-horizontal.png"
             alt="ATESS Project"
-            width={160}
-            height={45}
-            className="h-9 w-auto sm:h-11"
+            width={1414}
+            height={382}
+            className="h-9 w-auto sm:h-10 lg:h-11"
             priority
             draggable={false}
           />
@@ -104,7 +104,7 @@ export function Header() {
                       "text-sm font-medium tracking-wide uppercase transition-colors",
                       isActive
                         ? "text-accent-primary"
-                        : "text-text-muted hover:text-text-primary"
+                        : "text-text-primary/80 hover:text-text-primary"
                     )}
                   >
                     {item.label}
@@ -136,7 +136,7 @@ export function Header() {
                   "text-sm font-medium tracking-wide uppercase transition-colors",
                   isActive
                     ? "text-accent-primary"
-                    : "text-text-muted hover:text-text-primary"
+                    : "text-text-primary/80 hover:text-text-primary"
                 )}
               >
                 {item.label}
