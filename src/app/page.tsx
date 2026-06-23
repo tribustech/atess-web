@@ -4,6 +4,7 @@ import { ClientsSection } from "@/components/home/ClientsSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { SnapSection } from "@/components/home/SnapSection";
 import { ProducersSection } from "@/components/home/ProducersSection";
+import { InteriorExteriorSplit } from "@/components/home/InteriorExteriorSplit";
 import { FeaturedArticlesSection } from "@/components/home/FeaturedArticlesSection";
 import { getFeaturedArticles } from "@/lib/academy";
 
@@ -63,19 +64,11 @@ export default function Home() {
         <SnapSection id="hero">
           <HeroSection />
         </SnapSection>
+        <SnapSection id="interior-exterior" className="bg-bg-base">
+          <InteriorExteriorSplit />
+        </SnapSection>
         <SnapSection id="producers" className="bg-bg-base">
           <ProducersSection />
-        </SnapSection>
-        {/* HOME-FEATURE PLACEHOLDER: Teo va alege elementul vizual de impact care înlocuiește blocul 3D aici (CHANGE-PLAN §3 / F4 01:09) */}
-        <SnapSection id="home-feature" className="bg-bg-base">
-          <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col items-center justify-center px-6 py-24 md:px-10">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-text-muted">
-              Secțiune în pregătire
-            </p>
-            <p className="mt-4 max-w-xl text-center text-lg text-text-muted">
-              Elementul vizual de impact va fi definit în faza următoare.
-            </p>
-          </div>
         </SnapSection>
         <SnapSection id="clients" className="bg-bg-base">
           <ClientsSection />

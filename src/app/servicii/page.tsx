@@ -38,7 +38,7 @@ export default function ServiciiPage() {
       {AXES.map((axis) => {
         const categories = getCategoriesByAxis(axis);
         return (
-          <section key={axis} className="mb-20">
+          <section key={axis} id={axis} className="mb-20 scroll-mt-28">
             <h2 className="mb-8 text-2xl font-semibold text-text-primary">
               {AXIS_LABEL[axis]}
             </h2>
