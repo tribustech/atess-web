@@ -2,6 +2,11 @@
  * INTERN / NOINDEX — Jurnal al modificărilor pentru redesign-ul ATESS.
  * Prezentare pentru client: grupează cererile lui Teo cu înainte/după.
  *
+ * Fiecare modificare este un acordeon (<details>) — restrâns implicit pentru
+ * scanare rapidă, extins pentru a vedea citatul, ce s-a făcut și înainte/după.
+ * Folosim acordeonul ca instrument de lucru: mergem secțiune cu secțiune și
+ * îmbunătățim fiecare intrare de aici.
+ *
  * Nu indexa, nu lansa în producție ca pagină publică.
  */
 
@@ -65,6 +70,40 @@ function TimestampChip({ timestamp }: { timestamp: string }) {
   );
 }
 
+function ImagePane({
+  src,
+  label,
+  dot,
+}: {
+  src: string;
+  label: string;
+  dot: string;
+}) {
+  return (
+    <div className="overflow-hidden rounded-lg border border-white/10">
+      <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-neutral-900 px-3 py-2">
+        <span className="flex items-center gap-2">
+          <span className={`h-2 w-2 rounded-full ${dot}`} />
+          <span className="text-xs font-medium text-neutral-400">{label}</span>
+        </span>
+        <a
+          href={src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] text-neutral-500 underline-offset-2 hover:text-neutral-300 hover:underline"
+        >
+          deschide
+        </a>
+      </div>
+      {/* Tall full-page captures — scroll within the pane so the card stays compact */}
+      <div className="max-h-[520px] overflow-y-auto bg-neutral-950">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={label} className="w-full" loading="lazy" />
+      </div>
+    </div>
+  );
+}
+
 function ImageComparison({
   beforeImage,
   afterImage,
@@ -77,21 +116,7 @@ function ImageComparison({
   return (
     <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
       {beforeImage ? (
-        <div className="overflow-hidden rounded-lg border border-white/10">
-          <div className="flex items-center gap-2 border-b border-white/10 bg-neutral-900 px-3 py-2">
-            <span className="h-2 w-2 rounded-full bg-red-500/70" />
-            <span className="text-xs font-medium text-neutral-400">Înainte</span>
-          </div>
-          <div className="bg-neutral-950">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={beforeImage}
-              alt="Înainte"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        <ImagePane src={beforeImage} label="Înainte" dot="bg-red-500/70" />
       ) : (
         <div className="flex items-center justify-center rounded-lg border border-dashed border-white/10 bg-neutral-950 p-8 text-center">
           <p className="text-xs text-neutral-500">
@@ -102,58 +127,70 @@ function ImageComparison({
       )}
 
       {afterImage ? (
-        <div className="overflow-hidden rounded-lg border border-white/10">
-          <div className="flex items-center gap-2 border-b border-white/10 bg-neutral-900 px-3 py-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-500/70" />
-            <span className="text-xs font-medium text-neutral-400">După</span>
-          </div>
-          <div className="bg-neutral-950">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={afterImage}
-              alt="După"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
+        <ImagePane src={afterImage} label="După" dot="bg-emerald-500/70" />
+      ) : (
+        <div className="flex items-center justify-center rounded-lg border border-dashed border-white/10 bg-neutral-950 p-8 text-center">
+          <p className="text-xs text-neutral-500">Captură în pregătire</p>
         </div>
-      ) : null}
+      )}
     </div>
   );
 }
 
-function ChangeCard({ entry }: { entry: ChangeEntry }) {
+function Chevron() {
   return (
-    <div className="rounded-xl border border-white/8 bg-neutral-900/50 p-5">
-      {/* Header row */}
-      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-        <div className="flex-1">
+    <svg
+      className="h-4 w-4 shrink-0 text-neutral-500 transition-transform duration-200 group-open:rotate-180"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+      aria-hidden="true"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
+
+function ChangeAccordion({ entry }: { entry: ChangeEntry }) {
+  const cfg = STATUS_CONFIG[entry.status];
+  return (
+    <details
+      id={entry.id}
+      className="group overflow-hidden rounded-xl border border-white/8 bg-neutral-900/50 transition-colors open:border-white/15 open:bg-neutral-900/80 scroll-mt-20"
+    >
+      {/* Summary row — always visible, click to toggle */}
+      <summary className="flex cursor-pointer list-none items-start gap-3 p-5 [&::-webkit-details-marker]:hidden">
+        <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${cfg.dot}`} />
+        <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-white">{entry.clientAsk}</p>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <TimestampChip timestamp={entry.timestamp} />
+            <StatusBadge status={entry.status} />
+          </div>
         </div>
-        <div className="flex shrink-0 flex-wrap items-center gap-2">
-          <TimestampChip timestamp={entry.timestamp} />
-          <StatusBadge status={entry.status} />
+        <Chevron />
+      </summary>
+
+      {/* Expanded body */}
+      <div className="border-t border-white/8 px-5 pb-5 pt-4">
+        {/* Quote */}
+        <blockquote className="mb-4 border-l-2 border-white/20 pl-3 text-sm italic text-neutral-400">
+          &ldquo;{entry.quote}&rdquo;
+        </blockquote>
+
+        {/* What changed */}
+        <div className="mb-4">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-neutral-500">
+            Ce am făcut
+          </p>
+          <p className="text-sm leading-relaxed text-neutral-300">
+            {entry.whatChanged}
+          </p>
         </div>
-      </div>
 
-      {/* Quote */}
-      <blockquote className="mb-4 border-l-2 border-white/20 pl-3 text-sm italic text-neutral-400">
-        &ldquo;{entry.quote}&rdquo;
-      </blockquote>
-
-      {/* What changed */}
-      <div className="mb-4">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-neutral-500">
-          Ce am făcut
-        </p>
-        <p className="text-sm leading-relaxed text-neutral-300">
-          {entry.whatChanged}
-        </p>
-      </div>
-
-      {/* Live route link */}
-      {entry.route && (
-        <div className="mb-1">
+        {/* Live route link */}
+        {entry.route && (
           <a
             href={entry.route}
             target="_blank"
@@ -166,6 +203,7 @@ function ChangeCard({ entry }: { entry: ChangeEntry }) {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -176,15 +214,15 @@ function ChangeCard({ entry }: { entry: ChangeEntry }) {
             Vezi pagina
             <span className="font-mono text-neutral-500">{entry.route}</span>
           </a>
-        </div>
-      )}
+        )}
 
-      {/* Before / After images */}
-      <ImageComparison
-        beforeImage={entry.beforeImage}
-        afterImage={entry.afterImage}
-      />
-    </div>
+        {/* Before / After images */}
+        <ImageComparison
+          beforeImage={entry.beforeImage}
+          afterImage={entry.afterImage}
+        />
+      </div>
+    </details>
   );
 }
 
@@ -202,16 +240,20 @@ function SectionBlock({
   ).length;
 
   return (
-    <section className="mb-16">
+    <section className="mb-12">
       {/* Section heading */}
-      <div className="mb-6 flex flex-wrap items-center gap-4">
+      <div className="mb-4 flex flex-wrap items-center gap-4">
         <h2 className="text-lg font-semibold text-white">{sectionName}</h2>
         <div className="flex items-center gap-2 text-xs text-neutral-500">
           {doneCount > 0 && (
-            <span className="text-emerald-400">{doneCount} implementat{doneCount !== 1 ? "e" : ""}</span>
+            <span className="text-emerald-400">
+              {doneCount} implementat{doneCount !== 1 ? "e" : ""}
+            </span>
           )}
           {partialCount > 0 && (
-            <span className="text-amber-400">{partialCount} parțial{partialCount !== 1 ? "e" : ""}</span>
+            <span className="text-amber-400">
+              {partialCount} parțial{partialCount !== 1 ? "e" : ""}
+            </span>
           )}
           {needsAssetCount > 0 && (
             <span className="text-sky-400">{needsAssetCount} în așteptare</span>
@@ -219,9 +261,9 @@ function SectionBlock({
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
         {entries.map((entry) => (
-          <ChangeCard key={entry.id} entry={entry} />
+          <ChangeAccordion key={entry.id} entry={entry} />
         ))}
       </div>
     </section>
@@ -255,7 +297,7 @@ export default function ChangesPage() {
 
       <div className="mx-auto max-w-4xl px-6 pb-24 pt-12">
         {/* Page header */}
-        <div className="mb-12">
+        <div className="mb-10">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
             ATESS Project · Redesign 2025
           </p>
@@ -265,9 +307,9 @@ export default function ChangesPage() {
           <p className="max-w-2xl text-base leading-relaxed text-neutral-400">
             Această pagină documentează toate modificările realizate în cadrul
             redesign-ului site-ului ATESS Project, grupate pe arii tematice
-            conform solicitărilor discutate. Fiecare intrare include cererea
-            originală, citatul relevant din sesiunea de feedback și ce a fost
-            implementat.
+            conform solicitărilor discutate. Apasă pe orice intrare pentru a
+            vedea cererea originală, citatul din sesiunea de feedback, ce a fost
+            implementat și comparația înainte/după.
           </p>
 
           {/* Summary stats */}
@@ -308,7 +350,7 @@ export default function ChangesPage() {
         </div>
 
         {/* Divider */}
-        <div className="mb-12 border-t border-white/8" />
+        <div className="mb-10 border-t border-white/8" />
 
         {/* Sections */}
         {orderedSections.map((sectionName) => (
