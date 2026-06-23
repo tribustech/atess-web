@@ -16,16 +16,17 @@
         "body": "Aplicarea respectă fișa tehnică originală a producătorului: pregătirea suportului, controlul umidității și al temperaturii, dozarea corectă a componentelor. Întreținerea periodică — curățare și verificarea drenajului — prelungește durata de viață a suprafeței."
       }
     ],
-    "applications": [],
+    "applications": ["Piste de atletism", "Terenuri multisport", "Terenuri de tenis"],
     "isSport": true,
     "model3dId": "sport-outdoor",
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem sportiv de exterior",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/sport-outdoor.webp",
+      "alt": "Pistă de atletism cu suprafață sportivă turnată de exterior",
+      "caption": "Suprafață sportivă de exterior — pistă de atletism cu strat de uzură EPDM.",
+      "placeholder": false
     },
     "relatedProjectCategory": "multisport",
+    "relatedProjectTags": ["piste-atletism", "multisport"],
     "relatedArticleSlugs": []
   },
   {
@@ -49,10 +50,10 @@
     "isSport": false,
     "model3dId": "locuri-joaca",
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem pentru locuri de joacă",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/locuri-joaca.webp",
+      "alt": "Loc de joacă cu pardoseală turnată antitraumatică",
+      "caption": "Suprafață antitraumatică turnată pentru locuri de joacă.",
+      "placeholder": false
     },
     "relatedProjectCategory": "locuri-joaca",
     "relatedArticleSlugs": []
@@ -72,16 +73,20 @@
       {
         "heading": "Aplicații",
         "body": "Recomandată pentru alei, terase, zone din jurul piscinelor și amenajări peisagistice unde se dorește un aspect natural și un drenaj bun."
+      },
+      {
+        "heading": "Montaj și întreținere",
+        "body": "Amestecul de agregate și liant se aplică manual pe o bază pregătită și se nivelează până la grosimea proiectată. Suprafața rezultată este drenantă și ușor de întreținut prin spălare, iar zonele solicitate intens se pot reface punctual."
       }
     ],
     "applications": ["Alei și terase", "Zone de piscină", "Amenajări peisagistice"],
     "isSport": false,
     "model3dId": "pardoseli-piatra",
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem de pardoseală de piatră",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/pardoseli-piatra.webp",
+      "alt": "Covor de piatră decorativ pe liant rășinos",
+      "caption": "Covor de piatră decorativ și drenant, cu agregate naturale.",
+      "placeholder": false
     },
     "relatedProjectCategory": "spatii-publice",
     "relatedArticleSlugs": []
@@ -97,15 +102,19 @@
       {
         "heading": "Criterii de alegere",
         "body": "Selecția sistemului ține cont de trafic, expunerea la intemperii și aspectul dorit. Suprafața finală trebuie să fie antiderapantă și rezistentă la uzură."
+      },
+      {
+        "heading": "Montaj și întreținere",
+        "body": "Suprafața se aplică pe un suport pregătit și compactat, cu amorsă de aderență și un strat de uzură rezistent la trafic pietonal. Întreținerea curentă presupune curățarea periodică și verificarea integrității stratului, pentru a păstra aderența și aspectul în timp."
       }
     ],
     "applications": ["Circulații în parcuri", "Trotuare amenajate", "Spații instituționale"],
     "isSport": false,
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem de alee pietonală",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/alei-pietonale.webp",
+      "alt": "Alee pietonală amenajată într-un spațiu verde",
+      "caption": "Suprafață continuă pentru circulații pietonale în spații publice.",
+      "placeholder": false
     },
     "relatedProjectCategory": "spatii-publice",
     "relatedArticleSlugs": []
@@ -131,10 +140,10 @@
     "isSport": true,
     "model3dId": "sport-indoor",
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem sportiv de interior",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/sport-indoor.webp",
+      "alt": "Sală de sport de interior cu pardoseală sportivă marcată",
+      "caption": "Pardoseală sportivă de interior pentru săli și baze sportive.",
+      "placeholder": false
     },
     "relatedProjectCategory": "multisport",
     "relatedArticleSlugs": []
@@ -150,15 +159,19 @@
       {
         "heading": "Plăci vs. rolă",
         "body": "Plăcile modulare permit înlocuirea punctuală și gestionarea cablajului, în timp ce mocheta din rolă oferă o suprafață continuă. Alegerea depinde de utilizare și de bugetul de întreținere."
+      },
+      {
+        "heading": "Montaj și întreținere",
+        "body": "Montajul se realizează pe șapă plană și uscată, cu adeziv sau bandă dublu-adezivă în cazul plăcilor modulare. Întreținerea presupune aspirare regulată și curățare profesională periodică, iar plăcile uzate se pot înlocui individual, fără a reface întreaga suprafață."
       }
     ],
     "applications": ["Birouri corporate", "Spații comerciale", "Hoteluri"],
     "isSport": false,
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem de mochetă",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/mocheta.webp",
+      "alt": "Mochetă modulară pentru spații de birou",
+      "caption": "Mochetă modulară pentru birouri și spații comerciale.",
+      "placeholder": false
     },
     "relatedProjectCategory": "interioare",
     "relatedArticleSlugs": []
@@ -183,10 +196,10 @@
     "applications": ["Unități medicale", "Spații educaționale", "Spații comerciale"],
     "isSport": false,
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem PVC sau linoleum",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/pvc-linoleum.webp",
+      "alt": "Coridor medical cu pardoseală din covor PVC",
+      "caption": "Covor PVC pentru spații medicale, educaționale și comerciale.",
+      "placeholder": false
     },
     "relatedProjectCategory": "interioare",
     "relatedArticleSlugs": []
@@ -202,15 +215,19 @@
       {
         "heading": "Avantaje",
         "body": "LVT-urile bune arată identic cu parchetul, dar tolerează umezeala și traficul intens. Montajul poate fi prin lipire sau prin sistem click."
+      },
+      {
+        "heading": "Montaj și întreținere",
+        "body": "LVT-ul se montează prin lipire sau prin sistem click, pe un suport plan și uscat. Întreținerea este simplă — curățare uscată și umedă cu produse neutre — iar rezistența la umezeală îl recomandă inclusiv pentru bucătării și holuri."
       }
     ],
     "applications": ["Spații rezidențiale premium", "Showroom-uri", "Birouri"],
     "isSport": false,
     "layerPhoto": {
-      "src": "/images/services/placeholder-layers.webp",
-      "alt": "Secțiune prin straturile unui sistem LVT",
-      "caption": "Imagine demonstrativă a structurii pe straturi (înlocuită cu fotografia reală).",
-      "placeholder": true
+      "src": "/images/services/menu/lvt.webp",
+      "alt": "Spațiu rezidențial cu pardoseală LVT cu aspect de lemn",
+      "caption": "LVT cu aspect natural de lemn, rezistent la trafic și umezeală.",
+      "placeholder": false
     },
     "relatedProjectCategory": "interioare",
     "relatedArticleSlugs": []

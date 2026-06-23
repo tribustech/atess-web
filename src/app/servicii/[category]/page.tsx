@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { getAllCategories, getCategory } from "@/lib/services";
+import {
+  getAllCategories,
+  getCategory,
+  getRelatedProjectTags,
+} from "@/lib/services";
 import { getServiceSubcategories } from "@/lib/serviceSubcategories";
+import { getProjectsByCategories } from "@/lib/projects";
 import { CategoryLayerPhoto } from "@/components/servicii/CategoryLayerPhoto";
+import { ProjectCard } from "@/components/proiecte/ProjectCard";
 import { RelatedProjectsLink } from "@/components/servicii/RelatedProjectsLink";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
@@ -50,6 +56,9 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
   }
 
   const subcategories = getServiceSubcategories(cat.slug);
+  const relatedProjects = getProjectsByCategories(
+    getRelatedProjectTags(cat),
+  ).slice(0, 6);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -178,7 +187,26 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* ─── Related Projects + Back ────────────────────────────────────────── */}
+        {/* ─── Tagged Projects ───────────────────────────────────────────────── */}
+        {relatedProjects.length > 0 && (
+          <section className="border-t border-border">
+            <div className="mx-auto max-w-5xl px-6 py-12 md:py-16">
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.35em] text-accent-primary">
+                Portofoliu
+              </p>
+              <h2 className="mb-8 text-2xl font-semibold tracking-tight md:text-3xl">
+                Proiecte din această categorie
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {relatedProjects.map((project) => (
+                  <ProjectCard key={project.slug} project={project} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ─── Related Projects link + Back ───────────────────────────────────── */}
         <section className="border-t border-border">
           <div className="mx-auto max-w-5xl px-6 py-10 md:py-12">
             <RelatedProjectsLink

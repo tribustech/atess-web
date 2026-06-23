@@ -41,6 +41,18 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
+/**
+ * Returns every project carrying one of the given category tags, in source
+ * order. Used to surface real, tagged projects on the matching service
+ * category page (/servicii/[slug]).
+ */
+export function getProjectsByCategories(
+  categories: readonly ProjectCategory[],
+): Project[] {
+  const wanted = new Set<ProjectCategory>(categories);
+  return projects.filter((p) => wanted.has(p.category));
+}
+
 // ---------------------------------------------------------------------------
 // Grouped by canonical category (all 6; empty categories are excluded)
 // ---------------------------------------------------------------------------

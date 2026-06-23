@@ -71,7 +71,18 @@ const categorySchema = z.object({
   /** Only present on the 4 categories that have a 3-D model */
   model3dId: z.enum(FLOORING_SYSTEM_IDS).optional(),
   layerPhoto: layerPhotoSchema,
+  /** Primary project tag — drives the "see all in gallery" link (?categorie=). */
   relatedProjectCategory: z.enum(RELATED_PROJECT_CATEGORIES),
+  /**
+   * Optional set of project tags whose projects are shown as cards on the
+   * category page. When omitted, falls back to [relatedProjectCategory].
+   * Lets a category span multiple tags (e.g. sportive outdoor = atletism +
+   * multisport). Use getRelatedProjectTags() to resolve the effective list.
+   */
+  relatedProjectTags: z
+    .array(z.enum(RELATED_PROJECT_CATEGORIES))
+    .nonempty()
+    .optional(),
   relatedArticleSlugs: z.array(z.string()),
 });
 
@@ -182,6 +193,17 @@ export function getCategoriesByAxis(axis: ServiceAxis): ServiceCategory[] {
   return categories
     .filter((c) => c.group === group)
     .sort((a, b) => a.order - b.order);
+}
+
+/**
+ * Resolves the effective list of project tags whose projects should be shown
+ * on a category page: explicit `relatedProjectTags` when present, otherwise
+ * the single `relatedProjectCategory`.
+ */
+export function getRelatedProjectTags(
+  cat: ServiceCategory,
+): RelatedProjectCategory[] {
+  return cat.relatedProjectTags ?? [cat.relatedProjectCategory];
 }
 
 /**
