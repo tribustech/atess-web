@@ -1,193 +1,226 @@
 "use client";
 
 /**
- * ServicesMegaMenu — mega-panel shown when hovering "Servicii" in the Header.
+ * ServicesMegaMenu — full-width mega-panel shown when hovering "Servicii".
  *
- * Renders two columns (Exterior / Interior) with all service categories.
- * Each category is a link to /servicii/[slug] with a label, shortBlurb, and
- * a 3-D (or photo/icon fallback) preview via CategoryMega3D.
+ * Layout (Nike-style featured pattern, validated by NN/g + Baymard research):
+ *   - LEFT: two axis groups (Exterior / Interior) with strong headings; each
+ *     category is a link with its subcategories listed beneath. 3 visual
+ *     columns total (2 axis link-columns + 1 featured) stays within the
+ *     "3–4 column sweet spot" that avoids choice overload.
+ *   - RIGHT: a single featured image panel that updates to the category the
+ *     user is hovering — one image instead of eight, which keeps the panel
+ *     light and premium while still being visual.
  *
- * Perf / SSR strategy:
- *   CategoryMega3D is a "use client" component that may spawn a WebGL Canvas.
- *   To avoid SSR issues and eager WebGL init for all 8 categories, the 3-D
- *   slot is only mounted for the currently-hovered category row, and it is
- *   loaded via next/dynamic with ssr:false so the Canvas never executes
- *   server-side. Unhovered rows show a lightweight skeleton placeholder.
+ * Positioning (full-width, fixed under the header) is owned by Header.tsx;
+ * this file owns only the visual bar + content.
  */
 
-import React, { useState } from "react";
-import dynamic from "next/dynamic";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import { getCategoriesByAxis, AXIS_LABEL } from "@/lib/services";
-import type { ServiceCategory, ServiceAxis } from "@/lib/services";
-
-// Dynamic import — ssr:false prevents WebGL Canvas from running on the server
-// and defers bundle loading until the menu is actually rendered client-side.
-const CategoryMega3D = dynamic(
-  () =>
-    import("./CategoryMega3D").then((mod) => ({ default: mod.CategoryMega3D })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="aspect-square w-16 shrink-0 animate-pulse rounded-md bg-neutral-800" />
-    ),
-  },
-);
-
-// ─── Types ────────────────────────────────────────────────────────────────────
+import {
+  getCategoriesByAxis,
+  getCategory,
+  AXIS_LABEL,
+  type ServiceCategory,
+  type ServiceAxis,
+} from "@/lib/services";
+import { getMegaMenuImage } from "@/lib/megaMenuImages";
+import { getServiceSubcategories } from "@/lib/serviceSubcategories";
 
 export interface ServicesMegaMenuProps {
-  /** Called when a link is clicked — Task 9 (Header) uses this to close the panel. */
+  /** Called when a link is clicked — the Header uses this to close the panel. */
   onNavigate?: () => void;
 }
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
+const AXES: ServiceAxis[] = ["exterior", "interior"];
+const DEFAULT_FEATURED = "sport-outdoor";
 
-interface CategoryRowProps {
-  category: ServiceCategory;
+// ─── Axis block (left) ────────────────────────────────────────────────────────
+
+function AxisBlock({
+  axis,
+  onHoverCategory,
+  onNavigate,
+}: {
+  axis: ServiceAxis;
+  onHoverCategory: (slug: string) => void;
   onNavigate?: () => void;
-  isHovered: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+}) {
+  const categories = getCategoriesByAxis(axis);
+  return (
+    <section>
+      {/* Group label — distinct mono/accent eyebrow (NOT a category link) + rule */}
+      <div className="mb-4 flex items-center gap-3">
+        <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-accent-primary">
+          {AXIS_LABEL[axis]}
+        </h2>
+        <span aria-hidden="true" className="h-px flex-1 bg-border" />
+      </div>
+
+      <div className="flex flex-col gap-5">
+        {categories.map((cat) => (
+          <div
+            key={cat.slug}
+            onMouseEnter={() => onHoverCategory(cat.slug)}
+            onFocus={() => onHoverCategory(cat.slug)}
+          >
+            <Link
+              href={`/servicii/${cat.slug}`}
+              onClick={onNavigate}
+              className={cn(
+                "inline-block rounded text-base font-semibold text-text-primary transition-colors hover:text-accent-primary",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+              )}
+            >
+              {cat.label}
+            </Link>
+            <ul className="mt-1.5 flex flex-wrap gap-x-3.5 gap-y-1">
+              {getServiceSubcategories(cat.slug).map((sub) => (
+                <li key={sub.id}>
+                  <Link
+                    href={`/servicii/${cat.slug}#${sub.id}`}
+                    onClick={onNavigate}
+                    className={cn(
+                      "rounded text-[13px] text-text-muted transition-colors hover:text-accent-primary",
+                      "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent-primary",
+                    )}
+                  >
+                    {sub.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-function CategoryRow({
+// ─── Featured panel (right) ───────────────────────────────────────────────────
+
+function FeaturedPanel({
   category,
   onNavigate,
-  isHovered,
-  onMouseEnter,
-  onMouseLeave,
-}: CategoryRowProps): React.JSX.Element {
+}: {
+  category: ServiceCategory;
+  onNavigate?: () => void;
+}) {
+  const photo = getMegaMenuImage(category.slug);
   return (
     <Link
       href={`/servicii/${category.slug}`}
       onClick={onNavigate}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onFocus={onMouseEnter}
-      onBlur={onMouseLeave}
       className={cn(
-        "flex items-start gap-3 rounded-md px-3 py-2 transition-colors",
-        "hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+        "group relative block min-h-[300px] overflow-hidden rounded-xl bg-neutral-900",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base",
       )}
     >
-      {/* 3-D preview — only mounted for the hovered row to avoid spawning 8 canvases */}
-      <div className="w-16 shrink-0">
-        {isHovered ? (
-          <CategoryMega3D category={category} className="w-16" />
-        ) : (
-          <div className="aspect-square w-full rounded-md bg-neutral-800/60" />
-        )}
-      </div>
-
-      <div className="min-w-0 flex-1 pt-0.5">
-        <p className="text-sm font-medium text-text-primary">{category.label}</p>
-        <p className="mt-0.5 line-clamp-2 text-xs text-text-muted">
+      <Image
+        key={photo.src}
+        src={photo.src}
+        alt={photo.alt}
+        fill
+        sizes="360px"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/30 to-transparent"
+      />
+      <div className="absolute inset-x-0 bottom-0 p-5">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-primary">
+          {category.group}
+        </p>
+        <h3 className="mt-1.5 text-lg font-semibold text-white">
+          {category.label}
+        </h3>
+        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/75">
           {category.shortBlurb}
         </p>
+        <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+          Descoperă
+          <ArrowUpRight
+            size={13}
+            className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </span>
       </div>
     </Link>
   );
 }
 
-interface AxisColumnProps {
-  axis: ServiceAxis;
-  categories: ServiceCategory[];
-  hoveredSlug: string | null;
-  onHover: (slug: string | null) => void;
-  onNavigate?: () => void;
-}
-
-function AxisColumn({
-  axis,
-  categories,
-  hoveredSlug,
-  onHover,
-  onNavigate,
-}: AxisColumnProps): React.JSX.Element {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent-primary">
-        {AXIS_LABEL[axis]}
-      </p>
-      {categories.map((cat) => (
-        <CategoryRow
-          key={cat.slug}
-          category={cat}
-          onNavigate={onNavigate}
-          isHovered={hoveredSlug === cat.slug}
-          onMouseEnter={() => onHover(cat.slug)}
-          onMouseLeave={() => onHover(null)}
-        />
-      ))}
-    </div>
-  );
-}
-
 // ─── Main component ───────────────────────────────────────────────────────────
 
-const AXES: ServiceAxis[] = ["exterior", "interior"];
-
-export function ServicesMegaMenu({
-  onNavigate,
-}: ServicesMegaMenuProps): React.JSX.Element {
-  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+export function ServicesMegaMenu({ onNavigate }: ServicesMegaMenuProps) {
+  const [featuredSlug, setFeaturedSlug] = useState<string>(DEFAULT_FEATURED);
+  const featured = getCategory(featuredSlug) ?? getCategory(DEFAULT_FEATURED)!;
 
   return (
     <div
-      className={cn(
-        "w-[min(90vw,880px)] rounded-lg border border-border",
-        "bg-bg-base/95 p-6 shadow-2xl backdrop-blur-md",
-      )}
       id="servicii-mega-menu"
       role="region"
       aria-label="Meniu servicii"
+      className="w-full border-b border-border bg-bg-base/95 backdrop-blur-md shadow-2xl"
     >
-      {/* Heading */}
-      <p className="mb-4 text-xs font-mono uppercase tracking-[0.18em] text-text-muted">
-        Servicii ATESS
-      </p>
+      <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-8">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_340px]">
+          {/* Left: two axis link-columns */}
+          <div className="grid grid-cols-2 gap-x-10 gap-y-2">
+            {AXES.map((axis) => (
+              <AxisBlock
+                key={axis}
+                axis={axis}
+                onHoverCategory={setFeaturedSlug}
+                onNavigate={onNavigate}
+              />
+            ))}
+          </div>
 
-      {/* Two-column grid: Exterior | Interior */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {AXES.map((axis) => (
-          <AxisColumn
-            key={axis}
-            axis={axis}
-            categories={getCategoriesByAxis(axis)}
-            hoveredSlug={hoveredSlug}
-            onHover={setHoveredSlug}
-            onNavigate={onNavigate}
-          />
-        ))}
-      </div>
+          {/* Right: single featured image that follows the hovered category */}
+          <FeaturedPanel category={featured} onNavigate={onNavigate} />
+        </div>
 
-      {/* Footer cross-links */}
-      <div className="mt-6 flex items-center gap-6 border-t border-border pt-4">
-        <Link
-          href="/servicii"
-          onClick={onNavigate}
-          className={cn(
-            "text-xs uppercase tracking-wider text-text-muted",
-            "transition-colors hover:text-text-primary",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary rounded",
-          )}
-        >
-          Toate serviciile
-        </Link>
-        <Link
-          href="/proiecte"
-          onClick={onNavigate}
-          className={cn(
-            "text-xs uppercase tracking-wider text-text-muted",
-            "transition-colors hover:text-text-primary",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary rounded",
-          )}
-        >
-          Vezi proiecte
-        </Link>
+        {/* Footer cross-links */}
+        <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-border pt-5">
+          <Link
+            href="/servicii"
+            onClick={onNavigate}
+            className={cn(
+              "group/link inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.15em] text-text-primary",
+              "transition-colors hover:text-accent-primary",
+              "rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+            )}
+          >
+            Toate serviciile
+            <ArrowUpRight
+              size={14}
+              className="opacity-60 transition-opacity group-hover/link:opacity-100"
+            />
+          </Link>
+          <Link
+            href="/proiecte"
+            onClick={onNavigate}
+            className={cn(
+              "group/link inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.15em] text-text-primary",
+              "transition-colors hover:text-accent-primary",
+              "rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+            )}
+          >
+            Vezi proiecte
+            <ArrowUpRight
+              size={14}
+              className="opacity-60 transition-opacity group-hover/link:opacity-100"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
+
+export default ServicesMegaMenu;

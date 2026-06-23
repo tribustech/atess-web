@@ -101,7 +101,7 @@ export function Lightbox({ entries, index, numberById, onClose, onIndexChange }:
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 outline-none"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 p-4 outline-none"
           onClick={onClose}
           onTouchStart={(e) => {
             touchStartX.current = e.touches[0]?.clientX ?? null;

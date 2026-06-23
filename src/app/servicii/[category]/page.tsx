@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getAllCategories, getCategory } from "@/lib/services";
+import { getServiceSubcategories } from "@/lib/serviceSubcategories";
 import { CategoryLayerPhoto } from "@/components/servicii/CategoryLayerPhoto";
 import { RelatedProjectsLink } from "@/components/servicii/RelatedProjectsLink";
 
@@ -47,6 +48,8 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
   if (!cat) {
     notFound();
   }
+
+  const subcategories = getServiceSubcategories(cat.slug);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -145,30 +148,32 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* ─── Applications ──────────────────────────────────────────────────── */}
-        {cat.applications.length > 0 && (
+        {/* ─── Subcategories ─────────────────────────────────────────────────── */}
+        {subcategories.length > 0 && (
           <section className="border-t border-border bg-bg-elevated/30">
             <div className="mx-auto max-w-5xl px-6 py-12 md:py-16">
               <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.35em] text-accent-primary">
-                Domenii de aplicare
+                Ce executăm
               </p>
               <h2 className="mb-8 text-2xl font-semibold tracking-tight md:text-3xl">
-                Aplicații
+                Tipuri de lucrări
               </h2>
-              <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
-                {cat.applications.map((app, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-start gap-2 text-sm text-text-muted"
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {subcategories.map((sub) => (
+                  <div
+                    key={sub.id}
+                    id={sub.id}
+                    className="scroll-mt-28 rounded-lg border border-border bg-bg-base p-6"
                   >
-                    <span
-                      aria-hidden="true"
-                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-primary"
-                    />
-                    {app}
-                  </li>
+                    <h3 className="text-lg font-semibold tracking-tight">
+                      {sub.label}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                      {sub.blurb}
+                    </p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </section>
         )}
