@@ -17,14 +17,14 @@ export function ProducersSection() {
           href={lead.url}
           target="_blank"
           rel="noreferrer"
-          className="group relative flex flex-col justify-between gap-8 bg-bg-elevated p-8 transition-colors hover:bg-white lg:col-span-2 lg:row-span-2 lg:p-12"
+          className="group relative flex flex-col justify-between gap-8 bg-bg-elevated p-8 transition-colors hover:bg-bg-subtle lg:col-span-2 lg:row-span-2 lg:p-12"
         >
           <div className="flex items-start justify-between">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={lead.logo}
               alt={`${lead.name} logo`}
-              className="h-16 w-auto max-w-[280px] object-contain md:h-24"
+              className="h-16 w-auto max-w-[280px] object-contain object-left opacity-90 transition-opacity [filter:brightness(0)_invert(1)] group-hover:opacity-100 md:h-24"
               loading="lazy"
               decoding="async"
             />
@@ -46,14 +46,14 @@ export function ProducersSection() {
             href={m.url}
             target="_blank"
             rel="noreferrer"
-            className="group relative flex flex-col justify-between gap-6 bg-bg-elevated p-6 transition-colors hover:bg-white"
+            className="group relative flex flex-col justify-between gap-6 bg-bg-elevated p-6 transition-colors hover:bg-bg-subtle"
           >
             <div className="flex items-start justify-between">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={m.logo}
                 alt={`${m.name} logo`}
-                className="h-9 w-auto max-w-[160px] object-contain"
+                className="h-9 w-auto max-w-[160px] object-contain object-left opacity-70 transition-opacity [filter:brightness(0)_invert(1)] group-hover:opacity-100"
                 loading="lazy"
                 decoding="async"
               />
