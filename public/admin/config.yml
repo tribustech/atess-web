@@ -7,8 +7,9 @@ backend:
   name: github
   repo: tribustech/atess-web
   branch: main
-  # Self-hosted GitHub OAuth relay (Next API routes, added in Phase 3).
-  base_url: https://atess.ro
+  # Self-hosted GitHub OAuth relay (Next API routes). base_url must match the
+  # production domain that serves /admin and /api/auth.
+  base_url: https://atessproject.ro
   auth_endpoint: /api/auth
   commit_messages:
     create: 'cms: adaugă {{collection}} „{{slug}}”'
