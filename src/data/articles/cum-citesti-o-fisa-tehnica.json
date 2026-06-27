@@ -1,0 +1,96 @@
+{
+  "order": 7,
+  "slug": "cum-citesti-o-fisa-tehnica",
+  "title": "Cum se citește o fișă tehnică (și ce nu conține)",
+  "dek": "Datasheet-urile sunt scrise pentru aprobări, nu pentru proiectanți. Iată elementele esențiale de verificat la evaluarea unui sistem.",
+  "category": "tehnic",
+  "categories": [
+    "tehnic",
+    "decizii"
+  ],
+  "audience": [
+    "arhitecti",
+    "antreprenori"
+  ],
+  "level": "avansat",
+  "readingMin": 7,
+  "tags": [
+    "fise-tehnice",
+    "certificari",
+    "evaluare"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "O fișă tehnică tipică de pardoseală sportivă are între 4 și 12 pagini, prezintă două-trei grafice, o listă de certificări și un set de proprietăți chimico-mecanice. La o examinare atentă, multe câmpuri nu oferă informații utile pentru deciziile de proiectare. Iată elementele esențiale de urmărit."
+    },
+    {
+      "type": "h2",
+      "text": "1. Clasa de performanță"
+    },
+    {
+      "type": "p",
+      "text": "Pentru piste de atletism, sistemele se certifică pe clase: clasă 1 (omologare internațională, competiții oficiale), clasă 2 (utilizare școlară sau antrenament). Diferența reală este în uniformitatea grosimii, marcaje certificate și test reports per cantitate aplicată."
+    },
+    {
+      "type": "p",
+      "text": "Pentru terenuri multisport, există clase de absorbție de impact și de deformare verticală. Acestea sunt valorile relevante când utilizatorii finali sunt sportivi propriu-ziși."
+    },
+    {
+      "type": "h2",
+      "text": "2. Certificările (și semnificația fiecăreia)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "World Athletics (fost IAAF) — pentru piste de atletism omologate",
+        "FIBA — pentru terenuri de baschet competiționale",
+        "Junkers — institut german de testare cu reputație serioasă pe pardoseli sportive",
+        "SPAC — French Sports Federation, relevantă pentru standardele europene",
+        "EN 14904 — norma europeană pentru pardoseli sportive de interior"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Important: certificarea producătorului ≠ certificarea sistemului aplicat. Producătorul certifică sistemul la grosimile și raporturile testate. Dacă pe șantier se modifică grosimile, certificarea nu se mai aplică automat."
+    },
+    {
+      "type": "h2",
+      "text": "3. Test reports vs datasheet"
+    },
+    {
+      "type": "p",
+      "text": "Datasheet-ul este documentul de marketing-tehnic. Test report-ul este documentul de laborator pentru un sistem efectiv testat, cu numere reale. Pentru proiecte serioase, se solicită test report-ul, nu datasheet-ul."
+    },
+    {
+      "type": "p",
+      "text": "Test report-urile se emit per certificare (World Athletics, EN, FIBA) și conțin grosimi exacte, mod de aplicare, condiții ambient, rezultate cuantificate. Acestea sunt documentele care trebuie să apară în dosarul de predare al unei piste sau al unui teren competițional."
+    },
+    {
+      "type": "h2",
+      "text": "4. Informațiile rar disponibile"
+    },
+    {
+      "type": "p",
+      "text": "Există proprietăți pe care fișele tehnice nu le menționează direct sau pe care le tratează prin limbaj de marketing:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Raportul real liant/granulă în butoaiele colorate (detalii în articolul „220 vs 250 kg”)",
+        "Durata de viață reală la utilizare publică neregulamentată",
+        "Comportamentul după 3 ani de expunere UV și ciclu termic real",
+        "Compatibilitatea cu substanțele de curățare uzuale în România",
+        "Performanța în lipsa unei mentenanțe regulate"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Recomandare practică",
+      "text": "Înainte de a accepta o fișă tehnică pe un proiect de anvergură, solicitați referințe locale — proiecte aplicate cu același sistem, în România, în ultimii 3–5 ani. Vizitați unul. Suprafața vorbește singură."
+    }
+  ]
+}

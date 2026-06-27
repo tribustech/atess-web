@@ -5,7 +5,12 @@ import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
 import { LenisProvider } from "@/components/motion/LenisProvider";
 import { PageTransition } from "@/components/motion/PageTransition";
+import { IntroLoader } from "@/components/motion/IntroLoader";
 import "./globals.css";
+
+// Runs before first paint on a hard load: flags the homepage's first visit so a
+// dark cover paints immediately (no page flash before the intro animation mounts).
+const introBootstrap = `try{var p=location.pathname;if((p==='/'||p==='')&&!sessionStorage.getItem('atess_intro_seen')){document.documentElement.classList.add('intro-active')}}catch(e){}`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,13 +44,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ATESS Project — Pardoseli sportive profesionale",
+    default: "ATESS Project — Pardoseli profesionale",
     template: "%s | ATESS Project",
   },
   description:
-    "Pardoseli sportive profesionale. Aplicator certificat Stockmeier. 10+ ani pe teren.",
+    "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier. 10+ ani pe teren.",
   applicationName: "ATESS Project",
   keywords: [
+    "pardoseli profesionale",
     "pardoseli sportive",
     "Stockmeier",
     "tartan",
@@ -60,8 +66,8 @@ export const metadata: Metadata = {
     locale: "ro_RO",
     url: "/",
     siteName: "ATESS Project",
-    title: "ATESS Project — Pardoseli sportive profesionale",
-    description: "Aplicator certificat Stockmeier.",
+    title: "ATESS Project — Pardoseli profesionale",
+    description: "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier.",
     images: [
       {
         url: "/opengraph-image",
@@ -73,8 +79,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ATESS Project",
-    description: "Pardoseli sportive profesionale",
+    title: "ATESS Project — Pardoseli profesionale",
+    description: "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier.",
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg" },
@@ -89,7 +95,10 @@ export default function RootLayout({
       className={`dark ${inter.variable} ${fraunces.variable} ${spaceGrotesk.variable}`}
     >
       <body className="bg-bg-base text-text-primary min-h-screen flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: introBootstrap }} />
+        <div id="intro-cover" aria-hidden="true" />
         <LenisProvider>
+          <IntroLoader />
           <Header />
           <PageTransition>{children}</PageTransition>
           <Footer />

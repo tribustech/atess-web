@@ -13,7 +13,7 @@ export function FinalCtaSection() {
             </h2>
             <p className="mt-5 max-w-xl text-base text-text-muted sm:text-lg">
               In 2 minute afli sistemele potrivite, pasii de executie si
-              recomandarile pe care Teo le valideaza cu tine.
+              recomandarile validate de echipa ATESS.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
               <Link href="/configurator" className="w-full sm:w-auto">
@@ -30,7 +30,7 @@ export function FinalCtaSection() {
                   variant="ghost"
                   className="h-12 w-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
                 >
-                  Vorbeste cu Teo
+                  Contacteaza echipa
                 </Button>
               </Link>
             </div>

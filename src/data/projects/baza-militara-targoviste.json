@@ -1,0 +1,21 @@
+{
+  "order": 11,
+  "slug": "baza-militara-targoviste",
+  "title": "Pistă bază militară Târgoviște",
+  "locationCity": "Târgoviște",
+  "locationJudet": "DB",
+  "year": 2025,
+  "category": "piste-atletism",
+  "systemSlug": "piste-atletism",
+  "surfaceM2": 6400,
+  "description": "Pistă de atletism certificată pentru o bază militară. Parte dintr-un program național de infrastructură sportivă pentru forțele armate.",
+  "whatWeDid": [
+    "Turnare pistă de atletism certificată.",
+    "Execuție în program național de infrastructură sportivă.",
+    "Amenajare pentru o bază militară."
+  ],
+  "heroImage": "/images/8dcf0763-c57f-4711-bf61-c6497092cd0e.webp",
+  "images": [
+    "/images/1505c0a0-d7e5-4532-ba42-f7bd950f290b.webp"
+  ]
+}

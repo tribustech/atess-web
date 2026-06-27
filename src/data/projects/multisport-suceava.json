@@ -1,0 +1,23 @@
+{
+  "order": 1,
+  "slug": "multisport-suceava",
+  "title": "Teren multisport Primăria Municipiului Suceava",
+  "locationCity": "Suceava",
+  "locationJudet": "SV",
+  "year": 2023,
+  "category": "spatii-publice",
+  "systemSlug": "spatii-publice",
+  "surfaceM2": 850,
+  "client": "Primăria Municipiului Suceava",
+  "description": "Amenajare de spațiu public cu pardoseală EPDM colorată și marcaje decorative. Parte dintr-un program de reabilitare a spațiilor urbane.",
+  "whatWeDid": [
+    "Pregătire suport și turnare pardoseală EPDM colorată.",
+    "Marcaje decorative pentru spațiul public.",
+    "Integrare în programul de reabilitare urbană al municipiului."
+  ],
+  "heroImage": "/images/abe3623c-096a-4d2b-a26d-410e472adeae.webp",
+  "images": [
+    "/images/b72232ee-5d53-4962-a131-165457051962.webp"
+  ],
+  "featured": true
+}

@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "npm run data:build",
     "dev": "next dev --turbopack",
+    "prebuild": "npm run data:build",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "data:build": "node scripts/build-data.mjs",
     "gallery:build": "node scripts/build-gallery.mjs",
     "configurator:spec": "node scripts/build-configurator-spec.mjs",
     "test": "vitest run",

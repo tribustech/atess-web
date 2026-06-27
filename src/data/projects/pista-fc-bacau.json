@@ -1,0 +1,23 @@
+{
+  "order": 0,
+  "slug": "pista-fc-bacau",
+  "title": "Pistă de atletism FC Bacău",
+  "locationCity": "Bacău",
+  "locationJudet": "BC",
+  "year": 2024,
+  "category": "piste-atletism",
+  "systemSlug": "piste-atletism",
+  "surfaceM2": 6400,
+  "client": "FC Bacău (sponsorizat de Dedeman)",
+  "description": "Pistă de atletism de 400m, 8 culoare, color roșu cărămiziu. Aplicată conform standardului World Athletics, cu marcaje complete pentru probe de viteză și sărituri.",
+  "whatWeDid": [
+    "Turnare pistă de atletism 400m, 8 culoare, finisaj color roșu cărămiziu.",
+    "Aplicare conform standardului World Athletics.",
+    "Trasare completă a marcajelor pentru probe de viteză și sărituri."
+  ],
+  "heroImage": "/images/1505c0a0-d7e5-4532-ba42-f7bd950f290b.webp",
+  "images": [
+    "/images/3be63699-82b6-46ec-9066-ad38bd2eea86.webp"
+  ],
+  "featured": true
+}

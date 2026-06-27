@@ -1,0 +1,22 @@
+{
+  "order": 6,
+  "slug": "complex-privat-tiriac",
+  "title": "Complex sportiv privat — Țiriac",
+  "locationCity": "București",
+  "locationJudet": "B",
+  "year": 2022,
+  "category": "multisport",
+  "systemSlug": "multisport",
+  "surfaceM2": 1200,
+  "client": "Confidențial",
+  "description": "Terenuri de tenis și multisport pentru un complex sportiv privat premium. Sisteme Stockmeier aplicate cu marcaje personalizate.",
+  "whatWeDid": [
+    "Amenajare terenuri de tenis și multisport.",
+    "Sisteme Stockmeier cu marcaje personalizate.",
+    "Standard premium pentru complex sportiv privat."
+  ],
+  "heroImage": "/images/b2a1b133-941b-493c-95fb-a8b7a45c796e.webp",
+  "images": [
+    "/images/fff06bfa-00fc-461a-820c-f801367c3b5f.webp"
+  ]
+}

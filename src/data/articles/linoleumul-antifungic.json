@@ -1,0 +1,93 @@
+{
+  "order": 9,
+  "slug": "linoleumul-antifungic",
+  "title": "Mit demontat: linoleumul „antifungic natural”",
+  "dek": "Broșura susține că omoară bacteriile. În realitatea unui spital, prima curățare cu clor anulează complet această proprietate.",
+  "category": "tehnic",
+  "categories": [
+    "tehnic"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari"
+  ],
+  "level": "intermediar",
+  "readingMin": 4,
+  "tags": [
+    "linoleum",
+    "mit",
+    "spital"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Una dintre afirmațiile cele mai răspândite în broșurile producătorilor de linoleum natural este că materialul ar fi „antifungic” sau chiar „antibacterian” în mod natural. Argumentul: uleiul de in oxidat din compoziție ar avea proprietăți antimicrobiene."
+    },
+    {
+      "type": "p",
+      "text": "Examinarea tehnică onestă a afirmației."
+    },
+    {
+      "type": "h2",
+      "text": "Originea afirmației"
+    },
+    {
+      "type": "p",
+      "text": "Linoleumul tradițional are în compoziție ulei de in supus oxidării controlate, alături de făină de lemn și rășini naturale. Există într-adevăr studii care indică activitate antimicrobiană limitată a uleiului de in oxidat pe suprafețe statice, în condiții de laborator."
+    },
+    {
+      "type": "p",
+      "text": "Acesta este adevărul tehnic minim. De aici începe însă exagerarea de marketing."
+    },
+    {
+      "type": "h2",
+      "text": "Realitatea de utilizare"
+    },
+    {
+      "type": "p",
+      "text": "Spitalele publice sunt curățate cu clor diluat. Acesta este protocolul, nu o sugestie. Clorul oxidează și el — semnificativ mai agresiv decât uleiul de in."
+    },
+    {
+      "type": "p",
+      "text": "Concret: la prima ștergere cu clor, suprafața linoleumului își pierde proprietățile naturale invocate în broșură. Uleiul activ este neutralizat. Rămâne o pardoseală decentă, dar fără magia antifungică declarată."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "title": "Marketing vs realitate",
+      "text": "Linoleumul natural rămâne o opțiune validă pentru spațiile educaționale și pentru anumite secții medicale. Dar nu pentru argumentul „omoară bacterii”. Argumentul cade la prima curățare cu clor — adică în prima săptămână de utilizare."
+    },
+    {
+      "type": "h2",
+      "text": "Când reprezintă o alegere potrivită"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Spații educaționale (creșe, grădinițe, școli)",
+        "Birouri cu cerințe ecologice (LEED, BREEAM)",
+        "Locuințe sensibile la VOC (compuși organici volatili)",
+        "Spații medicale unde NU se folosește clor (clinici private, anumite secții)"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Când nu este alegerea potrivită"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Spitale publice cu protocol obligatoriu de clor",
+        "Zone cu trafic intens și mentenanță minimă",
+        "Spații cu umiditate ridicată constantă",
+        "Bucătării profesionale (degresanți agresivi)"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Materialul rămâne valid. Doar argumentul de marketing trebuie demontat înainte de specificație. Altfel, rezultatul este o pardoseală premium aplicată într-un context care anulează valoarea ei adăugată."
+    }
+  ]
+}

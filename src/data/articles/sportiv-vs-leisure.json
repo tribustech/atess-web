@@ -1,0 +1,76 @@
+{
+  "order": 1,
+  "slug": "sportiv-vs-leisure",
+  "title": "Sportiv vs leisure: aceeași compoziție, două lumi diferite",
+  "dek": "Toate pardoselile moderne turnate au la bază poliuretan și EPDM. O pardoseală sportivă și una de loc de joacă nu sunt însă același produs, chiar dacă arată identic.",
+  "category": "fundamente",
+  "categories": [
+    "fundamente",
+    "decizii"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari"
+  ],
+  "level": "incepator",
+  "readingMin": 4,
+  "tags": [
+    "sportiv",
+    "leisure",
+    "diferentiere"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Una dintre cele mai frecvente confuzii întâlnite în caietele de sarcini și în discuțiile cu beneficiarii este asocierea automată dintre o pistă de atletism și un loc de joacă. Argumentul pare logic: ambele sunt suprafețe turnate cu poliuretan și granulă EPDM, cu aceleași culori și aceeași aparență finală. Concluzia naturală ar fi că este vorba despre același sistem."
+    },
+    {
+      "type": "p",
+      "text": "Nu este."
+    },
+    {
+      "type": "h2",
+      "text": "Componente comune, construcție total diferită"
+    },
+    {
+      "type": "p",
+      "text": "O pardoseală sportivă este concepută pentru un singur tip de utilizare: practicarea unei discipline sportive specifice. Este optimizată pentru un set definit de proprietăți — rebound, absorbție de impact, friction, deformare verticală — măsurate și certificate."
+    },
+    {
+      "type": "p",
+      "text": "O pardoseală leisure (loc de joacă, alei pietonale, spații publice) este o pardoseală drenantă, concepută pentru siguranță la cădere și confort general, fără cerințele tehnice ale unei suprafețe sportive. Are aceleași componente la bază, dar construcția, grosimile și planul de mentenanță sunt complet diferite."
+    },
+    {
+      "type": "h2",
+      "text": "Implicații în alegere"
+    },
+    {
+      "type": "p",
+      "text": "Alegerea unui sistem sportiv pentru un loc de joacă înseamnă plata unui surplus pentru proprietăți care nu vor fi utilizate, plus un sistem neadaptat pentru bicicletă, trotinetă, role și cărucioare."
+    },
+    {
+      "type": "p",
+      "text": "Alegerea unui sistem leisure pentru un teren de sport reduce bugetul pe termen scurt, dar suprafața nu va îndeplini cerințele jocului — minge, dribling, alergare — și se va uza neuniform."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "title": "Capcana caietului de sarcini",
+      "text": "În multe caiete de sarcini românești, „loc de joacă” și „teren multisport” apar sub aceeași specificație tehnică. Sunt două sisteme diferite. Solicitați clarificare de la aplicator înainte de semnare."
+    },
+    {
+      "type": "h2",
+      "text": "Mentenanța: cealaltă diferență esențială"
+    },
+    {
+      "type": "p",
+      "text": "O pardoseală sportivă într-un spațiu reglementat (sală, club, școală privată) are o durată de viață predictibilă. Aceeași pardoseală amplasată într-un spațiu public neregulamentat — unde intră biciclete, role, cărucioare, animale, mucuri de țigară — se degradează diferit, indiferent de calitatea specificației."
+    },
+    {
+      "type": "p",
+      "text": "De aceea o discuție serioasă despre pardoseală sportivă începe cu o întrebare simplă: cine va folosi spațiul și cum este reglementat accesul?"
+    }
+  ]
+}

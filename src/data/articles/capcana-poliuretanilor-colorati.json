@@ -1,0 +1,102 @@
+{
+  "order": 6,
+  "slug": "capcana-poliuretanilor-colorati",
+  "title": "220 vs 250 kg: capcana poliuretanilor colorați",
+  "dek": "Două butoaie identice ca aparență. Unul are 220 kg, celălalt 250. Această diferență de 30 kg explică de ce multe terenuri colorate cedează înainte de termen.",
+  "category": "tehnic",
+  "categories": [
+    "tehnic"
+  ],
+  "audience": [
+    "antreprenori",
+    "arhitecti"
+  ],
+  "level": "avansat",
+  "readingMin": 6,
+  "tags": [
+    "poliuretan",
+    "colorant",
+    "garantie"
+  ],
+  "featured": false,
+  "status": "draft",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Această observație nu apare în fișele tehnice ale producătorilor. A fost descoperită întâmplător, în urma constatării că două butoaie de poliuretan, vizibil identice, aveau greutăți diferite. Concluziile au modificat modul de calcul al consumurilor pentru orice teren colorat."
+    },
+    {
+      "type": "h2",
+      "text": "Două butoaie, două greutăți"
+    },
+    {
+      "type": "p",
+      "text": "Pe șantier au fost folosite, simultan, două butoaie de poliuretan de la același producător:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Butoiul cu poliuretan transparent: 220 kg",
+        "Butoiul cu poliuretan colorat (roșu-cărămiziu): 250 kg"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Diferența: 30 kg de oxid de fier roșu — pigmentul care produce culoarea. Verificarea la producător a confirmat: „Pentru variantele colorate adăugăm pigment în recipient.” Procedură normală."
+    },
+    {
+      "type": "h2",
+      "text": "Originea problemei"
+    },
+    {
+      "type": "p",
+      "text": "Pigmentul în sine nu are nicio proprietate chimică sau mecanică de legare. Este praf colorant. Nu lipește granula, nu contribuie la elasticitate, nu are rol în rezistența mecanică a sistemului."
+    },
+    {
+      "type": "p",
+      "text": "Pentru context, fișa tehnică a unui sistem de loc de joacă prevede:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Consum granulă EPDM: 6,5 kg/m² per cm de grosime",
+        "Procent liant poliuretanic raportat la granulă: 20%",
+        "Rezultat: 6,5 × 20% = 1,3 kg liant/m² per cm"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Procentul de 20% este calculat pentru liant pur, transparent. La trecerea la varianta colorată, butoiul are 250 kg în loc de 220, dar calculul procentual rămâne pe greutatea totală a butoiului."
+    },
+    {
+      "type": "h2",
+      "text": "Erorile matematice mascate"
+    },
+    {
+      "type": "p",
+      "text": "Calculul brut este identic: același raport procentual, aplicat pe un butoi cu 30 kg de pigment în plus, produce același număr scris pe deviz. Dar din cantitatea declarată de „liant”, o parte este poliuretan real cu proprietăți de legare, iar restul este pigment fără rol mecanic."
+    },
+    {
+      "type": "p",
+      "text": "Concret, pe m², în loc de 1,3 kg de liant real, se aplică aproximativ 1,15–1,2 kg de liant amestecat cu praf colorant. Procentul scris pe hârtie este respectat. Performanța reală — nu."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "title": "Consecințe în teren",
+      "text": "Sistemul aplicat are mai puțin liant efectiv per m², deci legătura chimică între granule este mai slabă. Apar zone care se desprind, granulație care se eliberează, garanții invocate — toate previzibile, când structura efectivă a sistemului diferă de cea proiectată."
+    },
+    {
+      "type": "h2",
+      "text": "Soluția preventivă aplicată"
+    },
+    {
+      "type": "p",
+      "text": "Pe orice teren colorat, ATESS adaugă minimum 200 g/m² suplimentare de poliuretan transparent pentru compensarea diluției cu pigment. Se reduce marja inițială, dar dispar garanțiile invocate la șase ani, terenurile care cedează după două sezoane și discuțiile privind responsabilitatea reparațiilor."
+    },
+    {
+      "type": "p",
+      "text": "Concluzia practică: fișa tehnică declară un lucru, butoaiele indică altul. Diferența este detectabilă doar prin cântărire fizică și prin solicitarea de clarificări la producător."
+    }
+  ]
+}

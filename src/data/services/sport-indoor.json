@@ -1,0 +1,33 @@
+{
+  "slug": "sport-indoor",
+  "group": "Interior",
+  "order": 5,
+  "label": "Pardoseli sportive indoor",
+  "shortBlurb": "Pardoseli sportive de interior pentru săli, baze și spații multifuncționale.",
+  "intro": "Pardoselile sportive de interior sunt alese după disciplină, intensitatea utilizării și cerințele de elasticitate. Lucrăm atât sisteme turnate, cât și soluții PVC sportiv omologate.",
+  "seoCopy": [
+    {
+      "heading": "Tipuri de sisteme",
+      "body": "Pentru interior se folosesc sisteme poliuretanice turnate sau pardoseli PVC sportive, fiecare cu clase proprii de absorbție a impactului și de alunecare controlată."
+    },
+    {
+      "heading": "Omologare și marcaje",
+      "body": "Suprafețele competiționale respectă cerințele federațiilor sportive. Marcajele se planifică din proiectare, pentru a evita suprapunerile."
+    }
+  ],
+  "applications": [
+    "Săli de sport școlare",
+    "Baze sportive private",
+    "Spații multifuncționale"
+  ],
+  "isSport": true,
+  "model3dId": "sport-indoor",
+  "layerPhoto": {
+    "src": "/images/services/menu/sport-indoor.webp",
+    "alt": "Sală de sport de interior cu pardoseală sportivă marcată",
+    "caption": "Pardoseală sportivă de interior pentru săli și baze sportive.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "multisport",
+  "relatedArticleSlugs": []
+}

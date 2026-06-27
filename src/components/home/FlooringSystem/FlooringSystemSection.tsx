@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ACESFilmicToneMapping } from 'three';
+import { NeutralToneMapping } from 'three';
 import { gsap } from 'gsap';
-import { LAYERS, type LayerId } from './layers.config';
+import type { FlooringSystem } from './flooring-systems';
+import { DEFAULT_FLOORING_SYSTEM_ID, getFlooringSystem } from './flooring-systems';
 import { FlooringScene } from './FlooringScene';
 import { useExplodeAnimation } from './useExplodeAnimation';
 
@@ -21,7 +22,16 @@ function useMediaQuery(query: string): boolean {
   return matches;
 }
 
-export function FlooringSystemSection() {
+export type FlooringSystemSectionProps = {
+  system?: FlooringSystem;
+  /** Optional id override for in-page anchoring. Defaults to `flooring-system`. */
+  sectionId?: string;
+};
+
+export function FlooringSystemSection({
+  system = getFlooringSystem(DEFAULT_FLOORING_SYSTEM_ID),
+  sectionId = 'flooring-system',
+}: FlooringSystemSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
   const isMobile = useMediaQuery('(max-width: 767px)');
@@ -68,22 +78,22 @@ export function FlooringSystemSection() {
   // Bidirectional hover: list ↔ 3D layer.
   // State drives the React list UI; a mirror ref lets the R3F frameloop read
   // the latest value without forcing re-renders on each frame.
-  const [hoveredId, setHoveredId] = useState<LayerId | null>(null);
-  const hoveredIdRef = useRef<LayerId | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const hoveredIdRef = useRef<number | null>(null);
 
-  const setHover = (id: LayerId | null) => {
+  const setHover = (id: number | null) => {
     hoveredIdRef.current = id;
     setHoveredId(id);
   };
 
   // Reversed (top → bottom visual order for the list).
-  const orderedLayers = [...LAYERS].reverse();
+  const orderedLayers = [...system.layers].reverse();
 
   if (isMobile) {
     return (
       <section
         ref={sectionRef}
-        id="flooring-system"
+        id={sectionId}
         aria-labelledby="flooring-system-heading"
         className="bg-neutral-950 text-white"
       >
@@ -91,10 +101,11 @@ export function FlooringSystemSection() {
           <Canvas
             shadows
             dpr={[1, 1.5]}
-            gl={{ antialias: true, toneMapping: ACESFilmicToneMapping }}
+            gl={{ antialias: true, toneMapping: NeutralToneMapping, toneMappingExposure: 1.1 }}
             camera={{ position: [5.5, 3.8, 6.5], fov: 38 }}
           >
             <FlooringScene
+              system={system}
               progressRef={progressRef}
               hoveredIdRef={hoveredIdRef}
               onHoverChange={setHover}
@@ -109,7 +120,7 @@ export function FlooringSystemSection() {
             Construcția sistemului
           </p>
           <h2 id="flooring-system-heading" className="mb-6 text-3xl font-semibold leading-tight">
-            Patru straturi.
+            Mai multe straturi.
             <br />
             O singură suprafață.
           </h2>
@@ -120,10 +131,10 @@ export function FlooringSystemSection() {
 
           <ul className="space-y-1">
             {orderedLayers.map((layer, i) => {
-              const number = LAYERS.length - i;
+              const number = system.layers.length - i;
               return (
                 <li
-                  key={layer.id}
+                  key={layer.label}
                   className="relative overflow-hidden border-l-2 border-white/10 px-4 py-3 pl-5"
                 >
                   <div className="relative flex items-baseline gap-4">
@@ -131,7 +142,7 @@ export function FlooringSystemSection() {
                     <div className="flex-1">
                       <div className="text-sm font-semibold text-white/90">{layer.label}</div>
                       <div className="mt-0.5 text-xs leading-relaxed text-white/55">
-                        {layer.description}
+                        {layer.thicknessMm} mm
                       </div>
                     </div>
                   </div>
@@ -149,7 +160,7 @@ export function FlooringSystemSection() {
   return (
     <section
       ref={sectionRef}
-      id="flooring-system"
+      id={sectionId}
       aria-labelledby="flooring-system-heading"
       className="relative bg-neutral-950 text-white"
       style={{ height: '200vh' }}
@@ -163,10 +174,11 @@ export function FlooringSystemSection() {
           <Canvas
             shadows
             dpr={[1, isMobile ? 1.5 : 1.75]}
-            gl={{ antialias: true, toneMapping: ACESFilmicToneMapping }}
+            gl={{ antialias: true, toneMapping: NeutralToneMapping, toneMappingExposure: 1.1 }}
             camera={{ position: [5.5, 3.8, 6.5], fov: 38 }}
           >
             <FlooringScene
+              system={system}
               progressRef={progressRef}
               hoveredIdRef={hoveredIdRef}
               onHoverChange={setHover}
@@ -188,7 +200,7 @@ export function FlooringSystemSection() {
             id="flooring-system-heading"
             className="mb-6 text-4xl font-semibold leading-tight md:text-5xl"
           >
-            Patru straturi.
+            Mai multe straturi.
             <br />
             O singură suprafață.
           </h2>
@@ -199,13 +211,14 @@ export function FlooringSystemSection() {
 
           <ul className="space-y-1">
             {orderedLayers.map((layer, i) => {
-              const number = LAYERS.length - i;
-              const isActive = hoveredId === layer.id;
+              const number = system.layers.length - i;
+              const layerIndex = system.layers.length - 1 - i;
+              const isActive = hoveredId === layerIndex;
               const dim = hoveredId !== null && !isActive;
               return (
                 <li
-                  key={layer.id}
-                  onMouseEnter={() => setHover(layer.id)}
+                  key={layer.label}
+                  onMouseEnter={() => setHover(layerIndex)}
                   onMouseLeave={() => setHover(null)}
                   style={{
                     transform: isActive
@@ -251,7 +264,7 @@ export function FlooringSystemSection() {
                           isActive ? 'text-white/80' : 'text-white/55'
                         }`}
                       >
-                        {layer.description}
+                        {layer.thicknessMm} mm
                       </div>
                     </div>
                   </div>

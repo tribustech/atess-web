@@ -17,7 +17,18 @@ const DENYLIST = new Set([
 const NUMERIC_WEBP = /^\d+\.webp$/;
 
 const DEFAULT_CATEGORY = "piste-atletism";
-const PLAYGROUND_CATEGORY = "locuri-joaca";
+// Folder-name fragment -> category (matches the 6 Servicii categories).
+const FOLDER_CATEGORY = [
+  ["/piste", "piste-atletism"],
+  ["/multisport", "multisport"],
+  ["/playgrounds", "locuri-joaca"],
+  ["/locuri-joaca", "locuri-joaca"],
+  ["/spatii-publice", "spatii-publice"],
+  ["/gazon", "spatii-publice"],
+  ["/interioare", "interioare"],
+  ["/pvc", "interioare"],
+  ["/constructii", "constructii-cheie"],
+];
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -39,7 +50,9 @@ function deriveId(srcPath) {
 
 function inferCategory(srcPath, existing) {
   if (existing?.category) return existing.category;
-  if (srcPath.includes("/playgrounds/")) return PLAYGROUND_CATEGORY;
+  for (const [fragment, category] of FOLDER_CATEGORY) {
+    if (srcPath.includes(fragment)) return category;
+  }
   return DEFAULT_CATEGORY;
 }
 

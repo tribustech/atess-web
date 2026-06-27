@@ -1,0 +1,22 @@
+{
+  "order": 10,
+  "slug": "spital-pvc-timisoara",
+  "title": "Reamenajare PVC spital",
+  "locationCity": "Timișoara",
+  "locationJudet": "TM",
+  "year": 2023,
+  "category": "interioare",
+  "systemSlug": "interioare",
+  "surfaceM2": 2200,
+  "description": "Reamenajare completă de pardoseli PVC pentru secții spital. Produse medicale de clasă 34, antibacteriene, aplicate fără întrerupere de activitate.",
+  "whatWeDid": [
+    "Reamenajare pardoseli PVC medicale clasa 34.",
+    "Produse antibacteriene aplicate fără întreruperea activității.",
+    "Acoperire completă a secțiilor de spital."
+  ],
+  "heroImage": "/images/d8fd44ad-0663-4148-aa83-d7ccec0138a3.webp",
+  "images": [
+    "/images/f7198bf9-a3f2-4d1c-a088-0e57d2aef0c2.webp",
+    "/images/c7fcbcdb-2cde-4c0f-a0b7-7be7ddc26335.webp"
+  ]
+}

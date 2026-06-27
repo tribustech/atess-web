@@ -201,3 +201,53 @@ describe("configuratorReducer", () => {
     expect(s.firedRules).toContain("basket-kids-to-playground");
   });
 });
+
+describe("read / decline / accept tracking", () => {
+  it("read-rule records the rule once", () => {
+    let s = configuratorReducer(initialState, { type: "read-rule", ruleId: "r1" });
+    s = configuratorReducer(s, { type: "read-rule", ruleId: "r1" });
+    expect(s.readRules).toEqual(["r1"]);
+  });
+
+  it("decline-rule records both firedRules and declinedRules", () => {
+    const s = configuratorReducer(initialState, {
+      type: "decline-rule",
+      ruleId: "r2",
+    });
+    expect(s.firedRules).toContain("r2");
+    expect(s.declinedRules).toContain("r2");
+    expect(s.pendingRuleId).toBeUndefined();
+  });
+
+  it("accept-rule marks the rule as read and applies the rewrite", () => {
+    const seeded = { ...initialState, answers: { projectType: "teren-individual" as const } };
+    const s = configuratorReducer(seeded, {
+      type: "accept-rule",
+      ruleId: "basket-kids-to-playground",
+      rewrite: { projectType: "loc-joaca" },
+    });
+    expect(s.readRules).toContain("basket-kids-to-playground");
+    expect(s.acceptedRule).toBe("basket-kids-to-playground");
+    expect(s.answers.projectType).toBe("loc-joaca");
+    expect(s.originalAnswers?.projectType).toBe("teren-individual");
+  });
+
+  it("reset clears read and declined rules", () => {
+    let s = configuratorReducer(initialState, { type: "read-rule", ruleId: "r3" });
+    s = configuratorReducer(s, { type: "reset" });
+    expect(s.readRules).toEqual([]);
+    expect(s.declinedRules).toEqual([]);
+  });
+
+  it("read-rule does not corrupt answers or other state", () => {
+    const seeded = {
+      ...initialState,
+      answers: { projectType: "multisport" as const },
+      firedRules: ["some-other-rule"],
+    };
+    const s = configuratorReducer(seeded, { type: "read-rule", ruleId: "r4" });
+    expect(s.answers).toEqual(seeded.answers);
+    expect(s.firedRules).toEqual(seeded.firedRules);
+    expect(s.current).toBe(seeded.current);
+  });
+});

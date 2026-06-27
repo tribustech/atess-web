@@ -13,7 +13,7 @@ export const SITE_CONTACT = {
 } as const;
 
 export const WA_DEFAULT_MESSAGE =
-  "Bună! Sunt interesat(ă) de o pardoseală sportivă ATESS. Putem discuta?";
+  "Bună ziua! Sunt interesat(ă) de o pardoseală profesională ATESS. Putem discuta?";
 
 export function waLink(message: string = WA_DEFAULT_MESSAGE): string {
   return `https://wa.me/${SITE_CONTACT.phone.waNumber}?text=${encodeURIComponent(message)}`;

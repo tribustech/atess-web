@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "ATESS Project",
     short_name: "ATESS",
-    description: "Pardoseli sportive profesionale",
+    description: "Pardoseli profesionale",
     start_url: "/",
     display: "standalone",
     background_color: "#0B0B0D",

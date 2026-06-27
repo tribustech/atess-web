@@ -20,7 +20,7 @@ const CHANNELS: Channel[] = [
     label: "Telefon",
     value: SITE_CONTACT.phone.display,
     href: `tel:${SITE_CONTACT.phone.tel}`,
-    meta: "Apasă să suni · răspunde Teo",
+    meta: "Apasă să suni · răspunde echipa ATESS",
     icon: <Phone strokeWidth={1.4} className="h-6 w-6" />,
     accent: "red",
   },

@@ -1,0 +1,21 @@
+{
+  "order": 5,
+  "slug": "baza-cni-tip1-cluj",
+  "title": "Bază CNI tip 1 — Cluj",
+  "locationCity": "Cluj-Napoca",
+  "locationJudet": "CJ",
+  "year": 2023,
+  "category": "multisport",
+  "systemSlug": "multisport",
+  "surfaceM2": 968,
+  "description": "Teren standard CNI tip 1, 44×22m, sistem Stobitan P 10mm cu marcaje pentru baschet, volei și handbal. Aplicat pe fundație nouă turnată.",
+  "whatWeDid": [
+    "Turnare teren standard CNI tip 1, 44×22m.",
+    "Sistem Stobitan P 10mm pe fundație nouă.",
+    "Marcaje pentru baschet, volei și handbal."
+  ],
+  "heroImage": "/images/a88fa2a2-0478-43ec-9f83-87372c7de351.webp",
+  "images": [
+    "/images/164118d1-8139-4825-a273-8a9171480bad.webp"
+  ]
+}

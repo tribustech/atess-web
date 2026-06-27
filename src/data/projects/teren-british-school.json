@@ -1,0 +1,23 @@
+{
+  "order": 4,
+  "slug": "teren-british-school",
+  "title": "Campus British School",
+  "locationCity": "București",
+  "locationJudet": "B",
+  "year": 2026,
+  "category": "locuri-joaca",
+  "systemSlug": "locuri-joaca",
+  "surfaceM2": 1800,
+  "client": "Campus privat (NDA)",
+  "description": "Proiect extins de pardoseli sportive și spații de joacă pentru un campus internațional. Include terenuri multisport, zone de recreere, și pardoseli din plută pentru creșă.",
+  "whatWeDid": [
+    "Amenajare terenuri multisport și zone de recreere.",
+    "Pardoseli din plută pentru zona de creșă.",
+    "Coordonare extinsă pe un campus internațional."
+  ],
+  "heroImage": "/images/784cc04b-0c84-4536-83cd-ec8d0f43053b.webp",
+  "images": [
+    "/images/playgrounds/playground-03.webp",
+    "/images/bc342e77-7e20-45ab-b76c-a929e2f27c13.webp"
+  ]
+}

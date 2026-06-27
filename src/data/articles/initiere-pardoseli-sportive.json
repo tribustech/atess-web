@@ -1,0 +1,75 @@
+{
+  "order": 0,
+  "slug": "initiere-pardoseli-sportive",
+  "title": "Inițiere în pardoseli sportive",
+  "dek": "Orice pardoseală sportivă modernă pornește de la două ingrediente: poliuretan și granulă EPDM. Diferența reală este în modul de construire.",
+  "category": "fundamente",
+  "categories": [
+    "fundamente"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari",
+    "antreprenori"
+  ],
+  "level": "incepator",
+  "readingMin": 5,
+  "tags": [
+    "poliuretan",
+    "EPDM",
+    "fundamente"
+  ],
+  "featured": true,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Pentru arhitecții sau beneficiarii care întâlnesc pentru prima dată un proiect cu pardoseală sportivă, percepția inițială este adesea că totul se reduce la „cauciuc colorat”. În realitate, în spatele oricărei pardoseli sportive moderne — fie că este pistă de atletism, teren multisport sau loc de joacă — se află aceleași două ingrediente de bază: poliuretan și granulă EPDM."
+    },
+    {
+      "type": "p",
+      "text": "Diferența nu provine din materialele folosite, ci din modul în care sunt combinate, raportul dintre ele, grosimile aplicate, certificările obținute și — cel mai important — destinația pentru care sistemul este conceput."
+    },
+    {
+      "type": "h2",
+      "text": "Ce este o pardoseală sportivă turnată"
+    },
+    {
+      "type": "p",
+      "text": "Pardoseala sportivă turnată este un sistem multistrat aplicat la fața locului. La bază are granulă de cauciuc EPDM (sau SBR pentru stratul portant) legată chimic cu un liant pe bază de poliuretan. Peste stratul portant se aplică unul sau mai multe straturi de uzură, iar finisajul poate fi colorat, drenant sau impermeabil, în funcție de utilizare."
+    },
+    {
+      "type": "p",
+      "text": "Două sisteme pot avea exact aceleași ingrediente, dar grosimi, raporturi și certificări complet diferite. Această diferență determină dacă suprafața rezistă trei luni sau șapte ani."
+    },
+    {
+      "type": "h2",
+      "text": "Categoriile principale întâlnite în practică"
+    },
+    {
+      "type": "p",
+      "text": "În proiectele românești, vor fi întâlnite șase mari familii de pardoseli sportive și conexe, prezentate aici în ordinea frecvenței:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Piste de atletism omologate (clasă 1 și clasă 2)",
+        "Terenuri multisport — baze CNI și școli (44x22 m standard)",
+        "Sistemul educațional — creșe, grădinițe, școli",
+        "Locuri de joacă publice și private",
+        "Terenuri de gazon sintetic (fotbal)",
+        "Pardoseli de interior — PVC, LVT, mochete, linoleum"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pentru fiecare categorie există specificații, certificări, normative și — la fel de important — o realitate de execuție care nu este reflectată în fișa tehnică. Articolele următoare tratează fiecare categorie în detaliu."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Recomandare pentru proiectanți",
+      "text": "Nu există „pardoseală bună” sau „pardoseală slabă” în absolut. Există potrivire sau nepotrivire între sistem și utilizarea reală a spațiului. Un sistem premium aplicat în context nepotrivit cedează în câteva luni."
+    }
+  ]
+}

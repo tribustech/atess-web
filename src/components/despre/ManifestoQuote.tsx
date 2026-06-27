@@ -9,9 +9,9 @@ export function ManifestoQuote() {
           &ldquo;
         </span>
         <blockquote className="mt-2 font-serif text-2xl italic leading-snug text-text-primary md:text-3xl lg:text-4xl">
-          Nu am citit fișe tehnice. Am învățat pe propria piele ce rezistă și ce
-          nu. Tot ce am turnat acum șase ani încă rezistă — și nu e o
-          coincidență.
+          Ne-am asumat rolul de specialiști. Venim cu experiența din spate, nu
+          cu broșuri. Dacă proiectul nu are sens așa cum este scris, îl
+          schimbăm. Aceasta este meseria noastră, nu doar să turnăm cauciuc.
         </blockquote>
         <p className="mt-8 font-mono text-xs uppercase tracking-[0.3em] text-text-muted">
           — Teo Neagu

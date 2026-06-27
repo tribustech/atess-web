@@ -67,6 +67,7 @@ export function Wizard() {
             answers: state.answers,
             originalAnswers: state.originalAnswers,
             acceptedRule: state.acceptedRule,
+            readRules: state.readRules,
             contact,
             website: honeypot,
           }),
@@ -107,7 +108,7 @@ export function Wizard() {
         setSubmitting(false);
       }
     },
-    [state.answers, state.originalAnswers, state.acceptedRule],
+    [state.answers, state.originalAnswers, state.acceptedRule, state.readRules],
   );
 
   return (

@@ -7,6 +7,8 @@ export const initialState: State = {
   history: [],
   current: "project-type",
   firedRules: [],
+  readRules: [],
+  declinedRules: [],
 };
 
 function applyAnswerSideEffects(answers: Answers): Answers {
@@ -80,6 +82,14 @@ export function configuratorReducer(state: State, action: Action): State {
     case "rule-fired":
       return { ...state, pendingRuleId: action.ruleId };
 
+    case "read-rule":
+      return {
+        ...state,
+        readRules: state.readRules.includes(action.ruleId)
+          ? state.readRules
+          : [...state.readRules, action.ruleId],
+      };
+
     case "decline-rule":
       return {
         ...state,
@@ -87,6 +97,9 @@ export function configuratorReducer(state: State, action: Action): State {
         firedRules: state.firedRules.includes(action.ruleId)
           ? state.firedRules
           : [...state.firedRules, action.ruleId],
+        declinedRules: state.declinedRules.includes(action.ruleId)
+          ? state.declinedRules
+          : [...state.declinedRules, action.ruleId],
       };
 
     case "accept-rule": {
@@ -102,6 +115,9 @@ export function configuratorReducer(state: State, action: Action): State {
         firedRules: state.firedRules.includes(action.ruleId)
           ? state.firedRules
           : [...state.firedRules, action.ruleId],
+        readRules: state.readRules.includes(action.ruleId)
+          ? state.readRules
+          : [...state.readRules, action.ruleId],
         pendingRuleId: undefined,
       };
     }

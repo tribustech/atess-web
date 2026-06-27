@@ -1,0 +1,102 @@
+{
+  "order": 11,
+  "slug": "constructii-sportive-la-cheie",
+  "title": "Construcții sportive la cheie — de la concept la predare",
+  "dek": "Avize, DTAC-uri, ANR, fundație, turnare, marcaje, predare. Un singur contractant, un singur punct de coordonare.",
+  "category": "specializari",
+  "categories": [
+    "specializari"
+  ],
+  "audience": [
+    "beneficiari",
+    "arhitecti"
+  ],
+  "level": "intermediar",
+  "readingMin": 6,
+  "tags": [
+    "la-cheie",
+    "construire",
+    "servicii"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Nu toate proiectele se rezumă la turnarea pardoselii. În ultimii ani, ATESS a preluat ca activitate adiacentă construcția completă a obiectivelor sportive, de la concept până la predare. Aceasta înseamnă un singur contract, un singur punct de coordonare, un singur garant al rezultatului."
+    },
+    {
+      "type": "h2",
+      "text": "Semnificația „la cheie” în practică"
+    },
+    {
+      "type": "p",
+      "text": "Vorbim despre preluarea integrală a unui obiectiv sportiv, începând din momentul în care beneficiarul are doar o idee și un teren disponibil:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Concept design — discutarea nevoii reale și a constrângerilor spațiului",
+        "Studii preliminare — geotehnic, topografic, după caz",
+        "Proiectare completă — arhitectură, structură, instalații",
+        "Avize și autorizații — Primărie, ANR (Autoritatea Națională a Reglementărilor), CFR după caz",
+        "DTAC — Documentația Tehnică pentru Autorizația de Construire",
+        "Fundație și terasament — execuție conform proiectului",
+        "Sistem sportiv aplicat — turnare, marcaje, certificare",
+        "Mobilier și echipament — porți, panouri, gard, iluminat",
+        "Predare cu dosar complet — fișe tehnice, garanții, certificări"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Avantajul unui singur contractant"
+    },
+    {
+      "type": "p",
+      "text": "Cea mai mare problemă în proiectele de infrastructură sportivă din România este fragmentarea responsabilității. Beneficiarul colaborează cu un proiectant, un constructor, un aplicator de pardoseală, un montator de echipament. Când apar dificultăți — și apar frecvent — fiecare parte indică responsabilitatea celorlalți."
+    },
+    {
+      "type": "p",
+      "text": "Cu un singur contractant la cheie, există un singur punct responsabil. Bugetul este predictibil. Termenele sunt clare. Garanția acoperă întreaga lucrare, nu doar componentele individuale."
+    },
+    {
+      "type": "h2",
+      "text": "Când este potrivit, când nu"
+    },
+    {
+      "type": "p",
+      "text": "Modelul la cheie este recomandat pentru:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Beneficiari privați care prețuiesc predictibilitatea (școli private, complexuri rezidențiale)",
+        "Primării și consilii locale fără capacitate tehnică internă",
+        "Investitori imobiliari care vor finalizarea rapidă a unui proiect anexă",
+        "Companii care construiesc baze sportive pentru angajați"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Nu este potrivit când beneficiarul are deja proiectant și constructor implicați, când specificațiile sunt deja blocate, sau când proiectul este doar o etapă tehnică (ex. turnare suprafață peste fundație existentă)."
+    },
+    {
+      "type": "callout",
+      "tone": "info",
+      "title": "Avantajul de coordonare",
+      "text": "Avantajul real al unui model la cheie este că deciziile mici se iau imediat, fără negocieri între părți. Probleme cu terasamentul? Soluția se schimbă în două zile. Costuri ascunse? Sunt absorbite intern, fără impact asupra clientului."
+    },
+    {
+      "type": "h2",
+      "text": "Cum începe o discuție la cheie"
+    },
+    {
+      "type": "p",
+      "text": "Cu o singură întrebare:"
+    },
+    {
+      "type": "quote",
+      "text": "Care este rezultatul dorit pe acest teren peste 6 luni? De aici, preluăm responsabilitatea pentru execuție integrală."
+    }
+  ]
+}

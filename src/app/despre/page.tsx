@@ -8,6 +8,7 @@ import { PartnerPanel } from "@/components/despre/PartnerPanel";
 import { BeyondProject } from "@/components/despre/BeyondProject";
 import { StatsRow } from "@/components/despre/StatsRow";
 import { AboutCta } from "@/components/despre/AboutCta";
+import { EquipmentShowcase } from "@/components/despre/EquipmentShowcase";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -56,10 +57,11 @@ export default function DesprePage() {
       />
       <main>
         <HeroAbout />
-        <ManifestoQuote />
         <MissionBlock />
+        <ManifestoQuote />
         <PrinciplesGrid />
         <PillarsGrid />
+        <EquipmentShowcase />
         <PartnerPanel />
         <BeyondProject />
         <StatsRow />

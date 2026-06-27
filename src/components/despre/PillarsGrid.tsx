@@ -1,22 +1,29 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import type { ServiceSlug } from "@/lib/services";
 
-const PILLARS = [
+type PillarHref = `/servicii/${ServiceSlug}` | "/proiecte";
+
+export const PILLARS: { title: string; body: string; href: PillarHref }[] = [
   {
     title: "Pardoseli sportive",
     body: "Terenuri multisport, săli de sport, baze CNI. Opt sisteme Stockmeier, fiecare cu rolul lui.",
+    href: "/servicii/sport-indoor",
   },
   {
     title: "Piste de atletism omologate",
     body: "Cu certificare World Athletics. Doar trei firme din România le pot pune — suntem una dintre ele.",
+    href: "/servicii/sport-outdoor",
   },
   {
     title: "Educație & locuri de joacă",
     body: "Grădinițe, școli, parcuri. Inclusiv pardoseli din plută — singurul aplicator certificat din țară.",
+    href: "/servicii/locuri-joaca",
   },
   {
     title: "Construcții la cheie",
     body: "De la concept la predare: proiectare, avize, autorizații, turnări, finisaj. Un singur interlocutor pentru tot.",
+    href: "/proiecte",
   },
 ];
 
@@ -27,9 +34,13 @@ export function PillarsGrid() {
         <header className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-primary">
-              Ce facem
+              Experiența noastră
             </p>
-            <h2 className="mt-4 text-display-lg">Patru direcții.</h2>
+            <h2 className="mt-4 text-display-lg">Direcțiile noastre.</h2>
+            <p className="mt-5 text-lg text-text-muted">
+              Patru dintre direcțiile pe care le acoperim astăzi. Lista crește pe
+              măsură ce extindem serviciile.
+            </p>
           </div>
           <Link
             href="/servicii"
@@ -44,8 +55,8 @@ export function PillarsGrid() {
           {PILLARS.map((p) => (
             <Link
               key={p.title}
-              href="/servicii"
-              className="group flex items-start gap-6 border border-border bg-bg-base p-8 transition-all hover:-translate-y-1 hover:border-accent-primary"
+              href={p.href}
+              className="group flex items-start gap-6 border border-border bg-bg-base p-8 transition-all hover:-translate-y-1 hover:border-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
             >
               <div className="flex-1">
                 <h3 className="text-2xl font-semibold leading-tight">

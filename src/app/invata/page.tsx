@@ -2,30 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import {
-  getAllArticles,
+  getPublishedArticles,
   getArticlesGroupedByCategory,
+  getFeaturedArticles,
+  CATEGORY_META,
 } from "@/lib/academy";
 import { ArticleCard } from "@/components/invata/ArticleCard";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
 export const metadata: Metadata = {
-  title: "Învață — Ghiduri tehnice pentru arhitecți și proiectanți",
+  title: "Învață — Ghiduri tehnice pardoseli, covor PVC și pardoseli de plută",
   description:
-    "Cum alegi corect pardoseala sportivă, cum citești o fișă tehnică, ce nu-ți spune marketingul. Conținut tehnic gratuit, scris de Teo Neagu, aplicator certificat cu 10+ ani pe șantier.",
+    "Ghiduri tehnice despre pardoseli sportive, covor PVC, linoleum, LVT și pardoseli de plută. Cum alegi corect, cum citești o fișă tehnică și ce nu spune marketingul — conținut elaborat de ATESS Project.",
+  keywords: ["pardoseli", "covor PVC", "linoleum", "pardoseli de plută", "LVT", "pardoseli sportive", "fișă tehnică"],
   alternates: { canonical: "/invata" },
   openGraph: {
     title: "Învață — ATESS Project",
     description:
-      "Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari. Pardoseli sportive, locuri de joacă, interior — tot ce nu apare în fișele tehnice.",
+      "Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari. Pardoseli sportive, covor PVC, linoleum, pardoseli de plută — tot ce nu apare în fișele tehnice.",
     url: "/invata",
     type: "website",
   },
 };
 
 export default function InvataPage() {
-  const all = getAllArticles();
-  const featured = all.filter((a) => a.featured);
+  const all = getPublishedArticles();
+  const featured = getFeaturedArticles(3);
   const grouped = getArticlesGroupedByCategory();
 
   const blogJsonLd = {
@@ -68,9 +71,9 @@ export default function InvataPage() {
 
             <p className="mt-8 max-w-2xl text-lg text-text-muted md:text-xl">
               Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari.
-              Elaborate de Teo Neagu — peste 10 ani de experiență pe șantier,
-              aplicator certificat Stockmeier — pe baza practicii reale, nu a
-              materialelor de marketing.
+              Elaborate de echipa ATESS Project — peste 10 ani de experiență pe
+              șantier, aplicator certificat Stockmeier — pe baza practicii
+              reale, nu a materialelor de marketing.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-text-muted">
@@ -127,6 +130,9 @@ export default function InvataPage() {
                   {group.label}
                 </p>
                 <h2 className="mt-3 text-2xl md:text-3xl">{group.sub}</h2>
+                <p className="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
+                  {CATEGORY_META[group.category].intro}
+                </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -100,4 +100,34 @@ describe("POST /api/configurator/submit", () => {
     );
     expect(res.status).toBe(502);
   });
+
+  it("accepts a payload carrying readRules and returns 200", async () => {
+    const res = await POST(
+      makeReq({
+        answers: { projectType: "interior", useCase: "spital" },
+        readRules: ["interior-spital"],
+        contact: validContact,
+      }),
+    );
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+    expect(sendEmail).toHaveBeenCalledOnce();
+  });
+
+  it("rejects a payload with readRules exceeding 20 entries (returns 400)", async () => {
+    const oversizedRules = Array.from({ length: 21 }, (_, i) => `rule-${i}`);
+    const res = await POST(
+      makeReq({
+        answers: { projectType: "multisport" },
+        readRules: oversizedRules,
+        contact: validContact,
+      }),
+    );
+    expect(res.status).toBe(400);
+    const body = await res.json();
+    expect(body.ok).toBe(false);
+    expect(body.code).toBe("validation_failed");
+    expect(sendEmail).not.toHaveBeenCalled();
+  });
 });

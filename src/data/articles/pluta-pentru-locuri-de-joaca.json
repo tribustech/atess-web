@@ -1,0 +1,87 @@
+{
+  "order": 10,
+  "slug": "pluta-pentru-locuri-de-joaca",
+  "title": "Pardoselile de plută — soluție premium pentru locurile de joacă",
+  "dek": "Singurul aplicator certificat din România. Un material premium folosit acolo unde siguranța și confortul copiilor sunt prioritare.",
+  "category": "specializari",
+  "categories": [
+    "specializari",
+    "fundamente"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari"
+  ],
+  "level": "intermediar",
+  "readingMin": 5,
+  "tags": [
+    "pluta",
+    "loc-de-joaca",
+    "premium"
+  ],
+  "featured": true,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Există o categorie de proiecte unde diferența între un sistem standard și unul premium nu este doar de buget, ci de filozofie: locurile de joacă. ATESS Project este singurul aplicator certificat din România pentru pardoselile de plută destinate spațiilor de joacă pentru copii."
+    },
+    {
+      "type": "h2",
+      "text": "Caracteristici distinctive"
+    },
+    {
+      "type": "p",
+      "text": "Pardoseala de plută pentru locuri de joacă combină granula naturală de plută cu un liant poliuretanic special. Proprietățile rezultate sunt relevante pentru suprafețele destinate copiilor:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Nu se încinge la soare — temperatura suprafeței rămâne semnificativ mai redusă decât la EPDM negru sau colorat",
+        "Drenanță naturală — apa trece prin material, suprafața nu rămâne umedă",
+        "Sigură la cădere — absorbție de impact superioară pentru înălțimile critice de joacă",
+        "Material natural — fără solvenți și componente sintetice agresive",
+        "Aspect distinct, premium — culoare naturală de plută, integrare bună cu mediul urban modern"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Contexte de utilizare relevante"
+    },
+    {
+      "type": "p",
+      "text": "Pluta este o alegere justificată în următoarele contexte:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Grădinițe private și creșe premium",
+        "Locuri de joacă în dezvoltări rezidențiale de standing",
+        "Spații publice cu ambiție arhitecturală (parcuri redesignate, piațete)",
+        "Proiecte cu cerințe ecologice (certificări de sustenabilitate)"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Nu este recomandată pentru spațiile publice neregulamentate cu trafic mixt — în acel context, costul premium nu se justifică, întrucât riscurile de abuz al suprafeței sunt similare cu cele de la EPDM standard."
+    },
+    {
+      "type": "h2",
+      "text": "Costuri și provocări de implementare"
+    },
+    {
+      "type": "p",
+      "text": "Transparență deplină: pluta este mai scumpă decât EPDM-ul colorat. Aplicarea cere experiență specifică, materialele se comandă cu lead time, iar mentenanța are reguli proprii. Acestea sunt motivele pentru care există puțini aplicatori certificați la nivel global."
+    },
+    {
+      "type": "p",
+      "text": "Pentru proiectele unde beneficiarul prețuiește confortul copiilor, ambiția estetică și sustenabilitatea materialelor, este singura alegere care livrează toate cele trei simultan."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Specificarea corectă",
+      "text": "Pluta naturală pentru locuri de joacă trebuie specificată cu grosimi diferențiate pe zone (înălțime de cădere), tip de liant și culoare exactă. Nu se include în caietul de sarcini ca echivalent cu EPDM — sunt sisteme diferite, cu rețete diferite."
+    }
+  ]
+}

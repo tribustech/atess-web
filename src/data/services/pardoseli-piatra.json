@@ -1,0 +1,37 @@
+{
+  "slug": "pardoseli-piatra",
+  "group": "Exterior",
+  "order": 3,
+  "label": "Pardoseli de piatră",
+  "shortBlurb": "Covoare de piatră pe liant rășinos pentru alei, terase și zone pietonale decorative.",
+  "intro": "Pardoselile de piatră combină agregate naturale cu un liant rășinos transparent, rezultând o suprafață drenantă, decorativă și rezistentă pentru exterior.",
+  "seoCopy": [
+    {
+      "heading": "Compoziție",
+      "body": "Agregatele de marmură sau pietriș sunt amestecate cu un liant poliuretanic sau epoxidic și aplicate pe o bază pregătită corespunzător. Rezultă o suprafață continuă, fără rosturi."
+    },
+    {
+      "heading": "Aplicații",
+      "body": "Recomandată pentru alei, terase, zone din jurul piscinelor și amenajări peisagistice unde se dorește un aspect natural și un drenaj bun."
+    },
+    {
+      "heading": "Montaj și întreținere",
+      "body": "Amestecul de agregate și liant se aplică manual pe o bază pregătită și se nivelează până la grosimea proiectată. Suprafața rezultată este drenantă și ușor de întreținut prin spălare, iar zonele solicitate intens se pot reface punctual."
+    }
+  ],
+  "applications": [
+    "Alei și terase",
+    "Zone de piscină",
+    "Amenajări peisagistice"
+  ],
+  "isSport": false,
+  "model3dId": "pardoseli-piatra",
+  "layerPhoto": {
+    "src": "/images/services/menu/pardoseli-piatra.webp",
+    "alt": "Covor de piatră decorativ pe liant rășinos",
+    "caption": "Covor de piatră decorativ și drenant, cu agregate naturale.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "spatii-publice",
+  "relatedArticleSlugs": []
+}

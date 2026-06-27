@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
-import { TeoSection } from "@/components/home/TeoSection";
 import { ClientsSection } from "@/components/home/ClientsSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { SnapSection } from "@/components/home/SnapSection";
-import { FlooringSystemClient } from "@/components/home/FlooringSystemClient";
+import { ProducersSection } from "@/components/home/ProducersSection";
+import { InteriorExteriorSplit } from "@/components/home/InteriorExteriorSplit";
+import { FeaturedArticlesSection } from "@/components/home/FeaturedArticlesSection";
+import { getFeaturedArticles } from "@/lib/academy";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -41,6 +43,13 @@ const localBusinessLd = {
 };
 
 export default function Home() {
+  const featuredArticles = getFeaturedArticles(3).map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    dek: a.dek,
+    readingMin: a.readingMin,
+  }));
+
   return (
     <>
       <script
@@ -55,12 +64,17 @@ export default function Home() {
         <SnapSection id="hero">
           <HeroSection />
         </SnapSection>
-        <FlooringSystemClient />
+        <SnapSection id="interior-exterior" className="bg-bg-base">
+          <InteriorExteriorSplit />
+        </SnapSection>
+        <SnapSection id="producers" className="bg-bg-base">
+          <ProducersSection />
+        </SnapSection>
         <SnapSection id="clients" className="bg-bg-base">
           <ClientsSection />
         </SnapSection>
-        <SnapSection id="teo" className="bg-bg-base">
-          <TeoSection />
+        <SnapSection id="invata" className="bg-bg-base">
+          <FeaturedArticlesSection articles={featuredArticles} />
         </SnapSection>
         <SnapSection id="cta">
           <FinalCtaSection />

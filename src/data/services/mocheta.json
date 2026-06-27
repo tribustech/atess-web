@@ -1,0 +1,32 @@
+{
+  "slug": "mocheta",
+  "group": "Interior",
+  "order": 6,
+  "label": "Mochetă",
+  "shortBlurb": "Mochetă în plăci și din rolă pentru birouri și spații comerciale.",
+  "intro": "Mocheta oferă confort acustic și termic pentru birouri și spații comerciale. Lucrăm cu portofolii de producători recunoscuți, în plăci modulare sau din rolă.",
+  "seoCopy": [
+    {
+      "heading": "Plăci vs. rolă",
+      "body": "Plăcile modulare permit înlocuirea punctuală și gestionarea cablajului, în timp ce mocheta din rolă oferă o suprafață continuă. Alegerea depinde de utilizare și de bugetul de întreținere."
+    },
+    {
+      "heading": "Montaj și întreținere",
+      "body": "Montajul se realizează pe șapă plană și uscată, cu adeziv sau bandă dublu-adezivă în cazul plăcilor modulare. Întreținerea presupune aspirare regulată și curățare profesională periodică, iar plăcile uzate se pot înlocui individual, fără a reface întreaga suprafață."
+    }
+  ],
+  "applications": [
+    "Birouri corporate",
+    "Spații comerciale",
+    "Hoteluri"
+  ],
+  "isSport": false,
+  "layerPhoto": {
+    "src": "/images/services/menu/mocheta.webp",
+    "alt": "Mochetă modulară pentru spații de birou",
+    "caption": "Mochetă modulară pentru birouri și spații comerciale.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "interioare",
+  "relatedArticleSlugs": []
+}

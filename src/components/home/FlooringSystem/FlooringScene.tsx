@@ -3,17 +3,19 @@
 import { Suspense } from 'react';
 import { Environment, ContactShadows } from '@react-three/drei';
 import { LayerStack } from './LayerStack';
-import type { LayerId } from './layers.config';
+import type { FlooringSystem } from './flooring-systems';
 
 type FlooringSceneProps = {
+  system: FlooringSystem;
   progressRef: React.MutableRefObject<number>;
-  hoveredIdRef: React.MutableRefObject<LayerId | null>;
-  onHoverChange: (id: LayerId | null) => void;
+  hoveredIdRef: React.MutableRefObject<number | null>;
+  onHoverChange: (id: number | null) => void;
   autoRotate: boolean;
   interactive: boolean;
 };
 
 export function FlooringScene({
+  system,
   progressRef,
   hoveredIdRef,
   onHoverChange,
@@ -22,10 +24,10 @@ export function FlooringScene({
 }: FlooringSceneProps) {
   return (
     <>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.28} />
       <directionalLight
         position={[5, 8, 5]}
-        intensity={1.8}
+        intensity={2.2}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -37,8 +39,12 @@ export function FlooringScene({
         shadow-camera-far={20}
       />
       <Suspense fallback={null}>
-        <Environment preset="studio" />
+        {/* Low env intensity: studio HDRI at full strength washes the diffuse
+            colours to pale pastel. Keep it as a soft reflection fill only;
+            the directional key light does the real shaping. */}
+        <Environment preset="studio" environmentIntensity={0.3} />
         <LayerStack
+          system={system}
           progressRef={progressRef}
           hoveredIdRef={hoveredIdRef}
           onHoverChange={onHoverChange}

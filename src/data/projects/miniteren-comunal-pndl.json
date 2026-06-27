@@ -1,0 +1,21 @@
+{
+  "order": 8,
+  "slug": "miniteren-comunal-pndl",
+  "title": "Miniteren fotbal comunal (PNDL)",
+  "locationCity": "Jud. Constanța",
+  "locationJudet": "CT",
+  "year": 2022,
+  "category": "spatii-publice",
+  "systemSlug": "spatii-publice",
+  "surfaceM2": 1500,
+  "description": "Miniteren de fotbal cu gazon sintetic 50mm, parte a programului național PNDL. Include împrejmuire și marcaje FIFA compatible.",
+  "whatWeDid": [
+    "Montaj gazon sintetic 50mm.",
+    "Împrejmuire și marcaje compatibile FIFA.",
+    "Execuție în programul național PNDL."
+  ],
+  "heroImage": "/images/7411b6b2-5609-43e4-805a-68ed03233801.webp",
+  "images": [
+    "/images/39a382ec-6bc6-483a-a77b-f8c532812851.webp"
+  ]
+}
