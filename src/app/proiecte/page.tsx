@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { Map } from "lucide-react";
 import galleryRaw from "@/data/gallery.json";
 import {
@@ -9,13 +11,17 @@ import {
   type GalleryEntry,
 } from "@/lib/gallery";
 import { getProjectsGroupedByCategory, resolveCategorieParam } from "@/lib/projects";
-import { ProjectGroups } from "@/components/proiecte/ProjectGroups";
+import { ProjectsExplorer } from "@/components/proiecte/ProjectsExplorer";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
 const gallery = galleryRaw as GalleryEntry[];
 assertAllAltsFilled(gallery);
 const featured = gallery.find((g) => g.featured) ?? gallery[0];
+
+function loadMapSvg(): string {
+  return readFileSync(join(process.cwd(), "src/data/RomaniaMap.svg"), "utf8");
+}
 
 export const metadata: Metadata = {
   title: "Proiecte realizate | Atess Professional Flooring",
@@ -43,9 +49,10 @@ export default async function ProiectePage({ searchParams }: PageProps) {
   const initialCategory = resolveCategorieParam(categorie);
   const groups = getProjectsGroupedByCategory();
   const jsonLd = buildImageGalleryJsonLd(gallery, SITE_URL);
+  const svgMarkup = loadMapSvg();
 
   return (
-    <div className="mx-auto max-w-7xl px-6 pb-24 pt-32">
+    <div className="mx-auto max-w-[88rem] px-6 pb-24 pt-32">
       <header className="mb-12 max-w-3xl">
         <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-primary">
           Portofoliu
@@ -58,7 +65,7 @@ export default async function ProiectePage({ searchParams }: PageProps) {
         </p>
         <Link
           href="/proiecte/harta"
-          className="mt-6 inline-flex h-11 items-center gap-2 border border-accent-primary px-5 text-sm uppercase tracking-wider text-accent-primary transition hover:bg-accent-primary hover:text-text-primary"
+          className="mt-6 inline-flex h-11 items-center gap-2 border border-accent-primary px-5 text-sm uppercase tracking-wider text-accent-primary transition hover:bg-accent-primary hover:text-text-primary lg:hidden"
         >
           <Map size={16} />
           Explorează pe hartă
@@ -66,7 +73,11 @@ export default async function ProiectePage({ searchParams }: PageProps) {
       </header>
 
       <Suspense fallback={<div className="h-96 animate-pulse rounded bg-bg-elevated/30" />}>
-        <ProjectGroups groups={groups} initialCategory={initialCategory} />
+        <ProjectsExplorer
+          groups={groups}
+          initialCategory={initialCategory}
+          svgMarkup={svgMarkup}
+        />
       </Suspense>
 
       <section className="mt-24 border-t border-accent-primary/20 pt-12">

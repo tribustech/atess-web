@@ -19,27 +19,46 @@ function codeFromPathId(id: string | null): string | null {
 interface RomaniaMapProps {
   /** Raw SVG markup string, read server-side with fs.readFileSync. */
   svgMarkup: string;
-  /** Optional callback invoked when a county with projects is selected. */
-  onSelectJudet?: (code: string) => void;
+  /**
+   * Controlled selected county code (e.g. "BC"). When provided (defined),
+   * the component is controlled and the parent owns selection state.
+   */
+  selected?: string | null;
+  /** Invoked when a county with projects is toggled. Receives the next code or null. */
+  onSelectJudet?: (code: string | null) => void;
+  /**
+   * Whether to render the built-in selected-județ projects panel (aside).
+   * Set false when the parent renders its own results column.
+   */
+  showPanel?: boolean;
 }
 
-export function RomaniaMap({ svgMarkup, onSelectJudet }: RomaniaMapProps) {
+export function RomaniaMap({
+  svgMarkup,
+  selected: controlledSelected,
+  onSelectJudet,
+  showPanel = true,
+}: RomaniaMapProps) {
   const counts = useMemo(() => getJudetProjectCounts(), []);
-  const [selected, setSelected] = useState<string | null>(null);
+  const isControlled = controlledSelected !== undefined;
+  const [internalSelected, setInternalSelected] = useState<string | null>(null);
+  const selected = isControlled ? controlledSelected ?? null : internalSelected;
   const [hovered, setHovered] = useState<string | null>(null);
 
   const projects = selected ? getProjectsByJudet(selected) : [];
   const selectedLabel = selected ? (JUDET_LABELS[selected] ?? selected) : null;
 
+  function select(code: string) {
+    const next = selected === code ? null : code;
+    if (!isControlled) setInternalSelected(next);
+    onSelectJudet?.(next);
+  }
+
   function handleClick(e: React.MouseEvent<HTMLDivElement>) {
     const path = (e.target as Element).closest("path");
     const code = codeFromPathId(path?.getAttribute("id") ?? null);
     if (!code || !counts[code]) return; // mute counties without projects
-    setSelected((cur) => {
-      const next = cur === code ? null : code;
-      if (next !== null) onSelectJudet?.(code); // only fire on selection, not deselect
-      return next;
-    });
+    select(code);
   }
 
   function handleMouseOver(e: React.MouseEvent<HTMLDivElement>) {
@@ -58,11 +77,7 @@ export function RomaniaMap({ svgMarkup, onSelectJudet }: RomaniaMapProps) {
     const code = codeFromPathId(target.getAttribute("id") ?? null);
     if (!code || !counts[code]) return;
     e.preventDefault(); // prevent page scroll on Space
-    setSelected((cur) => {
-      const next = cur === code ? null : code;
-      if (next !== null) onSelectJudet?.(code); // only fire on selection, not deselect
-      return next;
-    });
+    select(code);
   }
 
   /**
@@ -75,6 +90,7 @@ export function RomaniaMap({ svgMarkup, onSelectJudet }: RomaniaMapProps) {
     // Build a CSS block for hover/focus-visible so no DOM rebuild on hover.
     const hoverCss = `
 <style>
+svg[baseprofile="tiny"] { width: 100% !important; height: auto !important; display: block; }
 path[role="button"]:hover { fill: #c4520d !important; }
 path[role="button"]:focus-visible { outline: 2px solid #f97316; outline-offset: 2px; }
 </style>`;
@@ -117,46 +133,47 @@ path[role="button"]:focus-visible { outline: 2px solid #f97316; outline-offset: 
   const tooltipLabel = tooltipCode ? (JUDET_LABELS[tooltipCode] ?? tooltipCode) : null;
   const tooltipCount = tooltipCode ? (counts[tooltipCode] ?? 0) : 0;
 
+  const mapBlock = (
+    <div>
+      <div
+        role="group"
+        aria-label="Hartă proiecte pe județe"
+        onClick={handleClick}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        onKeyDown={handleKeyDown}
+        className="relative w-full overflow-hidden"
+        dangerouslySetInnerHTML={{ __html: styledSvg }}
+      />
+
+      {/* Tooltip */}
+      {tooltipLabel && (
+        <div aria-hidden="true" className="mt-3 flex items-baseline gap-2 text-sm">
+          <span className="font-semibold text-text-primary">{tooltipLabel}</span>
+          {tooltipCount > 0 ? (
+            <span className="text-accent-primary">
+              {tooltipCount} proiect{tooltipCount === 1 ? "" : "e"}
+            </span>
+          ) : (
+            <span className="text-text-muted">niciun proiect documentat</span>
+          )}
+        </div>
+      )}
+
+      <p className="mt-3 text-sm text-text-muted">
+        Selectați un județ colorat pentru a vedea proiectele din zona respectivă.
+        {Object.keys(counts).length > 0
+          ? ` Avem proiecte în ${Object.keys(counts).length} județe.`
+          : ""}
+      </p>
+    </div>
+  );
+
+  if (!showPanel) return mapBlock;
+
   return (
     <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-      {/* Map panel */}
-      <div>
-        <div
-          role="group"
-          aria-label="Hartă proiecte pe județe"
-          onClick={handleClick}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          onKeyDown={handleKeyDown}
-          className="relative w-full overflow-hidden"
-          dangerouslySetInnerHTML={{ __html: styledSvg }}
-        />
-
-        {/* Tooltip */}
-        {tooltipLabel && (
-          <div
-            aria-hidden="true"
-            className="mt-3 flex items-baseline gap-2 text-sm"
-          >
-            <span className="font-semibold text-text-primary">{tooltipLabel}</span>
-            {tooltipCount > 0 ? (
-              <span className="text-accent-primary">
-                {tooltipCount} proiect{tooltipCount === 1 ? "" : "e"}
-              </span>
-            ) : (
-              <span className="text-text-muted">niciun proiect documentat</span>
-            )}
-          </div>
-        )}
-
-        <p className="mt-3 text-sm text-text-muted">
-          Selectați un județ colorat pentru a vedea proiectele din zona
-          respectivă.
-          {Object.keys(counts).length > 0
-            ? ` Avem proiecte în ${Object.keys(counts).length} județe.`
-            : ""}
-        </p>
-      </div>
+      {mapBlock}
 
       {/* Projects panel */}
       <aside aria-live="polite">
@@ -178,8 +195,7 @@ path[role="button"]:focus-visible { outline: 2px solid #f97316; outline-offset: 
           </>
         ) : (
           <p className="text-text-muted">
-            Niciun județ selectat. Apăsați pe hartă pentru a filtra
-            proiectele.
+            Niciun județ selectat. Apăsați pe hartă pentru a filtra proiectele.
           </p>
         )}
       </aside>
