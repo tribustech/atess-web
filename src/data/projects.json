@@ -1,5 +1,6 @@
 [
   {
+    "order": 0,
     "slug": "pista-fc-bacau",
     "title": "Pistă de atletism FC Bacău",
     "locationCity": "Bacău",
@@ -15,14 +16,14 @@
       "Aplicare conform standardului World Athletics.",
       "Trasare completă a marcajelor pentru probe de viteză și sărituri."
     ],
-    "heroImage": "/images/project-bacau.webp",
+    "heroImage": "/images/1505c0a0-d7e5-4532-ba42-f7bd950f290b.webp",
     "images": [
-      "/images/project-bacau-1.webp",
-      "/images/project-bacau-2.webp"
+      "/images/3be63699-82b6-46ec-9066-ad38bd2eea86.webp"
     ],
     "featured": true
   },
   {
+    "order": 1,
     "slug": "multisport-suceava",
     "title": "Teren multisport Primăria Municipiului Suceava",
     "locationCity": "Suceava",
@@ -38,13 +39,14 @@
       "Marcaje decorative pentru spațiul public.",
       "Integrare în programul de reabilitare urbană al municipiului."
     ],
-    "heroImage": "/images/project-suceava.webp",
+    "heroImage": "/images/abe3623c-096a-4d2b-a26d-410e472adeae.webp",
     "images": [
-      "/images/project-suceava.webp"
+      "/images/b72232ee-5d53-4962-a131-165457051962.webp"
     ],
     "featured": true
   },
   {
+    "order": 2,
     "slug": "teren-scoala-bihor",
     "title": "Teren multisport școală generală",
     "locationCity": "Oradea",
@@ -59,12 +61,13 @@
       "Trasare marcaje pentru baschet și fotbal.",
       "Amenajare în curtea școlii generale."
     ],
-    "heroImage": "/images/project-scoala.webp",
+    "heroImage": "/images/d011784f-d3c8-4dcf-8152-9ad256df82fd.webp",
     "images": [
-      "/images/project-scoala.webp"
+      "/images/6a7aaaa2-232e-4aca-a25b-b0022a14068e.webp"
     ]
   },
   {
+    "order": 3,
     "slug": "loc-joaca-sector-3",
     "title": "Loc de joacă Sector 3 București",
     "locationCity": "București",
@@ -80,13 +83,15 @@
       "Accent pe siguranța la impact și impact vizual.",
       "Coordonare cu Primăria Sector 3."
     ],
-    "heroImage": "/images/project-loc-joaca.webp",
+    "heroImage": "/images/1177f470-b83f-422e-b783-4c6ea15e7926.webp",
     "images": [
-      "/images/project-loc-joaca.webp"
+      "/images/61badf6f-8a96-4059-b940-25d498dd4439.webp",
+      "/images/playgrounds/playground-02.webp"
     ],
     "featured": true
   },
   {
+    "order": 4,
     "slug": "teren-british-school",
     "title": "Campus British School",
     "locationCity": "București",
@@ -102,12 +107,14 @@
       "Pardoseli din plută pentru zona de creșă.",
       "Coordonare extinsă pe un campus internațional."
     ],
-    "heroImage": "/images/project-british.webp",
+    "heroImage": "/images/784cc04b-0c84-4536-83cd-ec8d0f43053b.webp",
     "images": [
-      "/images/project-british.webp"
+      "/images/playgrounds/playground-03.webp",
+      "/images/bc342e77-7e20-45ab-b76c-a929e2f27c13.webp"
     ]
   },
   {
+    "order": 5,
     "slug": "baza-cni-tip1-cluj",
     "title": "Bază CNI tip 1 — Cluj",
     "locationCity": "Cluj-Napoca",
@@ -122,12 +129,13 @@
       "Sistem Stobitan P 10mm pe fundație nouă.",
       "Marcaje pentru baschet, volei și handbal."
     ],
-    "heroImage": "/images/project-cni.webp",
+    "heroImage": "/images/a88fa2a2-0478-43ec-9f83-87372c7de351.webp",
     "images": [
-      "/images/project-cni.webp"
+      "/images/164118d1-8139-4825-a273-8a9171480bad.webp"
     ]
   },
   {
+    "order": 6,
     "slug": "complex-privat-tiriac",
     "title": "Complex sportiv privat — Țiriac",
     "locationCity": "București",
@@ -143,12 +151,13 @@
       "Sisteme Stockmeier cu marcaje personalizate.",
       "Standard premium pentru complex sportiv privat."
     ],
-    "heroImage": "/images/project-tiriac.webp",
+    "heroImage": "/images/b2a1b133-941b-493c-95fb-a8b7a45c796e.webp",
     "images": [
-      "/images/project-tiriac.webp"
+      "/images/fff06bfa-00fc-461a-820c-f801367c3b5f.webp"
     ]
   },
   {
+    "order": 7,
     "slug": "pista-lacul-morii",
     "title": "Pistă de alergare Lacul Morii",
     "locationCity": "București",
@@ -163,12 +172,13 @@
       "Adaptare la utilizare mixtă și condiții meteo variate.",
       "Amenajare pe malul Lacului Morii."
     ],
-    "heroImage": "/images/project-lacul-morii.webp",
+    "heroImage": "/images/43afa769-a512-431c-829f-78512e6a5643.webp",
     "images": [
-      "/images/project-lacul-morii.webp"
+      "/images/4e16307f-8f0c-4876-94a4-354d2b4e8b29.webp"
     ]
   },
   {
+    "order": 8,
     "slug": "miniteren-comunal-pndl",
     "title": "Miniteren fotbal comunal (PNDL)",
     "locationCity": "Jud. Constanța",
@@ -183,12 +193,13 @@
       "Împrejmuire și marcaje compatibile FIFA.",
       "Execuție în programul național PNDL."
     ],
-    "heroImage": "/images/project-comunal.webp",
+    "heroImage": "/images/7411b6b2-5609-43e4-805a-68ed03233801.webp",
     "images": [
-      "/images/project-comunal.webp"
+      "/images/39a382ec-6bc6-483a-a77b-f8c532812851.webp"
     ]
   },
   {
+    "order": 9,
     "slug": "gradinita-privata-iasi",
     "title": "Grădiniță privată cu pardoseală din plută",
     "locationCity": "Iași",
@@ -203,12 +214,13 @@
       "Zonă de joacă naturală, non-toxică.",
       "Primul proiect de plută turnată pentru o grădiniță privată din Iași."
     ],
-    "heroImage": "/images/project-gradinita.webp",
+    "heroImage": "/images/894c6fb2-df45-4d3d-bccd-bd09e1cc4fe7.webp",
     "images": [
-      "/images/project-gradinita.webp"
+      "/images/23c101d0-4443-4dc3-a42c-a8ad077afd9f.webp"
     ]
   },
   {
+    "order": 10,
     "slug": "spital-pvc-timisoara",
     "title": "Reamenajare PVC spital",
     "locationCity": "Timișoara",
@@ -223,12 +235,14 @@
       "Produse antibacteriene aplicate fără întreruperea activității.",
       "Acoperire completă a secțiilor de spital."
     ],
-    "heroImage": "/images/project-spital.webp",
+    "heroImage": "/images/d8fd44ad-0663-4148-aa83-d7ccec0138a3.webp",
     "images": [
-      "/images/project-spital.webp"
+      "/images/f7198bf9-a3f2-4d1c-a088-0e57d2aef0c2.webp",
+      "/images/c7fcbcdb-2cde-4c0f-a0b7-7be7ddc26335.webp"
     ]
   },
   {
+    "order": 11,
     "slug": "baza-militara-targoviste",
     "title": "Pistă bază militară Târgoviște",
     "locationCity": "Târgoviște",
@@ -243,9 +257,9 @@
       "Execuție în program național de infrastructură sportivă.",
       "Amenajare pentru o bază militară."
     ],
-    "heroImage": "/images/project-militar.webp",
+    "heroImage": "/images/8dcf0763-c57f-4711-bf61-c6497092cd0e.webp",
     "images": [
-      "/images/project-militar.webp"
+      "/images/1505c0a0-d7e5-4532-ba42-f7bd950f290b.webp"
     ]
   }
 ]

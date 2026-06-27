@@ -1,0 +1,21 @@
+{
+  "order": 7,
+  "slug": "pista-lacul-morii",
+  "title": "Pistă de alergare Lacul Morii",
+  "locationCity": "București",
+  "locationJudet": "B",
+  "year": 2023,
+  "category": "piste-atletism",
+  "systemSlug": "piste-atletism",
+  "surfaceM2": 2400,
+  "description": "Pistă de alergare publică amenajată pe malul Lacului Morii. Sistem drenant, adaptat la utilizare mixtă și condiții meteo variate.",
+  "whatWeDid": [
+    "Turnare pistă de alergare publică drenantă.",
+    "Adaptare la utilizare mixtă și condiții meteo variate.",
+    "Amenajare pe malul Lacului Morii."
+  ],
+  "heroImage": "/images/43afa769-a512-431c-829f-78512e6a5643.webp",
+  "images": [
+    "/images/4e16307f-8f0c-4876-94a4-354d2b4e8b29.webp"
+  ]
+}

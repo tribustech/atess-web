@@ -1,0 +1,98 @@
+{
+  "order": 8,
+  "slug": "pvc-lvt-linoleum",
+  "title": "PVC, LVT, linoleum — alegerea corectă pentru interior",
+  "dek": "Gama de pardoseli de interior depășește 20.000 de produse. Iată cum poate fi filtrată rapid, folosind doar parametrii relevanți.",
+  "category": "tehnic",
+  "categories": [
+    "tehnic",
+    "specializari"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari"
+  ],
+  "level": "intermediar",
+  "readingMin": 6,
+  "tags": [
+    "interior",
+    "PVC",
+    "LVT",
+    "linoleum"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Domeniul pardoselilor de interior s-a extins masiv în ultimii doi ani, în special pe segmentele dezvoltatori imobiliari, retail și birouri. Gama cuprinde peste 20.000 de produse — imposibil de cunoscut integral, dar ușor de filtrat când se cunosc criteriile potrivite."
+    },
+    {
+      "type": "h2",
+      "text": "PVC: compoziție și calitate"
+    },
+    {
+      "type": "p",
+      "text": "PVC-ul (policlorură de vinil) este compus principal din doi parametri: poliuretan și cretă. Raportul dintre ele determină calitatea."
+    },
+    {
+      "type": "list",
+      "items": [
+        "PVC de calitate: proporție mai mare de poliuretan, proporție redusă de cretă — material mai ușor pe m²",
+        "PVC slab: proporție mai mare de cretă, proporție redusă de poliuretan — material mai greu, mai dens"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Concluzia este contraintuitivă: PVC-ul de calitate este mai ușor decât unul slab. Densitatea ridicată provine din procentul mare de cretă (umplutură economică), nu din calitate."
+    },
+    {
+      "type": "h2",
+      "text": "Cum se filtrează 20.000 de produse"
+    },
+    {
+      "type": "p",
+      "text": "Cunoașterea integrală a gamei este imposibilă. Cunoașterea zonelor de utilizare permite filtrarea rapidă:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Trafic intens public (spitale, mall-uri, aeroporturi) — PVC heterogen, strat de uzură ≥ 0,7 mm",
+        "Birou și retail mid-range — PVC heterogen, strat de uzură 0,4–0,55 mm",
+        "Rezidențial — LVT click sau PVC homogen subțire",
+        "Spațiu medical curat — linoleum natural sau PVC homogen cu sudură termică",
+        "Săli de sport interior — sport PVC dedicat (EN 14904)"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "LVT — când este alegerea corectă"
+    },
+    {
+      "type": "p",
+      "text": "LVT (Luxury Vinyl Tile) este potrivit pentru spații cu cerințe de aspect premium și mentenanță simplă. Disponibil în sistem click (montaj rapid, fără adeziv) sau cu adeziv (mai stabil pe termen lung)."
+    },
+    {
+      "type": "p",
+      "text": "Atenție la grosimea totală și la stratul de uzură. Un LVT de 4 mm cu strat de uzură de 0,3 mm este potrivit pentru locuință. Pentru retail sau birou de trafic, este necesar minim 0,55 mm strat de uzură."
+    },
+    {
+      "type": "h2",
+      "text": "Linoleum — material natural cu reguli stricte"
+    },
+    {
+      "type": "p",
+      "text": "Linoleumul este singurul material 100% natural din această categorie. Compoziție: ulei de in oxidat, făină de lemn, rășini naturale pe suport de iută. Este folosit masiv în spațiile educaționale și medicale."
+    },
+    {
+      "type": "p",
+      "text": "Are însă un mit important de demontat — antifungic natural — tratat separat în articolul „Linoleumul antifungic”. Pe scurt: marketingul depășește realitatea."
+    },
+    {
+      "type": "callout",
+      "tone": "info",
+      "title": "Informațiile minime necesare",
+      "text": "Comunicați aplicatorului trei elemente: cine va folosi spațiul, traficul în vârful zilei, tipul de curățare. Cu aceste trei informații, orice profesionist poate recomanda produsul potrivit din cele 20.000. În absența lor, decizia devine vizuală."
+    }
+  ]
+}

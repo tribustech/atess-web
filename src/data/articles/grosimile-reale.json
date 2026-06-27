@@ -1,0 +1,91 @@
+{
+  "order": 5,
+  "slug": "grosimile-reale",
+  "title": "Grosimile reale: 8+8 mm vs 1+1 cm",
+  "dek": "Fișa tehnică a unui sistem garantează performanță la o grosime exactă. În practică, terasamentul impune adesea grosimi modificate. Cât din certificare mai este valabilă?",
+  "category": "tehnic",
+  "categories": [
+    "tehnic"
+  ],
+  "audience": [
+    "arhitecti",
+    "antreprenori"
+  ],
+  "level": "avansat",
+  "readingMin": 6,
+  "tags": [
+    "grosimi",
+    "fise-tehnice",
+    "realitate"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Una dintre întrebările care nu se pun aproape niciodată în faza de proiectare — și care apoi nu mai primesc un răspuns onest pe șantier — este legată de grosimile reale ale sistemului aplicat. Iată un exemplu concret."
+    },
+    {
+      "type": "h2",
+      "text": "Sistemul 2S — exemplul clasic"
+    },
+    {
+      "type": "p",
+      "text": "Un sistem de tip 2S, frecvent în caietele de sarcini, este un sistem cu două straturi de uzură, cu o grosime totală de 16 mm (8+8). Fișa tehnică precizează că la 16 mm, o minge de baschet lăsată să cadă de la 70 cm trebuie să sară 40 cm. Aceasta este specificația de rebound omologată."
+    },
+    {
+      "type": "p",
+      "text": "Test report-ul confirmă rezultatul. Certificarea garantează că la grosimea respectivă, sistemul funcționează conform standardului."
+    },
+    {
+      "type": "h2",
+      "text": "Realitatea de execuție"
+    },
+    {
+      "type": "p",
+      "text": "În practică, terasamentul preluat (stratul-suport de la antreprenorul anterior) este rar perfect. Diferențele de cotă, planeitatea, denivelările locale impun folosirea stratului-suport ca strat de îndreptare. Din cei 8 mm de bază prevăzuți, se aplică efectiv 10–12 mm doar pentru corectarea terasamentului, iar stratul de uzură rămâne 6–8 mm."
+    },
+    {
+      "type": "p",
+      "text": "Rezultatul total este similar — aproximativ 16–20 mm de pardoseală — dar nu mai respectă raportul 8+8. În consecință, rebound-ul real al mingii nu mai corespunde celor 40 cm certificați."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "title": "Realitatea fișei tehnice",
+      "text": "Onest: turnarea unui 1+1 cm peste un terasament accidentat livrează un sistem care nu mai îndeplinește exact specificația 2S. Documentația rămâne aceeași, dar performanța de rebound diferă."
+    },
+    {
+      "type": "h2",
+      "text": "Opțiunile oneste"
+    },
+    {
+      "type": "p",
+      "text": "Există trei abordări corecte:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Refacerea terasamentului înainte de turnare — implică un cost suplimentar, dar păstrează specificația",
+        "Acceptarea abaterii și comunicarea scrisă către beneficiar, prin adresă tehnică",
+        "Modificarea sistemului cu unul cu specificație mai realistă pentru terasamentul disponibil"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ce nu este acceptabil profesional: livrarea unui 1+1 cm cu fișa tehnică de 8+8 nemodificată în dosarul de predare, ca și cum totul ar fi identic. Tehnic, sistemul aplicat este altul. Etic, această diferență merită declarată."
+    },
+    {
+      "type": "h2",
+      "text": "Întrebarea pentru orice aplicator"
+    },
+    {
+      "type": "quote",
+      "text": "Ce grosime efectivă se aplică, în ce raport, și cum se reflectă aceasta în test report-ul final predat beneficiarului?"
+    },
+    {
+      "type": "p",
+      "text": "Răspunsurile evazive — „depinde de terasament”, „aproximativ aceeași”, „vom vedea la fața locului” — sunt semnale clare că documentația și realitatea nu vor coincide la final."
+    }
+  ]
+}

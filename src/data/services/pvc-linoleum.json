@@ -1,0 +1,32 @@
+{
+  "slug": "pvc-linoleum",
+  "group": "Interior",
+  "order": 7,
+  "label": "Covor PVC / Linoleum / Tapet PVC",
+  "shortBlurb": "Covor PVC, linoleum natural și tapet PVC — un singur portofoliu de producător.",
+  "intro": "Covorul PVC, linoleumul și tapetul PVC provin din același portofoliu de producător și acoperă spațiile medicale, educaționale și comerciale. Fiecare mediu cere o clasă de trafic și un tip de finisaj diferit.",
+  "seoCopy": [
+    {
+      "heading": "Ce diferențiază un PVC bun",
+      "body": "Un covor PVC de calitate are mai mult poliuretan și mai puțină cretă, fiind mai ușor pe metru pătrat și mai rezistent în timp. Diferența se observă după câțiva ani de utilizare."
+    },
+    {
+      "heading": "Linoleumul natural",
+      "body": "Linoleumul natural are proprietăți antifungice, însă întreținerea cu produse clorinate anulează acest avantaj. Recomandăm un protocol de curățare adecvat."
+    }
+  ],
+  "applications": [
+    "Unități medicale",
+    "Spații educaționale",
+    "Spații comerciale"
+  ],
+  "isSport": false,
+  "layerPhoto": {
+    "src": "/images/services/menu/pvc-linoleum.webp",
+    "alt": "Coridor medical cu pardoseală din covor PVC",
+    "caption": "Covor PVC pentru spații medicale, educaționale și comerciale.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "interioare",
+  "relatedArticleSlugs": []
+}

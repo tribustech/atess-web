@@ -1,0 +1,37 @@
+{
+  "slug": "sport-outdoor",
+  "group": "Exterior",
+  "order": 1,
+  "label": "Pardoseli sportive outdoor",
+  "shortBlurb": "Piste de atletism, terenuri multisport și suprafețe EPDM omologate, construite pentru exterior.",
+  "intro": "Pardoselile sportive de exterior sunt expuse la UV, îngheț, ploaie și utilizare intensivă. Construim sisteme turnate, de la fundație până la stratul de uzură, dimensionate pentru climatul și traficul fiecărui proiect.",
+  "seoCopy": [
+    {
+      "heading": "Structura pe straturi",
+      "body": "Sistemul standard se construiește de jos în sus: bază de beton sau asfalt, amorsă de aderență, strat amortizor SBR, straturi de poliuretan și suprafață de uzură EPDM. Fiecare strat are o grosime calculată în funcție de disciplina sportivă și clasa de absorbție a impactului."
+    },
+    {
+      "heading": "Montaj și întreținere",
+      "body": "Aplicarea respectă fișa tehnică originală a producătorului: pregătirea suportului, controlul umidității și al temperaturii, dozarea corectă a componentelor. Întreținerea periodică — curățare și verificarea drenajului — prelungește durata de viață a suprafeței."
+    }
+  ],
+  "applications": [
+    "Piste de atletism",
+    "Terenuri multisport",
+    "Terenuri de tenis"
+  ],
+  "isSport": true,
+  "model3dId": "sport-outdoor",
+  "layerPhoto": {
+    "src": "/images/services/menu/sport-outdoor.webp",
+    "alt": "Pistă de atletism cu suprafață sportivă turnată de exterior",
+    "caption": "Suprafață sportivă de exterior — pistă de atletism cu strat de uzură EPDM.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "multisport",
+  "relatedProjectTags": [
+    "piste-atletism",
+    "multisport"
+  ],
+  "relatedArticleSlugs": []
+}

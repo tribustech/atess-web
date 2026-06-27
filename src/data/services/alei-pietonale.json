@@ -1,0 +1,32 @@
+{
+  "slug": "alei-pietonale",
+  "group": "Exterior",
+  "order": 4,
+  "label": "Alei pietonale",
+  "shortBlurb": "Suprafețe continue pentru circulații pietonale, fără destinație sportivă.",
+  "intro": "Aleile pietonale cer suprafețe durabile, antiderapante și ușor de întreținut. Propunem sisteme turnate adaptate traficului pietonal și condițiilor de exterior.",
+  "seoCopy": [
+    {
+      "heading": "Criterii de alegere",
+      "body": "Selecția sistemului ține cont de trafic, expunerea la intemperii și aspectul dorit. Suprafața finală trebuie să fie antiderapantă și rezistentă la uzură."
+    },
+    {
+      "heading": "Montaj și întreținere",
+      "body": "Suprafața se aplică pe un suport pregătit și compactat, cu amorsă de aderență și un strat de uzură rezistent la trafic pietonal. Întreținerea curentă presupune curățarea periodică și verificarea integrității stratului, pentru a păstra aderența și aspectul în timp."
+    }
+  ],
+  "applications": [
+    "Circulații în parcuri",
+    "Trotuare amenajate",
+    "Spații instituționale"
+  ],
+  "isSport": false,
+  "layerPhoto": {
+    "src": "/images/services/menu/alei-pietonale.webp",
+    "alt": "Alee pietonală amenajată într-un spațiu verde",
+    "caption": "Suprafață continuă pentru circulații pietonale în spații publice.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "spatii-publice",
+  "relatedArticleSlugs": []
+}

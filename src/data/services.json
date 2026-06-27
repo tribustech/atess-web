@@ -16,7 +16,11 @@
         "body": "Aplicarea respectă fișa tehnică originală a producătorului: pregătirea suportului, controlul umidității și al temperaturii, dozarea corectă a componentelor. Întreținerea periodică — curățare și verificarea drenajului — prelungește durata de viață a suprafeței."
       }
     ],
-    "applications": ["Piste de atletism", "Terenuri multisport", "Terenuri de tenis"],
+    "applications": [
+      "Piste de atletism",
+      "Terenuri multisport",
+      "Terenuri de tenis"
+    ],
     "isSport": true,
     "model3dId": "sport-outdoor",
     "layerPhoto": {
@@ -26,7 +30,10 @@
       "placeholder": false
     },
     "relatedProjectCategory": "multisport",
-    "relatedProjectTags": ["piste-atletism", "multisport"],
+    "relatedProjectTags": [
+      "piste-atletism",
+      "multisport"
+    ],
     "relatedArticleSlugs": []
   },
   {
@@ -46,7 +53,11 @@
         "body": "Pluta naturală nu se încinge la soare, permite drenajul apei și nu conține solvenți. Reprezintă un nivel superior față de EPDM-ul clasic, justificat în proiecte premium."
       }
     ],
-    "applications": ["Grădinițe și creșe", "Parcuri publice", "Spații de joacă rezidențiale"],
+    "applications": [
+      "Grădinițe și creșe",
+      "Parcuri publice",
+      "Spații de joacă rezidențiale"
+    ],
     "isSport": false,
     "model3dId": "locuri-joaca",
     "layerPhoto": {
@@ -79,7 +90,11 @@
         "body": "Amestecul de agregate și liant se aplică manual pe o bază pregătită și se nivelează până la grosimea proiectată. Suprafața rezultată este drenantă și ușor de întreținut prin spălare, iar zonele solicitate intens se pot reface punctual."
       }
     ],
-    "applications": ["Alei și terase", "Zone de piscină", "Amenajări peisagistice"],
+    "applications": [
+      "Alei și terase",
+      "Zone de piscină",
+      "Amenajări peisagistice"
+    ],
     "isSport": false,
     "model3dId": "pardoseli-piatra",
     "layerPhoto": {
@@ -108,7 +123,11 @@
         "body": "Suprafața se aplică pe un suport pregătit și compactat, cu amorsă de aderență și un strat de uzură rezistent la trafic pietonal. Întreținerea curentă presupune curățarea periodică și verificarea integrității stratului, pentru a păstra aderența și aspectul în timp."
       }
     ],
-    "applications": ["Circulații în parcuri", "Trotuare amenajate", "Spații instituționale"],
+    "applications": [
+      "Circulații în parcuri",
+      "Trotuare amenajate",
+      "Spații instituționale"
+    ],
     "isSport": false,
     "layerPhoto": {
       "src": "/images/services/menu/alei-pietonale.webp",
@@ -136,7 +155,11 @@
         "body": "Suprafețele competiționale respectă cerințele federațiilor sportive. Marcajele se planifică din proiectare, pentru a evita suprapunerile."
       }
     ],
-    "applications": ["Săli de sport școlare", "Baze sportive private", "Spații multifuncționale"],
+    "applications": [
+      "Săli de sport școlare",
+      "Baze sportive private",
+      "Spații multifuncționale"
+    ],
     "isSport": true,
     "model3dId": "sport-indoor",
     "layerPhoto": {
@@ -165,7 +188,11 @@
         "body": "Montajul se realizează pe șapă plană și uscată, cu adeziv sau bandă dublu-adezivă în cazul plăcilor modulare. Întreținerea presupune aspirare regulată și curățare profesională periodică, iar plăcile uzate se pot înlocui individual, fără a reface întreaga suprafață."
       }
     ],
-    "applications": ["Birouri corporate", "Spații comerciale", "Hoteluri"],
+    "applications": [
+      "Birouri corporate",
+      "Spații comerciale",
+      "Hoteluri"
+    ],
     "isSport": false,
     "layerPhoto": {
       "src": "/images/services/menu/mocheta.webp",
@@ -193,7 +220,11 @@
         "body": "Linoleumul natural are proprietăți antifungice, însă întreținerea cu produse clorinate anulează acest avantaj. Recomandăm un protocol de curățare adecvat."
       }
     ],
-    "applications": ["Unități medicale", "Spații educaționale", "Spații comerciale"],
+    "applications": [
+      "Unități medicale",
+      "Spații educaționale",
+      "Spații comerciale"
+    ],
     "isSport": false,
     "layerPhoto": {
       "src": "/images/services/menu/pvc-linoleum.webp",
@@ -221,7 +252,11 @@
         "body": "LVT-ul se montează prin lipire sau prin sistem click, pe un suport plan și uscat. Întreținerea este simplă — curățare uscată și umedă cu produse neutre — iar rezistența la umezeală îl recomandă inclusiv pentru bucătării și holuri."
       }
     ],
-    "applications": ["Spații rezidențiale premium", "Showroom-uri", "Birouri"],
+    "applications": [
+      "Spații rezidențiale premium",
+      "Showroom-uri",
+      "Birouri"
+    ],
     "isSport": false,
     "layerPhoto": {
       "src": "/images/services/menu/lvt.webp",

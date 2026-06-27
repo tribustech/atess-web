@@ -1,0 +1,263 @@
+# Sveltia CMS configuration — ATESS content dashboard.
+# Source of truth = the per-item JSON files under src/data/<folder>/.
+# `npm run data:build` concatenates them into the aggregate JSON the app imports
+# (runs on predev/prebuild). Editing here commits to `main`; Vercel rebuilds.
+
+backend:
+  name: github
+  repo: tribustech/atess-web
+  branch: main
+  # Self-hosted GitHub OAuth relay (Next API routes, added in Phase 3).
+  base_url: https://atess.ro
+  auth_endpoint: /api/auth
+  commit_messages:
+    create: 'cms: adaugă {{collection}} „{{slug}}”'
+    update: 'cms: actualizează {{collection}} „{{slug}}”'
+    delete: 'cms: șterge {{collection}} „{{slug}}”'
+
+# Uploaded images live in the repo (public/images), served from /images.
+media_folder: public/images
+public_folder: /images
+
+locale: ro
+
+collections:
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: articole
+    label: Articole (Învață)
+    label_singular: Articol
+    description: Ghidurile tehnice din secțiunea „Învață”.
+    folder: src/data/articles
+    extension: json
+    format: json
+    identifier_field: slug
+    create: true
+    slug: '{{fields.slug}}'
+    summary: '{{title}}  ·  {{status}}'
+    sortable_fields: [order, title, status]
+    fields:
+      - { name: order, label: Ordine afișare, widget: number, value_type: int, required: false, hint: 'Mai mic = mai sus în listă' }
+      - { name: slug, label: Slug (URL), widget: string, pattern: ['^[a-z0-9-]+$', 'Doar litere mici, cifre și liniuțe (-)'] }
+      - { name: title, label: Titlu, widget: string }
+      - { name: dek, label: Rezumat (dek), widget: text }
+      - name: status
+        label: Stare
+        widget: select
+        default: draft
+        options:
+          - { label: Ciornă (nepublicat), value: draft }
+          - { label: Publicat, value: published }
+      - { name: featured, label: Recomandat pe pagina principală, widget: boolean, default: false }
+      - name: category
+        label: Categorie principală
+        widget: select
+        options:
+          - { label: Bazele, value: fundamente }
+          - { label: Ghiduri de decizie, value: decizii }
+          - { label: Tehnic & mituri, value: tehnic }
+          - { label: Specializări, value: specializari }
+      - name: categories
+        label: Categorii (pentru filtrare)
+        widget: select
+        multiple: true
+        options:
+          - { label: Bazele, value: fundamente }
+          - { label: Ghiduri de decizie, value: decizii }
+          - { label: Tehnic & mituri, value: tehnic }
+          - { label: Specializări, value: specializari }
+      - name: audience
+        label: Public țintă
+        widget: select
+        multiple: true
+        options:
+          - { label: Arhitecți, value: arhitecti }
+          - { label: Beneficiari, value: beneficiari }
+          - { label: Antreprenori, value: antreprenori }
+      - name: level
+        label: Nivel
+        widget: select
+        options:
+          - { label: Începător, value: incepator }
+          - { label: Intermediar, value: intermediar }
+          - { label: Avansat, value: avansat }
+      - { name: readingMin, label: Minute de citit, widget: number, value_type: int, min: 1 }
+      - { name: tags, label: Etichete, widget: list, required: false }
+      - name: sections
+        label: Conținut
+        label_singular: Bloc
+        widget: list
+        types:
+          - name: p
+            label: Paragraf
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: text }
+          - name: h2
+            label: Subtitlu (H2)
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: string }
+          - name: h3
+            label: Subtitlu mic (H3)
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: string }
+          - name: list
+            label: Listă cu buline
+            widget: object
+            fields:
+              - { name: items, label: Elemente, widget: list }
+          - name: ordered
+            label: Listă numerotată
+            widget: object
+            fields:
+              - { name: items, label: Elemente, widget: list }
+          - name: callout
+            label: Casetă evidențiată
+            widget: object
+            fields:
+              - name: tone
+                label: Ton
+                widget: select
+                options:
+                  - { label: Informativ, value: info }
+                  - { label: Atenție, value: warn }
+                  - { label: Sfat, value: tip }
+              - { name: title, label: Titlu (opțional), widget: string, required: false }
+              - { name: text, label: Text, widget: text }
+          - name: quote
+            label: Citat
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: text }
+              - { name: attribution, label: Sursă (opțional), widget: string, required: false }
+
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: proiecte
+    label: Proiecte
+    label_singular: Proiect
+    description: Studiile de caz afișate pe /proiecte și pagina fiecărui proiect.
+    folder: src/data/projects
+    extension: json
+    format: json
+    identifier_field: slug
+    create: true
+    slug: '{{fields.slug}}'
+    summary: '{{title}}  ·  {{locationCity}} {{year}}'
+    sortable_fields: [order, title, year]
+    fields:
+      - { name: order, label: Ordine afișare, widget: number, value_type: int, required: false, hint: 'Mai mic = mai sus în categorie' }
+      - { name: slug, label: Slug (URL), widget: string, pattern: ['^[a-z0-9-]+$', 'Doar litere mici, cifre și liniuțe (-)'] }
+      - { name: title, label: Titlu proiect, widget: string }
+      - { name: locationCity, label: Oraș, widget: string }
+      - name: locationJudet
+        label: Județ
+        widget: select
+        options:
+          - { label: Alba (AB), value: AB }
+          - { label: Arad (AR), value: AR }
+          - { label: Argeș (AG), value: AG }
+          - { label: Bacău (BC), value: BC }
+          - { label: Bihor (BH), value: BH }
+          - { label: Bistrița-Năsăud (BN), value: BN }
+          - { label: Botoșani (BT), value: BT }
+          - { label: Brașov (BV), value: BV }
+          - { label: Brăila (BR), value: BR }
+          - { label: Buzău (BZ), value: BZ }
+          - { label: Caraș-Severin (CS), value: CS }
+          - { label: Călărași (CL), value: CL }
+          - { label: Cluj (CJ), value: CJ }
+          - { label: Constanța (CT), value: CT }
+          - { label: Covasna (CV), value: CV }
+          - { label: Dâmbovița (DB), value: DB }
+          - { label: Dolj (DJ), value: DJ }
+          - { label: Galați (GL), value: GL }
+          - { label: Giurgiu (GR), value: GR }
+          - { label: Gorj (GJ), value: GJ }
+          - { label: Harghita (HR), value: HR }
+          - { label: Hunedoara (HD), value: HD }
+          - { label: Ialomița (IL), value: IL }
+          - { label: Iași (IS), value: IS }
+          - { label: Ilfov (IF), value: IF }
+          - { label: Maramureș (MM), value: MM }
+          - { label: Mehedinți (MH), value: MH }
+          - { label: Mureș (MS), value: MS }
+          - { label: Neamț (NT), value: NT }
+          - { label: Olt (OT), value: OT }
+          - { label: Prahova (PH), value: PH }
+          - { label: Satu Mare (SM), value: SM }
+          - { label: Sălaj (SJ), value: SJ }
+          - { label: Sibiu (SB), value: SB }
+          - { label: Suceava (SV), value: SV }
+          - { label: Teleorman (TR), value: TR }
+          - { label: Timiș (TM), value: TM }
+          - { label: Tulcea (TL), value: TL }
+          - { label: Vaslui (VS), value: VS }
+          - { label: Vâlcea (VL), value: VL }
+          - { label: Vrancea (VN), value: VN }
+          - { label: București (B), value: B }
+      - { name: year, label: An, widget: number, value_type: int, min: 2000, max: 2100 }
+      - name: category
+        label: Categorie
+        widget: select
+        options:
+          - { label: Piste de atletism, value: piste-atletism }
+          - { label: Terenuri multisport, value: multisport }
+          - { label: Locuri de joacă, value: locuri-joaca }
+          - { label: Spații publice & gazon, value: spatii-publice }
+          - { label: Pardoseli interioare, value: interioare }
+          - { label: Construcții la cheie, value: constructii-cheie }
+      - { name: surfaceM2, label: Suprafață (m²), widget: number, value_type: int, min: 1 }
+      - { name: client, label: Client (opțional), widget: string, required: false }
+      - { name: description, label: Descriere, widget: text }
+      - { name: whatWeDid, label: Ce am făcut, widget: list, hint: 'Câte un punct pe rând' }
+      - { name: heroImage, label: Imagine principală, widget: image }
+      - name: images
+        label: Fotografii proiect
+        widget: list
+        field: { name: image, label: Imagine, widget: image }
+      - { name: featured, label: Recomandat pe pagina principală, widget: boolean, default: false }
+
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: servicii
+    label: Servicii
+    label_singular: Serviciu
+    description: Textele și fotografiile paginilor de servicii. (Setul este fix — se editează, nu se adaugă.)
+    folder: src/data/services
+    extension: json
+    format: json
+    identifier_field: slug
+    create: false
+    delete: false
+    summary: '{{label}}  ·  {{group}}'
+    sortable_fields: [order, label]
+    fields:
+      # Câmpuri tehnice — păstrate, dar ascunse de editor.
+      - { name: order, widget: hidden }
+      - { name: slug, widget: hidden }
+      - { name: group, widget: hidden }
+      - { name: isSport, widget: hidden }
+      - { name: model3dId, widget: hidden }
+      - { name: relatedProjectCategory, widget: hidden }
+      - { name: relatedProjectTags, widget: hidden }
+      - { name: relatedArticleSlugs, widget: hidden }
+      # Câmpuri editabile.
+      - { name: label, label: Denumire serviciu, widget: string }
+      - { name: shortBlurb, label: Descriere scurtă (meniu/carduri), widget: text }
+      - { name: intro, label: Introducere pagină, widget: text }
+      - name: seoCopy
+        label: Secțiuni de conținut
+        label_singular: Secțiune
+        widget: list
+        fields:
+          - { name: heading, label: Titlu secțiune, widget: string }
+          - { name: body, label: Text, widget: text }
+      - { name: applications, label: Aplicații, widget: list, hint: 'Câte una pe rând' }
+      - name: layerPhoto
+        label: Fotografie reprezentativă
+        widget: object
+        fields:
+          - { name: src, label: Imagine, widget: image }
+          - { name: alt, label: Text alternativ (accesibilitate/SEO), widget: string }
+          - { name: caption, label: Legendă, widget: string, required: false }
+          - { name: placeholder, widget: hidden }

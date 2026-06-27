@@ -1,0 +1,21 @@
+{
+  "order": 9,
+  "slug": "gradinita-privata-iasi",
+  "title": "Grădiniță privată cu pardoseală din plută",
+  "locationCity": "Iași",
+  "locationJudet": "IS",
+  "year": 2024,
+  "category": "locuri-joaca",
+  "systemSlug": "locuri-joaca",
+  "surfaceM2": 180,
+  "description": "Primul proiect cu pardoseală din plută turnată Corkeen pentru o grădiniță privată din Iași. Zonă de joacă naturală, non-toxică.",
+  "whatWeDid": [
+    "Turnare pardoseală din plută Corkeen.",
+    "Zonă de joacă naturală, non-toxică.",
+    "Primul proiect de plută turnată pentru o grădiniță privată din Iași."
+  ],
+  "heroImage": "/images/894c6fb2-df45-4d3d-bccd-bd09e1cc4fe7.webp",
+  "images": [
+    "/images/23c101d0-4443-4dc3-a42c-a8ad077afd9f.webp"
+  ]
+}

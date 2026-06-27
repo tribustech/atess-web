@@ -1,0 +1,33 @@
+{
+  "slug": "locuri-joaca",
+  "group": "Exterior",
+  "order": 2,
+  "label": "Pardoseli pentru locuri de joacă",
+  "shortBlurb": "Suprafețe turnate antitraumatice pentru locuri de joacă, inclusiv plută naturală.",
+  "intro": "Locurile de joacă au cerințe proprii de siguranță: înălțimea critică de cădere și absorbția impactului se calculează pentru fiecare echipament. Aplicăm sisteme EPDM și, în premieră în România, pardoseli din plută naturală.",
+  "seoCopy": [
+    {
+      "heading": "Siguranță și HIC",
+      "body": "Grosimea stratului antitraumatic se dimensionează după înălțimea critică de cădere (HIC) a fiecărui echipament. Verificăm conformitatea cu standardele de siguranță înainte de turnare."
+    },
+    {
+      "heading": "Plută vs. EPDM",
+      "body": "Pluta naturală nu se încinge la soare, permite drenajul apei și nu conține solvenți. Reprezintă un nivel superior față de EPDM-ul clasic, justificat în proiecte premium."
+    }
+  ],
+  "applications": [
+    "Grădinițe și creșe",
+    "Parcuri publice",
+    "Spații de joacă rezidențiale"
+  ],
+  "isSport": false,
+  "model3dId": "locuri-joaca",
+  "layerPhoto": {
+    "src": "/images/services/menu/locuri-joaca.webp",
+    "alt": "Loc de joacă cu pardoseală turnată antitraumatică",
+    "caption": "Suprafață antitraumatică turnată pentru locuri de joacă.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "locuri-joaca",
+  "relatedArticleSlugs": []
+}

@@ -1,0 +1,21 @@
+{
+  "order": 2,
+  "slug": "teren-scoala-bihor",
+  "title": "Teren multisport școală generală",
+  "locationCity": "Oradea",
+  "locationJudet": "BH",
+  "year": 2024,
+  "category": "multisport",
+  "systemSlug": "multisport",
+  "surfaceM2": 420,
+  "description": "Teren multisport cu marcaje pentru baschet și fotbal, amenajat în curtea unei școli generale. Sistem Stockmeier CP 10mm pe fundație de asfalt existentă.",
+  "whatWeDid": [
+    "Aplicare sistem Stockmeier CP 10mm pe fundație de asfalt existentă.",
+    "Trasare marcaje pentru baschet și fotbal.",
+    "Amenajare în curtea școlii generale."
+  ],
+  "heroImage": "/images/d011784f-d3c8-4dcf-8152-9ad256df82fd.webp",
+  "images": [
+    "/images/6a7aaaa2-232e-4aca-a25b-b0022a14068e.webp"
+  ]
+}

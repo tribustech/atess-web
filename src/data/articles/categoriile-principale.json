@@ -1,0 +1,94 @@
+{
+  "order": 2,
+  "slug": "categoriile-principale",
+  "title": "Categoriile principale de pardoseli sportive",
+  "dek": "Șase familii principale, fiecare cu logica, normativele și capcanele ei. Ghid scurt prin tot ce veți întâlni pe piață.",
+  "category": "fundamente",
+  "categories": [
+    "fundamente"
+  ],
+  "audience": [
+    "arhitecti",
+    "antreprenori"
+  ],
+  "level": "incepator",
+  "readingMin": 7,
+  "tags": [
+    "categorii",
+    "ghid"
+  ],
+  "featured": true,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Domeniul pardoselilor sportive pare vast la o primă vedere. În realitate, există doar șase categorii majore. Sunt prezentate aici în ordinea apariției lor în proiectele românești."
+    },
+    {
+      "type": "h2",
+      "text": "1. Piste de atletism omologate"
+    },
+    {
+      "type": "p",
+      "text": "Cele mai pretențioase tehnic și mai rare ca apariție. Doar doi-trei aplicatori certificați acoperă piața din România. Un proiect mare are 10.000–15.000 m² și se finalizează în maxim două luni."
+    },
+    {
+      "type": "p",
+      "text": "Sunt clasificate pe clase de viteză (clasă 1, clasă 2) și certificate World Athletics, cu test reports pentru fiecare sistem. Aplicarea unei piste cere strat de bază omologat, controlat dimensional, și execuție impecabilă a marcajelor."
+    },
+    {
+      "type": "h2",
+      "text": "2. Terenuri multisport — baze CNI"
+    },
+    {
+      "type": "p",
+      "text": "Programele naționale CNI au generat cel mai mare volum de terenuri din ultimii ani. Un teren standard CNI are 44x22 m (968 m²) și include marcaje pentru baschet, volei, handbal, tenis."
+    },
+    {
+      "type": "p",
+      "text": "Reprezintă principala sursă de proiecte pentru aplicatorii din România. Sistemele folosite sunt mid-range, optimizate pentru utilizare școlară sau comunitară."
+    },
+    {
+      "type": "h2",
+      "text": "3. Sistemul educațional — creșe, grădinițe, școli"
+    },
+    {
+      "type": "p",
+      "text": "Diviziunea principală este între spațiile publice și cele private. Școlile și grădinițele private investesc în sisteme superioare și au planuri de mentenanță. Cele publice solicită sisteme rezistente la trafic și la lipsa supravegherii. Detalii în articolul „Public vs privat”."
+    },
+    {
+      "type": "h2",
+      "text": "4. Locuri de joacă publice și private"
+    },
+    {
+      "type": "p",
+      "text": "Toate trebuie să respecte normativele europene de înălțime de cădere (HIC). Diferența între cele publice și cele private nu este în reglementare, ci în mentenanță și în comportamentul utilizatorilor după predare."
+    },
+    {
+      "type": "p",
+      "text": "Tot în această categorie intră și pardoseala de plută — tehnologie premium pentru care ATESS este singurul aplicator certificat din România. Detalii în articolul dedicat."
+    },
+    {
+      "type": "h2",
+      "text": "5. Terenuri de gazon sintetic"
+    },
+    {
+      "type": "p",
+      "text": "Apar masiv prin programele naționale PNDL și PNRR — fiecare comună sau așezământ cultural își construiește un mini-teren de fotbal. Sunt proiecte mari ca suprafață, cu marje per metru pătrat mai reduse, compensate de volum."
+    },
+    {
+      "type": "h2",
+      "text": "6. Pardoseli de interior"
+    },
+    {
+      "type": "p",
+      "text": "PVC, LVT, mochete tip birou, linoleum natural. Domeniul s-a extins masiv în ultimii doi ani pe segmentul privat (dezvoltatori imobiliari, retail, birouri). Marja per m² este mai bună, deși suprafețele sunt mai reduse."
+    },
+    {
+      "type": "callout",
+      "tone": "info",
+      "title": "De ce contează ordinea",
+      "text": "Această ordine reflectă atât complexitatea tehnică, cât și frecvența apariției în proiecte. Pistele de atletism sunt rare și pretențioase. Terenurile multisport sunt cele mai frecvente. Interiorul închide lista, dar este cel mai diversificat ca produse."
+    }
+  ]
+}

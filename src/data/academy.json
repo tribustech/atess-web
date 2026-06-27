@@ -1,5 +1,6 @@
 [
   {
+    "order": 0,
     "slug": "initiere-pardoseli-sportive",
     "title": "Inițiere în pardoseli sportive",
     "dek": "Orice pardoseală sportivă modernă pornește de la două ingrediente: poliuretan și granulă EPDM. Diferența reală este în modul de construire.",
@@ -74,6 +75,7 @@
     ]
   },
   {
+    "order": 1,
     "slug": "sportiv-vs-leisure",
     "title": "Sportiv vs leisure: aceeași compoziție, două lumi diferite",
     "dek": "Toate pardoselile moderne turnate au la bază poliuretan și EPDM. O pardoseală sportivă și una de loc de joacă nu sunt însă același produs, chiar dacă arată identic.",
@@ -149,6 +151,7 @@
     ]
   },
   {
+    "order": 2,
     "slug": "categoriile-principale",
     "title": "Categoriile principale de pardoseli sportive",
     "dek": "Șase familii principale, fiecare cu logica, normativele și capcanele ei. Ghid scurt prin tot ce veți întâlni pe piață.",
@@ -242,6 +245,7 @@
     ]
   },
   {
+    "order": 3,
     "slug": "public-vs-privat",
     "title": "Public vs privat: de ce contează cine întreține",
     "dek": "O grădiniță privată și un parc public arată identic în caietul de sarcini. Sunt două lumi total diferite. Aceasta schimbă fundamental sistemul potrivit.",
@@ -333,6 +337,7 @@
     ]
   },
   {
+    "order": 4,
     "slug": "teren-basket-sau-parcare",
     "title": "Teren de basket sau parcare? Reglementarea dictează sistemul",
     "dek": "Un client cere teren de basket. Realitatea spațiului indică altceva. Aceasta este diferența între un proiectant bun și unul care doar bifează cerințele.",
@@ -407,6 +412,7 @@
     ]
   },
   {
+    "order": 5,
     "slug": "grosimile-reale",
     "title": "Grosimile reale: 8+8 mm vs 1+1 cm",
     "dek": "Fișa tehnică a unui sistem garantează performanță la o grosime exactă. În practică, terasamentul impune adesea grosimi modificate. Cât din certificare mai este valabilă?",
@@ -497,6 +503,7 @@
     ]
   },
   {
+    "order": 6,
     "slug": "capcana-poliuretanilor-colorati",
     "title": "220 vs 250 kg: capcana poliuretanilor colorați",
     "dek": "Două butoaie identice ca aparență. Unul are 220 kg, celălalt 250. Această diferență de 30 kg explică de ce multe terenuri colorate cedează înainte de termen.",
@@ -598,6 +605,7 @@
     ]
   },
   {
+    "order": 7,
     "slug": "cum-citesti-o-fisa-tehnica",
     "title": "Cum se citește o fișă tehnică (și ce nu conține)",
     "dek": "Datasheet-urile sunt scrise pentru aprobări, nu pentru proiectanți. Iată elementele esențiale de verificat la evaluarea unui sistem.",
@@ -693,6 +701,7 @@
     ]
   },
   {
+    "order": 8,
     "slug": "pvc-lvt-linoleum",
     "title": "PVC, LVT, linoleum — alegerea corectă pentru interior",
     "dek": "Gama de pardoseli de interior depășește 20.000 de produse. Iată cum poate fi filtrată rapid, folosind doar parametrii relevanți.",
@@ -790,6 +799,7 @@
     ]
   },
   {
+    "order": 9,
     "slug": "linoleumul-antifungic",
     "title": "Mit demontat: linoleumul „antifungic natural”",
     "dek": "Broșura susține că omoară bacteriile. În realitatea unui spital, prima curățare cu clor anulează complet această proprietate.",
@@ -882,6 +892,7 @@
     ]
   },
   {
+    "order": 10,
     "slug": "pluta-pentru-locuri-de-joaca",
     "title": "Pardoselile de plută — soluție premium pentru locurile de joacă",
     "dek": "Singurul aplicator certificat din România. Un material premium folosit acolo unde siguranța și confortul copiilor sunt prioritare.",
@@ -968,6 +979,7 @@
     ]
   },
   {
+    "order": 11,
     "slug": "constructii-sportive-la-cheie",
     "title": "Construcții sportive la cheie — de la concept la predare",
     "dek": "Avize, DTAC-uri, ANR, fundație, turnare, marcaje, predare. Un singur contractant, un singur punct de coordonare.",

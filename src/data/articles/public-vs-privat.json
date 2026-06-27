@@ -1,0 +1,92 @@
+{
+  "order": 3,
+  "slug": "public-vs-privat",
+  "title": "Public vs privat: de ce contează cine întreține",
+  "dek": "O grădiniță privată și un parc public arată identic în caietul de sarcini. Sunt două lumi total diferite. Aceasta schimbă fundamental sistemul potrivit.",
+  "category": "decizii",
+  "categories": [
+    "decizii",
+    "fundamente"
+  ],
+  "audience": [
+    "arhitecti",
+    "beneficiari"
+  ],
+  "level": "intermediar",
+  "readingMin": 6,
+  "tags": [
+    "public",
+    "privat",
+    "mantenanta"
+  ],
+  "featured": true,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Una dintre cele mai costisitoare greșeli în piață este tratarea unui loc de joacă privat și a unuia public ca proiecte echivalente. Ambele sunt „loc de joacă”. Ambele pot avea aceeași suprafață și aceeași compoziție. Dar mentenanța, utilizarea reală și ciclul de viață sunt fundamentale diferite — ceea ce înseamnă că sistemul potrivit pentru fiecare este altul."
+    },
+    {
+      "type": "h2",
+      "text": "Grădinița privată — mediu controlat"
+    },
+    {
+      "type": "p",
+      "text": "La grădinița privată, utilizatorii suprafeței sunt copii, organizați în grupe, supravegheați de educatoare. Programul este definit, accesul este închis în afara orelor de program, riscurile sunt anticipate."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Niciun copil nu va vărsa solvent pe pardoseală",
+        "Nu intră biciclete, role, trotinete",
+        "Nu se aruncă mucuri de țigară",
+        "Nu intră animale fără supraveghere",
+        "Programul de curățare este regulat și consecvent"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Într-un mediu controlat, un sistem premium își justifică investiția. Rezistă zece ani fără efort suplimentar, fișa tehnică este respectată, garanția se aplică."
+    },
+    {
+      "type": "h2",
+      "text": "Parcul public — context total diferit"
+    },
+    {
+      "type": "p",
+      "text": "La parcul public, pe aceeași pardoseală în 24 de ore intră: biciclete, trotinete electrice, role, cărucioare, câini cu lese, mucuri de țigară, resturi alimentare, baterii de la dispozitive electrice. Spațiul nu se reglementează, accesul este liber, mentenanța este minimă."
+    },
+    {
+      "type": "p",
+      "text": "Aplicat în acest context, același sistem premium cedează în câteva luni. Nu pentru că sistemul este deficient — ci pentru că nu a fost conceput pentru această utilizare."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "title": "Aceeași cerere, două răspunsuri",
+      "text": "Când în caietul de sarcini apar „loc de joacă pentru spațiu public” și „loc de joacă pentru grădiniță” cu aceeași specificație tehnică — solicitați imediat reformulare. Sunt două proiecte diferite cu același nume."
+    },
+    {
+      "type": "h2",
+      "text": "Cum se alege în practică"
+    },
+    {
+      "type": "p",
+      "text": "Întrebările esențiale la începutul oricărei discuții despre sistem sunt:"
+    },
+    {
+      "type": "ordered",
+      "items": [
+        "Cine va folosi spațiul și în ce intervale orare?",
+        "Cine reglementează accesul în afara orelor de program?",
+        "Care este bugetul anual real pentru mentenanță?",
+        "Există un protocol de curățare și cine îl pune în aplicare?",
+        "Care este durata de viață așteptată, ținând cont de toate cele de mai sus?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Răspunsurile la aceste întrebări schimbă complet sistemul recomandat. La privat, soluțiile premium sunt justificate. La public, sunt potrivite sistemele rezistente la abuz, cu mentenanță predictibilă, chiar dacă fișa tehnică pare mai modestă."
+    }
+  ]
+}

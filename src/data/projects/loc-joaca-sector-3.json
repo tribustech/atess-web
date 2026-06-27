@@ -1,0 +1,24 @@
+{
+  "order": 3,
+  "slug": "loc-joaca-sector-3",
+  "title": "Loc de joacă Sector 3 București",
+  "locationCity": "București",
+  "locationJudet": "B",
+  "year": 2023,
+  "category": "locuri-joaca",
+  "systemSlug": "locuri-joaca",
+  "surfaceM2": 280,
+  "client": "Primăria Sector 3",
+  "description": "Amenajare loc de joacă cu pardoseală EPDM multi-color, design curbat inspirat din curcubeu. Proiect cu accent pe siguranță și impact vizual.",
+  "whatWeDid": [
+    "Turnare pardoseală EPDM multi-color cu design curbat.",
+    "Accent pe siguranța la impact și impact vizual.",
+    "Coordonare cu Primăria Sector 3."
+  ],
+  "heroImage": "/images/1177f470-b83f-422e-b783-4c6ea15e7926.webp",
+  "images": [
+    "/images/61badf6f-8a96-4059-b940-25d498dd4439.webp",
+    "/images/playgrounds/playground-02.webp"
+  ],
+  "featured": true
+}

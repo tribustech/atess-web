@@ -1,0 +1,75 @@
+{
+  "order": 4,
+  "slug": "teren-basket-sau-parcare",
+  "title": "Teren de basket sau parcare? Reglementarea dictează sistemul",
+  "dek": "Un client cere teren de basket. Realitatea spațiului indică altceva. Aceasta este diferența între un proiectant bun și unul care doar bifează cerințele.",
+  "category": "decizii",
+  "categories": [
+    "decizii"
+  ],
+  "audience": [
+    "arhitecti",
+    "antreprenori"
+  ],
+  "level": "intermediar",
+  "readingMin": 5,
+  "tags": [
+    "realitate",
+    "specificatii",
+    "exemple"
+  ],
+  "featured": false,
+  "status": "published",
+  "sections": [
+    {
+      "type": "p",
+      "text": "Cele mai dificile eșecuri din portofoliu nu sunt sistemele aplicate incorect. Sunt sistemele aplicate corect, dar pentru o utilizare diferită de cea reală. Cel mai relevant exemplu vine de la un teren multisport executat conform specificațiilor într-un sector din București."
+    },
+    {
+      "type": "h2",
+      "text": "Studiul de caz"
+    },
+    {
+      "type": "p",
+      "text": "Proiectul: teren de basket public, sistem standardizat pentru baschet — marcaje, grosime, friction, toate la specificație."
+    },
+    {
+      "type": "p",
+      "text": "Utilizarea reală în primele patru luni: biciclete, role, cărucioare, patine, scootere, mașini parcate seara, trafic mixt necontrolat."
+    },
+    {
+      "type": "p",
+      "text": "Rezultat: suprafața a cedat. Reacția primă a primăriei: „Pardoseala este necorespunzătoare.” Reacția corectă: pardoseala corespunde exact cu specificația — un teren de basket. Spațiul nu a fost utilizat ca teren de basket."
+    },
+    {
+      "type": "h2",
+      "text": "Reglementarea zonei este mai importantă decât specificația"
+    },
+    {
+      "type": "p",
+      "text": "Lecția pe care orice arhitect și orice antreprenor o învață mai devreme sau mai târziu: într-un spațiu public neregulamentat, specificația sportivă nu protejează suprafața. Protecția vine din controlul accesului. În absența unei autorități care să gestioneze utilizarea, conținutul caietului de sarcini devine irelevant."
+    },
+    {
+      "type": "callout",
+      "tone": "tip",
+      "title": "Rolul specialistului",
+      "text": "Când beneficiarul insistă pe un sistem nepotrivit utilizării reale, responsabilitatea specialistului este să schimbe soluția — nu să execute cererea literal. „Teren de basket” nu înseamnă teren de basket dacă spațiul funcționează ca zonă publică deschisă."
+    },
+    {
+      "type": "h2",
+      "text": "Cum se poartă discuția corectă cu clientul"
+    },
+    {
+      "type": "p",
+      "text": "Discuția nu se negociază pe preț. Se negociază pe utilizare. Întrebarea care deschide discuția:"
+    },
+    {
+      "type": "quote",
+      "text": "Cum funcționează spațiul după ora 18:00 și după plecarea supraveghetorului? Răspunsul determină sistemul potrivit."
+    },
+    {
+      "type": "p",
+      "text": "Răspunsul indică imediat tipul de sistem corect. Dacă răspunsul este „nu știm”, acesta echivalează cu „spațiu public neregulamentat” — iar sistemul ales trebuie să reflecte realitatea, nu intenția."
+    }
+  ]
+}

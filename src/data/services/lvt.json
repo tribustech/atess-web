@@ -1,0 +1,32 @@
+{
+  "slug": "lvt",
+  "group": "Interior",
+  "order": 8,
+  "label": "LVT",
+  "shortBlurb": "Luxury Vinyl Tile cu aspect de lemn sau piatră, rezistent la trafic și umezeală.",
+  "intro": "LVT-ul reproduce aspectul lemnului sau al pietrei, dar rezistă la umezeală și trafic intens. Este potrivit pentru spații rezidențiale premium și comerciale.",
+  "seoCopy": [
+    {
+      "heading": "Avantaje",
+      "body": "LVT-urile bune arată identic cu parchetul, dar tolerează umezeala și traficul intens. Montajul poate fi prin lipire sau prin sistem click."
+    },
+    {
+      "heading": "Montaj și întreținere",
+      "body": "LVT-ul se montează prin lipire sau prin sistem click, pe un suport plan și uscat. Întreținerea este simplă — curățare uscată și umedă cu produse neutre — iar rezistența la umezeală îl recomandă inclusiv pentru bucătării și holuri."
+    }
+  ],
+  "applications": [
+    "Spații rezidențiale premium",
+    "Showroom-uri",
+    "Birouri"
+  ],
+  "isSport": false,
+  "layerPhoto": {
+    "src": "/images/services/menu/lvt.webp",
+    "alt": "Spațiu rezidențial cu pardoseală LVT cu aspect de lemn",
+    "caption": "LVT cu aspect natural de lemn, rezistent la trafic și umezeală.",
+    "placeholder": false
+  },
+  "relatedProjectCategory": "interioare",
+  "relatedArticleSlugs": []
+}
