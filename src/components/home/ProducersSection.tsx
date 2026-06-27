@@ -6,7 +6,7 @@ export function ProducersSection() {
   const rest = getManufacturers().filter((m) => m.slug !== lead.slug);
 
   return (
-    <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 py-24 md:px-10">
+    <div className="mx-auto flex w-full max-w-7xl flex-col px-6 py-20 md:px-10 md:py-28">
       <h2 className="text-display-lg">Producători pe care îi distribuim</h2>
       <p className="mt-2 text-sm uppercase tracking-[0.14em] text-text-muted">
         Distribuitori autorizați pentru sisteme sportive și de interior

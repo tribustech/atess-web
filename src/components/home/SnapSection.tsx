@@ -11,7 +11,7 @@ export function SnapSection({ id, className, children }: SnapSectionProps) {
   return (
     <section
       id={id}
-      className={cn("relative min-h-[100svh] scroll-mt-24", className)}
+      className={cn("relative scroll-mt-24", className)}
     >
       {children}
     </section>

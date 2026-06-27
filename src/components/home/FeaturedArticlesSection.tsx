@@ -9,7 +9,7 @@ export function FeaturedArticlesSection({ articles }: FeaturedArticlesSectionPro
   if (articles.length === 0) return null;
 
   return (
-    <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 py-24 md:px-10">
+    <div className="mx-auto flex w-full max-w-7xl flex-col px-6 py-20 md:px-10 md:py-28">
       <div className="flex items-end justify-between gap-6">
         <div>
           <h2 className="text-display-lg">Învață</h2>
@@ -31,7 +31,7 @@ export function FeaturedArticlesSection({ articles }: FeaturedArticlesSectionPro
           <li key={article.slug} className="bg-bg-elevated">
             <Link
               href={`/invata/${article.slug}`}
-              className="group flex h-full flex-col justify-between gap-6 p-7 transition-colors hover:bg-white"
+              className="group flex h-full flex-col justify-between gap-6 p-7 transition-colors hover:bg-bg-subtle"
             >
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-text-muted">
