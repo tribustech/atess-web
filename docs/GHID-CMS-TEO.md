@@ -5,10 +5,13 @@ administrare. Nu este nevoie de cunoștințe tehnice.
 
 ## Cum intri
 
-1. Deschide în browser: **https://atess.ro/admin**
-2. Apasă **„Login with GitHub”** și autentifică-te cu contul primit
-   (utilizator `atess-editor`).
+1. Deschide în browser: **https://atessproject.ro/admin**
+2. Apasă **„Sign In Using Access Token”** și lipește tokenul primit de la
+   echipa tehnică, apoi confirmă.
 3. Vezi în stânga cele trei secțiuni: **Articole**, **Proiecte**, **Servicii**.
+
+> Tokenul se introduce o singură dată (browserul îl ține minte). Dacă la un
+> moment dat ești delogat, cere un token nou echipei tehnice.
 
 > După fiecare salvare, modificarea apare pe site în aproximativ **1 minut**
 > (site-ul se reconstruiește automat). Dacă nu vezi schimbarea imediat,
