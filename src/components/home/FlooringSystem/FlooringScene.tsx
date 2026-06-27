@@ -24,10 +24,10 @@ export function FlooringScene({
 }: FlooringSceneProps) {
   return (
     <>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.28} />
       <directionalLight
         position={[5, 8, 5]}
-        intensity={1.8}
+        intensity={2.2}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -39,7 +39,10 @@ export function FlooringScene({
         shadow-camera-far={20}
       />
       <Suspense fallback={null}>
-        <Environment preset="studio" />
+        {/* Low env intensity: studio HDRI at full strength washes the diffuse
+            colours to pale pastel. Keep it as a soft reflection fill only;
+            the directional key light does the real shaping. */}
+        <Environment preset="studio" environmentIntensity={0.3} />
         <LayerStack
           system={system}
           progressRef={progressRef}

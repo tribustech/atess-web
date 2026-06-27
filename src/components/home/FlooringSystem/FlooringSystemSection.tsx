@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ACESFilmicToneMapping } from 'three';
+import { NeutralToneMapping } from 'three';
 import { gsap } from 'gsap';
 import type { FlooringSystem } from './flooring-systems';
 import { DEFAULT_FLOORING_SYSTEM_ID, getFlooringSystem } from './flooring-systems';
@@ -101,7 +101,7 @@ export function FlooringSystemSection({
           <Canvas
             shadows
             dpr={[1, 1.5]}
-            gl={{ antialias: true, toneMapping: ACESFilmicToneMapping }}
+            gl={{ antialias: true, toneMapping: NeutralToneMapping, toneMappingExposure: 1.1 }}
             camera={{ position: [5.5, 3.8, 6.5], fov: 38 }}
           >
             <FlooringScene
@@ -174,7 +174,7 @@ export function FlooringSystemSection({
           <Canvas
             shadows
             dpr={[1, isMobile ? 1.5 : 1.75]}
-            gl={{ antialias: true, toneMapping: ACESFilmicToneMapping }}
+            gl={{ antialias: true, toneMapping: NeutralToneMapping, toneMappingExposure: 1.1 }}
             camera={{ position: [5.5, 3.8, 6.5], fov: 38 }}
           >
             <FlooringScene

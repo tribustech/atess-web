@@ -1,41 +1,36 @@
-# Flooring PBR textures — placeholder map
+# Flooring PBR textures — source map
 
-The 3D flooring systems (`src/components/home/FlooringSystem/flooring-systems.ts`) reference
-the PBR maps below. Files marked **PLACEHOLDER** are temporary copies of an existing map so the
-scene renders end-to-end. Teo builds the final 3D from raw PBR downloads; the developer's job is
-to source the correct raw materials from Poly Haven / textures.com / 3dtextures.me and drop them
-in at the exact filenames below (diffuse as `*_diff.jpg`, normal as `*_normal.png`, roughness as
-`*_rough.png`). **No code change is needed when a real map replaces a placeholder.**
+The 3D flooring systems (`src/components/home/FlooringSystem/flooring-systems.ts`) reference the
+PBR maps below via `texture-manifest.ts`. **All keys now resolve to real textures** — no more
+copy-of-another-map placeholders. Maps are 512px, 8-bit (diffuse `*_diff.jpg`, OpenGL normal
+`*_normal.png`, roughness `*_rough.png`). Replacing a file (same name) needs no code change.
 
-| Texture key | Filename prefix | Used by layer(s) | Status | Where the real map comes from |
-| --- | --- | --- | --- | --- |
-| `asphalt`      | `asphalt_*`       | Subbază balast, piatră spartă 0–63 (gazon sintetic) | REAL (existing) | — |
-| `concrete`     | `concrete_*`      | Bază de beton (sport-outdoor, sport-indoor, locuri-joaca, pardoseli-piatra) | **PLACEHOLDER** (copy of asphalt) | Poly Haven "concrete_floor" / "concrete_bare" |
-| `epdm`         | `epdm_*`          | Suprafață EPDM (sport-outdoor, locuri-joaca) | REAL (existing) | — |
-| `grass`        | `grass_*`         | Gazon sintetic + umplutură granule plută (gazon-sintetic) | **PLACEHOLDER** (copy of epdm, green tint applied in material) | textures.com "artificial grass / turf" |
-| `polyurethane` | `polyurethane_*`  | Straturi PU, liant poliuretanic (sport-outdoor, sport-indoor, locuri-joaca) | **PLACEHOLDER** (copy of epdm — smooth surface) | textures.com "smooth polyurethane coating" / Poly Haven "plastic" |
-| `primer`       | `primer_*`        | Amorsă (sport-outdoor, sport-indoor, locuri-joaca, pardoseli-piatra) | **PLACEHOLDER** (copy of sbr — thin coat) | textures.com "paint primer" / solid near-black tint sufficient |
-| `resin-stone`  | `resin-stone_*`   | Mortar piatră + rășină (pardoseli-piatra) | **PLACEHOLDER** (copy of sbr — granular) | textures.com "gravel / resin-bound aggregate" / "exposed aggregate" |
-| `sbr`          | `sbr_*`           | Straturi SBR granule (sport-outdoor, sport-indoor, locuri-joaca) | REAL (existing) | — |
+| Texture key | Used by layer(s) | Source |
+| --- | --- | --- |
+| `concrete`     | Bază de beton | Poly Haven **concrete_floor_02** (CC0) |
+| `primer`       | Amorsă (thin bonding coat) | Poly Haven **smooth_concrete_floor** (CC0) |
+| `sbr`          | Strat SBR (black rubber crumb) | ambientCG **Rubber001** (CC0) — real black rubber-crumb scan |
+| `polyurethane` | Straturi PU / liant (smooth resin coat) | Poly Haven **smooth_concrete_floor** (CC0) |
+| `epdm`         | Suprafață EPDM (red rubber granules) | ambientCG **Rubber003** (CC0) coarse rubber-crumb relief, diffuse colorized red |
+| `resin-stone`  | Mortar piatră + rășină | Poly Haven **gravel_floor** (CC0) |
+| `asphalt`      | Subbază / piatră spartă (gazon sintetic) | Poly Haven asphalt scan (CC0) |
+| `grass`        | Gazon sintetic surface | Poly Haven **leafy_grass** (CC0) |
 
-## Real materials Teo specifically asked to source
-
-| Material | Used for |
-| --- | --- |
-| SBR granule (negru, mărun) | `sbr` layers — already have a placeholder; replace with real scan |
-| EPDM granule (color) | `epdm` layers — already have a placeholder; replace with real scan |
-| Asfalt drenant | `asphalt` — subbază gazon sintetic |
-| Gazon sintetic / iarbă artificială | `grass` — gazon-sintetic surface layer |
-| Piatră legată cu rășină (aggregate resin-bound) | `resin-stone` — pardoseli-piatra surface |
+## Notes
+- **EPDM / SBR** are modelled to match real two-layer rubber sports tiles (red EPDM granule top
+  over black SBR crumb base). They share the same granular normal/roughness relief so both read
+  as 3D rubber crumb; only the diffuse colour differs. To swap in a photographed EPDM granule
+  scan later, drop `epdm_diff.jpg` (+ optional `epdm_normal.png` / `epdm_rough.png`) in place.
+- All Poly Haven and ambientCG assets are **CC0** (public domain) — safe under the
+  no-scraping-competitor-photos rule in `feedback/CHANGE-PLAN.md` §11.
 
 ## PBR map channels expected per key
-
-Each key needs three files:
-
-- `*_diff.jpg` — diffuse / albedo (sRGB colour)
-- `*_normal.png` — OpenGL tangent-space normal map
+- `*_diff.jpg` — diffuse / albedo (sRGB)
+- `*_normal.png` — OpenGL tangent-space normal
 - `*_rough.png` — roughness (greyscale, linear)
-
-Optional when available: `*_ao.png` (ambient occlusion), `*_disp.png` (displacement / height).
-Task 4 material loader will pick up AO and displacement automatically if present alongside the
-three required maps.
+- `*_disp.png` — height / displacement (greyscale, linear) — drives **real geometry
+  relief**. Layer meshes are subdivided (`LayerStack` `segments`) and each material
+  applies `displacementMap` + per-key `displacementScale` (see `useLayerMaterials.ts`),
+  so granular layers (EPDM, SBR, gravel) physically bump up into crumb and the slab
+  edges crumble. EPDM/SBR heights come from the ambientCG rubber scans; the rest are
+  derived from each key's diffuse luminance.

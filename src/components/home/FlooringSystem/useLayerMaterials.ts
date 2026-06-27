@@ -11,6 +11,24 @@ import type { FlooringSystem } from './flooring-systems';
 import { TEXTURE_MANIFEST, type TextureKey } from './texture-manifest';
 
 // ---------------------------------------------------------------------------
+// Per-material displacement strength (scene units).
+//
+// Drives real geometry relief on the subdivided layer mesh — granular rubber
+// and aggregate bump up into 3-D crumb; smooth resin coats stay nearly flat.
+// Keep modest relative to layer thickness so layers don't tear apart.
+// ---------------------------------------------------------------------------
+const DISPLACEMENT_SCALE: Record<TextureKey, number> = {
+  epdm: 0.11, // chunky red EPDM granules — the hero surface
+  sbr: 0.09, // black rubber crumb
+  'resin-stone': 0.085, // resin-bound aggregate
+  grass: 0.1, // turf
+  asphalt: 0.05, // drenant subbase
+  concrete: 0.03, // cast slab — subtle
+  polyurethane: 0.012, // smooth resin coat
+  primer: 0.01, // thin bonding coat
+};
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -24,7 +42,7 @@ function textureUrlsFor(system: FlooringSystem): string[] {
       system.layers.flatMap((l) => {
         const maps = TEXTURE_MANIFEST[l.texture as TextureKey];
         if (!maps) return [];
-        return [maps.map, maps.normalMap, maps.roughnessMap];
+        return [maps.map, maps.normalMap, maps.roughnessMap, maps.displacementMap];
       })
     )
   );
@@ -83,10 +101,17 @@ export function useLayerMaterials(
       const maps = TEXTURE_MANIFEST[layer.texture as TextureKey];
 
       const mat = new MeshStandardMaterial({
-        roughness: 0.9,
+        roughness: 0.92,
         metalness: 0,
+        // Soft reflection fill only — full env intensity washes the diffuse
+        // colour out (rich red EPDM → pale pink) and tints the near-black SBR
+        // layer slate-blue from the cool studio HDRI. Keep it minimal; the
+        // directional key light does the shaping and reveals the granules.
+        envMapIntensity: 0.12,
       });
 
+      // Coarser tiling so the rubber crumb reads as chunky granules (like the
+      // reference tile) rather than fine sandpaper.
       const tiling: [number, number] = [2, 2];
 
       if (maps) {
@@ -102,7 +127,11 @@ export function useLayerMaterials(
           const tex = normalTex.clone();
           configureTexture(tex, tiling, false, aniso);
           mat.normalMap = tex;
-          mat.normalScale.set(1, 1);
+          // Strong normal scale does the heavy lifting for the granular LOOK:
+          // GPU displacement moves vertices but doesn't recompute normals, so
+          // the per-pixel normal map (same crumb source + tiling as the
+          // displacement) is what makes the top face self-shade as 3-D crumb.
+          mat.normalScale.set(2.6, 2.6);
         }
 
         const roughTex = byUrl.get(maps.roughnessMap);
@@ -110,6 +139,18 @@ export function useLayerMaterials(
           const tex = roughTex.clone();
           configureTexture(tex, tiling, false, aniso);
           mat.roughnessMap = tex;
+        }
+
+        const dispTex = byUrl.get(maps.displacementMap);
+        if (dispTex) {
+          const tex = dispTex.clone();
+          configureTexture(tex, tiling, false, aniso);
+          mat.displacementMap = tex;
+          const scale = DISPLACEMENT_SCALE[layer.texture as TextureKey] ?? 0;
+          mat.displacementScale = scale;
+          // Bias by -half so the relief pushes both up and down around the
+          // original slab surface instead of inflating the layer's thickness.
+          mat.displacementBias = -scale * 0.5;
         }
       }
 

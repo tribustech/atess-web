@@ -13,7 +13,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
-import { ACESFilmicToneMapping } from 'three';
+import { NeutralToneMapping } from 'three';
 import { getFlooringSystem, type FlooringSystemId } from './flooring-systems';
 import { LayerStack } from './LayerStack';
 import { useExplodeAnimation } from './useExplodeAnimation';
@@ -35,10 +35,10 @@ function MiniScene({ system, autoRotate, interactive, sectionRef }: MiniScenePro
 
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[4, 6, 4]} intensity={1.4} />
+      <ambientLight intensity={0.28} />
+      <directionalLight position={[4, 6, 4]} intensity={1.9} />
       <Suspense fallback={null}>
-        <Environment preset="studio" />
+        <Environment preset="studio" environmentIntensity={0.3} />
         <LayerStack
           system={system}
           progressRef={progressRef}
@@ -47,6 +47,7 @@ function MiniScene({ system, autoRotate, interactive, sectionRef }: MiniScenePro
           autoRotate={autoRotate}
           interactive={interactive}
           scale={0.45}
+          segments={40}
         />
       </Suspense>
     </>
@@ -79,7 +80,7 @@ export function FlooringMiniModel({
     >
       <Canvas
         dpr={[1, 1.5]}
-        gl={{ antialias: true, toneMapping: ACESFilmicToneMapping }}
+        gl={{ antialias: true, toneMapping: NeutralToneMapping, toneMappingExposure: 1.1 }}
         camera={{ position: [3.5, 2.5, 4.0], fov: 42 }}
       >
         <MiniScene

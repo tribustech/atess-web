@@ -19,6 +19,9 @@ export type LayerProps = {
   hoveredIdRef: React.MutableRefObject<number | null>;
   onHover: (id: number | null) => void;
   interactive: boolean;
+  /** Per-face subdivision count — needed so the displacement map has vertices
+   *  to push into real granular relief. */
+  segments: number;
 };
 
 export function Layer({
@@ -30,6 +33,7 @@ export function Layer({
   hoveredIdRef,
   onHover,
   interactive,
+  segments,
 }: LayerProps) {
   const meshRef = useRef<Mesh>(null);
 
@@ -79,7 +83,11 @@ export function Layer({
           : undefined
       }
     >
-      <boxGeometry args={[size[0], thickness, size[1]]} />
+      {/* High width/depth subdivision feeds the displacement map for granular
+          top relief; a few height segments let the side edges crumble too. */}
+      <boxGeometry
+        args={[size[0], thickness, size[1], segments, Math.max(2, Math.round(segments / 8)), segments]}
+      />
     </mesh>
   );
 }

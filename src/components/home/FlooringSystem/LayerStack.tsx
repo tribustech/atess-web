@@ -15,8 +15,8 @@ import { Layer } from './Layer';
  * Converts a thicknessMm value to scene units.
  * Min-clamp ensures even thin adhesive/primer layers remain visible.
  */
-const MM_TO_SCENE = 0.006;
-const MIN_THICKNESS = 0.08;
+const MM_TO_SCENE = 0.007;
+const MIN_THICKNESS = 0.13;
 
 function toSceneThickness(mm: number): number {
   return Math.max(mm * MM_TO_SCENE, MIN_THICKNESS);
@@ -71,6 +71,9 @@ export type LayerStackProps = {
   autoRotate: boolean;
   interactive: boolean;
   scale?: number;
+  /** Per-face mesh subdivision for displacement relief. Lower it for the small
+   *  mega-menu mini models to keep the triangle count in check. */
+  segments?: number;
 };
 
 // ---------------------------------------------------------------------------
@@ -89,6 +92,7 @@ export function LayerStack({
   autoRotate,
   interactive,
   scale = 0.7,
+  segments = 72,
 }: LayerStackProps) {
   const rotatingGroupRef = useRef<Group>(null);
   const materials = useLayerMaterials(system);
@@ -144,6 +148,7 @@ export function LayerStack({
             hoveredIdRef={hoveredIdRef}
             onHover={onHoverChange}
             interactive={interactive}
+            segments={segments}
           />
         ))}
       </group>

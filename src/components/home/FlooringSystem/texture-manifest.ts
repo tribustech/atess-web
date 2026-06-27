@@ -20,6 +20,8 @@ export interface PbrMaps {
   normalMap: string;
   /** Roughness map (greyscale, linear). */
   roughnessMap: string;
+  /** Height / displacement map (greyscale, linear) — drives real geometry relief. */
+  displacementMap: string;
 }
 
 /** All 8 texture keys referenced by flooring-systems.ts. */
@@ -36,62 +38,65 @@ export type TextureKey =
 /**
  * Manifest mapping each TextureKey to its three PBR map paths.
  *
- * REAL entries: asphalt, epdm, sbr — sourced from actual PBR scans.
- * PLACEHOLDER entries: concrete, grass, polyurethane, primer, resin-stone —
- *   copied from a visually similar REAL map so the 3D scene loads end-to-end.
- *   Replace the files at the paths listed here when real maps are available.
+ * All 8 keys now resolve to REAL CC0 PBR scans (1k → downscaled to 512, 8-bit).
+ * Sources: Poly Haven (CC0). See PLACEHOLDERS.md for the asset-slug mapping.
  */
 export const TEXTURE_MANIFEST: Record<TextureKey, PbrMaps> = {
-  // --- REAL ---
+  // asphalt — Poly Haven "asphalt" (drenant subbase, gazon sintetic)
   asphalt: {
     map:          `${BASE}/asphalt_diff.jpg`,
     normalMap:    `${BASE}/asphalt_normal.png`,
     roughnessMap: `${BASE}/asphalt_rough.png`,
+    displacementMap: `${BASE}/asphalt_disp.png`,
   },
+  // epdm — smooth coloured in-situ rubber sports surface
   epdm: {
     map:          `${BASE}/epdm_diff.jpg`,
     normalMap:    `${BASE}/epdm_normal.png`,
     roughnessMap: `${BASE}/epdm_rough.png`,
+    displacementMap: `${BASE}/epdm_disp.png`,
   },
+  // sbr — black rubber granule mat
   sbr: {
     map:          `${BASE}/sbr_diff.jpg`,
     normalMap:    `${BASE}/sbr_normal.png`,
     roughnessMap: `${BASE}/sbr_rough.png`,
+    displacementMap: `${BASE}/sbr_disp.png`,
   },
-
-  // --- PLACEHOLDER (copy of asphalt) ---
+  // concrete — Poly Haven "concrete_floor_02" (bază de beton)
   concrete: {
     map:          `${BASE}/concrete_diff.jpg`,
     normalMap:    `${BASE}/concrete_normal.png`,
     roughnessMap: `${BASE}/concrete_rough.png`,
+    displacementMap: `${BASE}/concrete_disp.png`,
   },
-
-  // --- PLACEHOLDER (copy of epdm, green tint applied in material) ---
+  // grass — Poly Haven "leafy_grass" (gazon sintetic surface)
   grass: {
     map:          `${BASE}/grass_diff.jpg`,
     normalMap:    `${BASE}/grass_normal.png`,
     roughnessMap: `${BASE}/grass_rough.png`,
+    displacementMap: `${BASE}/grass_disp.png`,
   },
-
-  // --- PLACEHOLDER (copy of epdm — smooth coating) ---
+  // polyurethane — Poly Haven "smooth_concrete_floor" (smooth resin coating)
   polyurethane: {
     map:          `${BASE}/polyurethane_diff.jpg`,
     normalMap:    `${BASE}/polyurethane_normal.png`,
     roughnessMap: `${BASE}/polyurethane_rough.png`,
+    displacementMap: `${BASE}/polyurethane_disp.png`,
   },
-
-  // --- PLACEHOLDER (copy of sbr — thin binding coat) ---
+  // primer — Poly Haven "smooth_concrete_floor" (thin amorsă bonding coat)
   primer: {
     map:          `${BASE}/primer_diff.jpg`,
     normalMap:    `${BASE}/primer_normal.png`,
     roughnessMap: `${BASE}/primer_rough.png`,
+    displacementMap: `${BASE}/primer_disp.png`,
   },
-
-  // --- PLACEHOLDER (copy of sbr — granular aggregate) ---
+  // resin-stone — Poly Haven "gravel_floor" (piatră legată cu rășină)
   'resin-stone': {
     map:          `${BASE}/resin-stone_diff.jpg`,
     normalMap:    `${BASE}/resin-stone_normal.png`,
     roughnessMap: `${BASE}/resin-stone_rough.png`,
+    displacementMap: `${BASE}/resin-stone_disp.png`,
   },
 };
 
