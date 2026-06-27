@@ -2,9 +2,12 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+type LenisScrollOptions = { immediate?: boolean; offset?: number; duration?: number };
+
 type LenisLike = {
   on: (event: 'scroll', callback: () => void) => void;
   raf: (timeMs: number) => void;
+  scrollTo: (target: number | string | HTMLElement, options?: LenisScrollOptions) => void;
   destroy: () => void;
 };
 
@@ -18,6 +21,8 @@ type LenisControllerOptions = {
 export type LenisController = {
   start: () => void;
   stop: () => void;
+  /** Scroll the page. No-op until started; callers fall back to window.scrollTo. */
+  scrollTo: (target: number | string | HTMLElement, options?: LenisScrollOptions) => void;
 };
 
 export function createLenisController(options: LenisControllerOptions): LenisController {
@@ -47,6 +52,9 @@ export function createLenisController(options: LenisControllerOptions): LenisCon
       lenis.destroy();
       lenis = null;
       tickerCallback = null;
+    },
+    scrollTo(target, scrollOptions) {
+      lenis?.scrollTo(target, scrollOptions);
     },
   };
 }

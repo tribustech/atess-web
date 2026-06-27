@@ -23,7 +23,7 @@ export function ServiceCategoryCard({
   return (
     <Link
       href={`/servicii/${category.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-white/10 bg-neutral-900 transition hover:border-accent-primary/50 hover:shadow-lg"
+      className="group flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-neutral-900 transition hover:border-accent-primary/50 hover:shadow-lg"
     >
       {/* Thumbnail */}
       <div className="relative overflow-hidden">

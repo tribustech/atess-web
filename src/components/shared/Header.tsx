@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils/cn";
 import { ServicesMegaMenu } from "@/components/servicii/ServicesMegaMenu";
 import { MobileServiciiMenu } from "@/components/servicii/MobileServiciiMenu";
+import { MEGA_MENU_IMAGES } from "@/lib/megaMenuImages";
 
 const NAV = [
   { to: "/servicii", label: "Servicii" },
@@ -128,6 +129,26 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  // Prefetch the mega-menu photos on idle so the first hover is instant
+  // (they're served unoptimized, so the prefetched URL matches what renders).
+  useEffect(() => {
+    const run = () => {
+      for (const { src } of Object.values(MEGA_MENU_IMAGES)) {
+        const img = new window.Image();
+        img.src = src;
+      }
+    };
+    const ric = (window as typeof window & {
+      requestIdleCallback?: (cb: () => void) => number;
+    }).requestIdleCallback;
+    if (ric) {
+      ric(run);
+    } else {
+      const t = window.setTimeout(run, 1200);
+      return () => clearTimeout(t);
+    }
+  }, []);
 
   const serviciiActive = pathname.startsWith("/servicii");
 

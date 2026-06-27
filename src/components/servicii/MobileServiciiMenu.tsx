@@ -59,6 +59,7 @@ export function MobileServiciiMenu({ onNavigate }: MobileServiciiMenuProps) {
                         alt=""
                         fill
                         sizes="44px"
+                        unoptimized
                         className="object-cover"
                       />
                     </span>

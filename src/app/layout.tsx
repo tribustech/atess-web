@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     description: "Pardoseli profesionale pentru exterior și interior. Aplicator certificat Stockmeier.",
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.svg" },
+  // Icons come from the file-based convention: src/app/{icon.png,apple-icon.png,favicon.ico}
 };
 
 export default function RootLayout({

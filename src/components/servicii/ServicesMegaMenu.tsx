@@ -126,6 +126,9 @@ function FeaturedPanel({
         alt={photo.alt}
         fill
         sizes="360px"
+        // Already-optimized small webp; serve directly so it loads instantly on
+        // hover (no cold Next/Image optimizer round-trip). Prefetched in Header.
+        unoptimized
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
       <span
