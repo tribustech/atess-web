@@ -7,6 +7,7 @@ import { ProducersSection } from "@/components/home/ProducersSection";
 import { InteriorExteriorSplit } from "@/components/home/InteriorExteriorSplit";
 import { FeaturedArticlesSection } from "@/components/home/FeaturedArticlesSection";
 import { getFeaturedArticles } from "@/lib/academy";
+import { SITE_CONTACT } from "@/lib/site-contact";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -37,8 +38,8 @@ const localBusinessLd = {
     addressLocality: "București",
     addressCountry: "RO",
   },
-  email: "contact@atess.ro",
-  telephone: "+40700000000",
+  email: SITE_CONTACT.email,
+  telephone: SITE_CONTACT.phone.tel,
   areaServed: "RO",
 };
 

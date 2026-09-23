@@ -1,10 +1,10 @@
 export const SITE_CONTACT = {
   phone: {
-    display: "+40 700 000 000",
-    tel: "+40700000000",
-    waNumber: "40700000000",
+    display: "0766 684 441",
+    tel: "+40766684441",
+    waNumber: "40766684441",
   },
-  email: "contact@atess.ro",
+  email: "teo.neagu@atessproject.ro",
   city: "București",
   region: "România",
   hours: "Luni–Vineri · 09:00–18:00",
