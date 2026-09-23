@@ -84,7 +84,7 @@ export function ContactChannels() {
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+        <div className="grid gap-4 md:gap-6 lg:grid-cols-3">
           {CHANNELS.map((c, i) => (
             <motion.a
               key={c.key}
@@ -113,8 +113,19 @@ export function ContactChannels() {
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.3em] text-text-muted">
                 {c.label}
               </p>
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-text-primary md:text-3xl">
-                {c.value}
+              <p
+                className={`mt-2 font-semibold tracking-tight text-text-primary break-words ${
+                  c.key === "email" ? "text-xl lg:text-2xl" : "text-2xl md:text-3xl"
+                }`}
+              >
+                {c.key === "email" ? (
+                  <>
+                    {c.value.split("@")[0]}
+                    <wbr />@{c.value.split("@")[1]}
+                  </>
+                ) : (
+                  c.value
+                )}
               </p>
               <p className="mt-3 text-sm text-text-muted">{c.meta}</p>
 
