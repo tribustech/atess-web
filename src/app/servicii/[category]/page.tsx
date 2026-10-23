@@ -12,6 +12,7 @@ import { getProjectsByCategories } from "@/lib/projects";
 import { CategoryLayerPhoto } from "@/components/servicii/CategoryLayerPhoto";
 import { ProjectCard } from "@/components/proiecte/ProjectCard";
 import { RelatedProjectsLink } from "@/components/servicii/RelatedProjectsLink";
+import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -56,9 +57,9 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
   }
 
   const subcategories = getServiceSubcategories(cat.slug);
-  const relatedProjects = getProjectsByCategories(
-    getRelatedProjectTags(cat),
-  ).slice(0, 6);
+  const relatedProjects = PORTFOLIO_PUBLIC
+    ? getProjectsByCategories(getRelatedProjectTags(cat)).slice(0, 6)
+    : [];
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -207,6 +208,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         )}
 
         {/* ─── Related Projects link + Back ───────────────────────────────────── */}
+        {PORTFOLIO_PUBLIC && (
         <section className="border-t border-border">
           <div className="mx-auto max-w-5xl px-6 py-10 md:py-12">
             <RelatedProjectsLink
@@ -215,6 +217,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
             />
           </div>
         </section>
+        )}
       </main>
     </>
   );

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllServices } from "@/lib/services";
 import { getPublishedArticles } from "@/lib/academy";
 import projectsData from "@/data/projects.json";
+import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -46,12 +47,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    {
-      url: `${SITE_URL}/proiecte/harta`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+    ...(PORTFOLIO_PUBLIC
+      ? [
+          {
+            url: `${SITE_URL}/proiecte/harta`,
+            lastModified: now,
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+          },
+        ]
+      : []),
     {
       url: `${SITE_URL}/invata`,
       lastModified: now,
@@ -80,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ── /proiecte/[slug] — all projects (auto-updates as projects.json grows) ────
   const proiecteRoutes: MetadataRoute.Sitemap = (
-    projectsData as Array<{ slug: string }>
+    PORTFOLIO_PUBLIC ? (projectsData as Array<{ slug: string }>) : []
   ).map((project) => ({
     url: `${SITE_URL}/proiecte/${project.slug}`,
     lastModified: now,

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 import { RomaniaMap } from "@/components/proiecte/RomaniaMap";
 
 export const metadata: Metadata = {
@@ -20,6 +22,7 @@ function loadSvg(): string {
 }
 
 export default function HartaPage() {
+  if (!PORTFOLIO_PUBLIC) redirect("/proiecte");
   const svgMarkup = loadSvg();
 
   return (

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 import { ArrowLeft, MapPin, Calendar, Ruler, Layers } from "lucide-react";
 import {
   getAllProjects,
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
+  if (!PORTFOLIO_PUBLIC) redirect("/proiecte");
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) notFound();

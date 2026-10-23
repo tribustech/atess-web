@@ -12,6 +12,8 @@ import {
 } from "@/lib/gallery";
 import { getProjectsGroupedByCategory, resolveCategorieParam } from "@/lib/projects";
 import { ProjectsExplorer } from "@/components/proiecte/ProjectsExplorer";
+import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
+import { PortfolioComingSoon } from "@/components/proiecte/PortfolioComingSoon";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
 
@@ -23,7 +25,7 @@ function loadMapSvg(): string {
   return readFileSync(join(process.cwd(), "src/data/RomaniaMap.svg"), "utf8");
 }
 
-export const metadata: Metadata = {
+const galleryMetadata: Metadata = {
   title: "Proiecte realizate | Atess Professional Flooring",
   description:
     "Proiecte de pardoseli sportive, piste de atletism, terenuri multisport și spații educaționale realizate de echipa Atess în toată România.",
@@ -40,11 +42,23 @@ export const metadata: Metadata = {
   },
 };
 
+const comingSoonMetadata: Metadata = {
+  title: "Portofoliu în lucru | Atess Professional Flooring",
+  description:
+    "Pregătim o prezentare nouă a proiectelor Atess. Revenim în curând cu lucrările realizate în toată țara.",
+  alternates: { canonical: "/proiecte" },
+  robots: { index: false, follow: true },
+};
+
+export const metadata: Metadata = PORTFOLIO_PUBLIC ? galleryMetadata : comingSoonMetadata;
+
 interface PageProps {
   searchParams: Promise<{ categorie?: string }>;
 }
 
 export default async function ProiectePage({ searchParams }: PageProps) {
+  if (!PORTFOLIO_PUBLIC) return <PortfolioComingSoon />;
+
   const { categorie } = await searchParams;
   const initialCategory = resolveCategorieParam(categorie);
   const groups = getProjectsGroupedByCategory();
