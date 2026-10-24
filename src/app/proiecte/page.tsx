@@ -26,7 +26,7 @@ function loadMapSvg(): string {
 }
 
 const galleryMetadata: Metadata = {
-  title: "Proiecte realizate | Atess Professional Flooring",
+  title: "Proiecte realizate",
   description:
     "Proiecte de pardoseli sportive, piste de atletism, terenuri multisport și spații educaționale realizate de echipa Atess în toată România.",
   alternates: { canonical: "/proiecte" },
@@ -43,7 +43,7 @@ const galleryMetadata: Metadata = {
 };
 
 const comingSoonMetadata: Metadata = {
-  title: "Portofoliu în lucru | Atess Professional Flooring",
+  title: "Portofoliu în lucru",
   description:
     "Pregătim o prezentare nouă a proiectelor Atess. Revenim în curând cu lucrările realizate în toată țara.",
   alternates: { canonical: "/proiecte" },

@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "Ghiduri tehnice pentru arhitecți, proiectanți și beneficiari. Pardoseli sportive, covor PVC, linoleum, pardoseli de plută — tot ce nu apare în fișele tehnice.",
     url: "/invata",
+    images: ["/opengraph-image"],
     type: "website",
   },
 };

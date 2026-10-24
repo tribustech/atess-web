@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: cat.label,
       description: cat.shortBlurb,
       url: `/servicii/${cat.slug}`,
+      images: ["/opengraph-image"],
       type: "website",
     },
   };

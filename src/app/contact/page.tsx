@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Contact | ATESS Project",
     description: "Telefon, WhatsApp, email — alege cum vrei să ne găsești.",
     url: "/contact",
+    images: ["/opengraph-image"],
   },
 };
 

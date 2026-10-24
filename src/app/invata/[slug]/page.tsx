@@ -53,6 +53,7 @@ export async function generateMetadata({
       description: article.dek,
       url,
       type: "article",
+      images: ["/opengraph-image"],
     },
   };
 }
