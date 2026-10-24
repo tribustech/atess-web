@@ -243,6 +243,8 @@ collections:
       # Câmpuri editabile.
       - { name: label, label: Denumire serviciu, widget: string }
       - { name: shortBlurb, label: Descriere scurtă (meniu/carduri), widget: text }
+      - { name: seoTitle, label: Titlu Google, widget: string, required: false, hint: "Titlul din rezultatele Google (max. ~45 caractere). Gol = denumirea serviciului." }
+      - { name: seoDescription, label: Descriere Google, widget: text, required: false, hint: "Textul de sub titlu în Google (140–160 caractere). Gol = descrierea scurtă." }
       - { name: intro, label: Introducere pagină, widget: text }
       - name: seoCopy
         label: Secțiuni de conținut

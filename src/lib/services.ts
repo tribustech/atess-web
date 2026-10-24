@@ -64,6 +64,10 @@ const categorySchema = z.object({
   order: z.number().int().positive(),
   label: z.string().min(1),
   shortBlurb: z.string().min(1),
+  /** Optional search-result title (layout appends " | ATESS Project"). Falls back to label. */
+  seoTitle: z.string().min(1).optional(),
+  /** Optional meta description. Falls back to shortBlurb. */
+  seoDescription: z.string().min(1).optional(),
   intro: z.string().min(1),
   seoCopy: z.array(seoCopySectionSchema),
   applications: z.array(z.string()),

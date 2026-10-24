@@ -12,9 +12,9 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export const metadata: Metadata = {
-  title: "ATESS Project — Pardoseli sportive profesionale",
+  title: "ATESS Project — Piste de atletism și pardoseli sportive",
   description:
-    "Pardoseli sportive profesionale. Aplicator certificat Stockmeier. 10+ ani pe teren.",
+    "Piste de atletism, terenuri sportive și locuri de joacă cu pardoseală turnată EPDM, plus pardoseli de interior. Aplicator certificat Stockmeier, 10+ ani pe teren.",
   alternates: { canonical: "/" },
 };
 

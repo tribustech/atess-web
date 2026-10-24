@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${cat.label} | Servicii`,
-    description: cat.shortBlurb,
+    title: cat.seoTitle ?? `${cat.label} | Servicii`,
+    description: cat.seoDescription ?? cat.shortBlurb,
     alternates: { canonical: `/servicii/${cat.slug}` },
     openGraph: {
-      title: cat.label,
-      description: cat.shortBlurb,
+      title: cat.seoTitle ?? cat.label,
+      description: cat.seoDescription ?? cat.shortBlurb,
       url: `/servicii/${cat.slug}`,
       images: ["/opengraph-image"],
       type: "website",
