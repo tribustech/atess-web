@@ -4,7 +4,7 @@ import { getPublishedArticles } from "@/lib/academy";
 import projectsData from "@/data/projects.json";
 import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

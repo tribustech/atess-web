@@ -50,7 +50,7 @@ export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
   const subject = `[Configurator] ${answers.projectType ?? "—"} — ${contact.name} (${contact.judet})`;
 
   const textLines = [
-    `Lead configurator atess.ro`,
+    `Lead configurator atessproject.ro`,
     ``,
     `=== Proiect ===`,
     ...answersTextLines(answers),
@@ -138,7 +138,7 @@ export function buildConfiguratorEmail(input: ConfiguratorEmailInput) {
       : "";
 
   const html = `<!doctype html><html><body style="font-family:system-ui,sans-serif;color:#111;">
-<h2 style="margin:0 0 8px;">Lead configurator atess.ro</h2>
+<h2 style="margin:0 0 8px;">Lead configurator atessproject.ro</h2>
 <p style="margin:0 0 24px;color:#666;">Trimite o ofertă de orientare prin telefon în 1 zi lucrătoare.</p>
 
 <h3 style="margin:0 0 8px;">Proiect</h3>

@@ -10,7 +10,7 @@ import { StatsRow } from "@/components/despre/StatsRow";
 import { AboutCta } from "@/components/despre/AboutCta";
 import { EquipmentShowcase } from "@/components/despre/EquipmentShowcase";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export const metadata: Metadata = {
   title: "Despre — Teo Neagu & echipa ATESS",

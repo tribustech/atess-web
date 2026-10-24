@@ -32,7 +32,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export const viewport: Viewport = {
   themeColor: "#0B0B0D",

@@ -12,7 +12,7 @@ import {
 import { PROJECT_CATEGORIES } from "@/lib/gallery";
 import { ProjectGallery } from "@/components/proiecte/ProjectGallery";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

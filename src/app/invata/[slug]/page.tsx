@@ -11,7 +11,7 @@ import {
 } from "@/lib/academy";
 import { ArticleRenderer } from "@/components/invata/ArticleRenderer";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

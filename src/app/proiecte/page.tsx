@@ -15,7 +15,7 @@ import { ProjectsExplorer } from "@/components/proiecte/ProjectsExplorer";
 import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 import { PortfolioComingSoon } from "@/components/proiecte/PortfolioComingSoon";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 const gallery = galleryRaw as GalleryEntry[];
 assertAllAltsFilled(gallery);

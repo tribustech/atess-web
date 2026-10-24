@@ -9,7 +9,7 @@ import { FeaturedArticlesSection } from "@/components/home/FeaturedArticlesSecti
 import { getFeaturedArticles } from "@/lib/academy";
 import { SITE_CONTACT } from "@/lib/site-contact";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export const metadata: Metadata = {
   title: "ATESS Project — Pardoseli sportive profesionale",

@@ -22,7 +22,7 @@ export function buildContactEmail(input: ContactEmailInput) {
   const emailSubject = `[Contact] ${subject?.trim() || "Mesaj nou"} — ${name}`;
 
   const text = [
-    `Mesaj nou de pe atess.ro/contact`,
+    `Mesaj nou de pe atessproject.ro/contact`,
     ``,
     `=== Expeditor ===`,
     `- Nume: ${name}`,
@@ -56,7 +56,7 @@ export function buildContactEmail(input: ContactEmailInput) {
     .join("");
 
   const html = `<!doctype html><html><body style="font-family:system-ui,sans-serif;color:#111;">
-<h2 style="margin:0 0 8px;">Mesaj nou de pe atess.ro/contact</h2>
+<h2 style="margin:0 0 8px;">Mesaj nou de pe atessproject.ro/contact</h2>
 <p style="margin:0 0 24px;color:#666;">Răspunde direct la acest email — câmpul Reply-To este setat la expeditor.</p>
 
 <h3 style="margin:0 0 8px;">Expeditor</h3>

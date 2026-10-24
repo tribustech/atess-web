@@ -14,7 +14,7 @@ import { ProjectCard } from "@/components/proiecte/ProjectCard";
 import { RelatedProjectsLink } from "@/components/servicii/RelatedProjectsLink";
 import { PORTFOLIO_PUBLIC } from "@/lib/portfolio-visibility";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 interface PageProps {
   params: Promise<{ category: string }>;

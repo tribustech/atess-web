@@ -9,7 +9,7 @@ import {
 } from "@/lib/academy";
 import { ArticleCard } from "@/components/invata/ArticleCard";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://atess.ro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.atessproject.ro";
 
 export const metadata: Metadata = {
   title: "Învață — Ghiduri tehnice pardoseli, covor PVC și pardoseli de plută",
